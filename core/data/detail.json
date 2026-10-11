@@ -1,0 +1,290 @@
+{
+ "architecte": {
+  "perception": "Perçoit le monde comme un système à comprendre : des faits, des causes, des règles et des priorités. Une situation est d'abord analysée en éléments concrets avant d'être ressentie.",
+  "recoit": "Reçoit l'information au mieux par écrit ou de façon structurée : chiffres, faits, plan, ordre du jour. Elle a besoin de savoir ce qui est attendu, pour quand et selon quels critères.",
+  "traite": "Traite l'information par l'analyse : elle trie, compare, vérifie et classe avant de se prononcer. Elle aime prendre le temps de réfléchir et supporte mal de décider dans l'urgence sans données.",
+  "restitue": "Restitue de façon ordonnée, précise et complète : points numérotés, exemples chiffrés, conclusions argumentées. Le risque est d'en dire trop, ou d'attendre d'avoir tout vérifié pour s'exprimer.",
+  "style_com": "Posé, factuel, structuré. Phrases précises, peu d'effets de style, goût du vocabulaire exact.",
+  "com_atouts": [
+   "Clarté et précision des messages",
+   "Fiabilité : ce qui est dit a été vérifié",
+   "Capacité à structurer un sujet complexe"
+  ],
+  "com_vigilance": [
+   "Un ton perçu comme sec ou critique",
+   "Trop de détails pour un auditoire qui attend l'essentiel",
+   "Peu de place laissée aux émotions de l'interlocuteur"
+  ],
+  "encadre": "Encadre par la clarté : objectifs mesurables, processus, points de suivi réguliers. L'équipe est rassurée par la cohérence, parfois freinée par l'exigence et le contrôle.",
+  "encadree": "Apprécie d'être encadrée par quelqu'un de fiable : consignes claires, critères d'évaluation connus, reconnaissance du travail bien fait.",
+  "angle": "Déléguer sans contrôler chaque détail, et valoriser les personnes autant que les résultats.",
+  "recharge": [
+   "Un temps calme pour ordonner ses idées et ses priorités",
+   "Un travail abouti, reconnu pour sa qualité",
+   "Des routines et un environnement organisé"
+  ],
+  "oui": [
+   "Arriver préparé, avec des faits et un cadre",
+   "Annoncer l'objectif et la durée d'un échange",
+   "Laisser du temps pour réfléchir avant de répondre"
+  ],
+  "non": [
+   "Improviser ou changer les règles sans prévenir",
+   "Critiquer la personne plutôt que le résultat",
+   "Rester vague ou approximatif"
+  ],
+  "plan": [
+   "Prendre une décision par semaine avec 80 % des informations seulement",
+   "Adresser chaque jour un remerciement précis à un collègue ou à un proche",
+   "Planifier un vrai temps de repos, sans objectif de productivité"
+  ],
+  "autres": {
+   "architecte": "S'accorder vite sur la méthode, puis penser à échanger sur les personnes et pas seulement sur les tâches.",
+   "connecteur": "Prendre un moment pour demander comment il va avant d'entrer dans le sujet, puis donner les faits en peu de mots.",
+   "guerrier": "Partager le pourquoi, la valeur en jeu, en plus du comment. Montrer que les règles servent ce qui compte.",
+   "visionnaire": "Donner du temps et de l'espace, poser une question ouverte, accepter une réponse qui vient plus tard.",
+   "creatif": "Garder l'échange court et léger, accepter un peu d'imprévu, puis formaliser par écrit.",
+   "competiteur": "Aller à l'essentiel, présenter les options et le gain attendu, laisser la décision se prendre vite."
+  }
+ },
+ "connecteur": {
+  "perception": "Perçoit le monde à travers les personnes : ambiances, intentions, liens et ressentis. Une situation est d'abord lue par ce qu'elle fait aux gens qui la vivent.",
+  "recoit": "Reçoit l'information au mieux à l'oral et dans l'échange, avec de l'attention portée à la personne qui parle. Le ton et le contexte comptent autant que le contenu.",
+  "traite": "Traite l'information en la reliant aux personnes concernées et à ses propres ressentis. Elle consulte, écoute des avis et cherche une décision qui préserve l'harmonie.",
+  "restitue": "Restitue de façon chaleureuse et imagée, avec des exemples vécus. Le risque est d'adoucir le message au point d'en diluer l'essentiel, ou de s'étendre sur le contexte.",
+  "style_com": "Chaleureux, expressif, à l'écoute. Parle volontiers à la première personne et par histoires, crée vite du lien.",
+  "com_atouts": [
+   "Facilité à créer un climat de confiance",
+   "Écoute sincère et empathie",
+   "Capacité à fédérer et à apaiser un groupe"
+  ],
+  "com_vigilance": [
+   "Éviter les messages difficiles pour ne pas blesser",
+   "Prendre sur soi plus que de raison",
+   "Se laisser porter par les attentes des autres"
+  ],
+  "encadre": "Encadre par la relation : disponibilité, écoute, esprit d'équipe. L'équipe est soudée et en confiance, avec parfois des décisions difficiles repoussées.",
+  "encadree": "Apprécie d'être encadrée par quelqu'un d'accessible : échanges réguliers, attention portée à la personne, ambiance de travail saine.",
+  "angle": "Poser des limites et donner un retour clair, même quand il peut déplaire.",
+  "recharge": [
+   "Des moments de partage et d'échange authentiques",
+   "Se sentir apprécié pour ce que l'on est",
+   "Un cadre où l'on se sent entouré"
+  ],
+  "oui": [
+   "Prendre un temps pour la personne avant le sujet",
+   "Montrer un intérêt et une reconnaissance sincères",
+   "Donner un retour avec bienveillance"
+  ],
+  "non": [
+   "Aller trop vite, sans un mot d'attention",
+   "Ignorer ou rabaisser publiquement",
+   "Laisser entendre que son avis ne compte pas"
+  ],
+  "plan": [
+   "Formuler chaque semaine une demande claire ou un refus poli",
+   "Réserver un temps hebdomadaire pour soi, sans personne à aider",
+   "Donner à quelqu'un un retour franc et bienveillant, en partant d'un fait"
+  ],
+  "autres": {
+   "architecte": "Arriver avec des faits et un ordre du jour, et ne pas prendre sa réserve pour de la froideur.",
+   "connecteur": "Profiter de la complicité, tout en veillant à aborder aussi les sujets qui fâchent.",
+   "guerrier": "Être franc sur ses positions et respecter ses convictions, sans chercher à arrondir.",
+   "visionnaire": "Respecter son besoin de calme et proposer un échange posé, en tête à tête.",
+   "creatif": "Partager l'enthousiasme et le jeu, puis cadrer ensemble l'essentiel à retenir.",
+   "competiteur": "Aller droit au but, proposer une action concrète plutôt qu'un long échange sur le ressenti."
+  }
+ },
+ "guerrier": {
+  "perception": "Perçoit le monde à travers ses valeurs : ce qui est juste, loyal, sensé. Une situation est jugée d'abord à l'aune de ses principes et de l'engagement que chacun y met.",
+  "recoit": "Reçoit l'information au mieux quand elle est directe, sincère et porteuse de sens. Elle veut savoir pourquoi cela compte et quelle est la position de l'autre.",
+  "traite": "Traite l'information en la confrontant à ses convictions et à son expérience. Elle se forge une opinion nette, difficile à faire évoluer sans arguments solides.",
+  "restitue": "Restitue avec franchise et conviction, en prenant position. Le risque est de paraître catégorique, ou de laisser peu de place à l'avis contraire.",
+  "style_com": "Direct, engagé, parfois tranché. Parle avec conviction, valorise la loyauté et la parole tenue.",
+  "com_atouts": [
+   "Franchise et courage d'exprimer un désaccord",
+   "Fiabilité et loyauté envers ses engagements",
+   "Capacité à donner du sens et à mobiliser autour d'une cause"
+  ],
+  "com_vigilance": [
+   "Une position perçue comme rigide ou jugeante",
+   "Difficulté à accepter une vision différente des valeurs",
+   "Un engagement qui peut devenir intransigeance"
+  ],
+  "encadre": "Encadre par les valeurs : exemplarité, cap clair, exigence de loyauté. L'équipe sait où elle va, mais peut craindre de contredire.",
+  "encadree": "Apprécie d'être encadrée par quelqu'un de cohérent : parole tenue, sens donné aux décisions, respect de ses convictions.",
+  "angle": "Écouter vraiment les points de vue qui diffèrent et nuancer ses jugements.",
+  "recharge": [
+   "Agir en accord avec ses valeurs",
+   "Être respectée pour ses opinions et son engagement",
+   "Se consacrer à une cause qui a du sens"
+  ],
+  "oui": [
+   "Être direct et sincère",
+   "Expliquer le sens et les valeurs derrière une demande",
+   "Respecter les engagements pris"
+  ],
+  "non": [
+   "Manipuler, ou dire une chose et en faire une autre",
+   "Minimiser ses convictions",
+   "Imposer sans explication"
+  ],
+  "plan": [
+   "Écouter une opinion contraire jusqu'au bout avant de répondre",
+   "Nommer une valeur et la relier à un geste concret de la semaine",
+   "Reformuler une critique en demande précise"
+  ],
+  "autres": {
+   "architecte": "S'appuyer sur des faits pour étayer ses convictions, et lui laisser le temps d'analyser.",
+   "connecteur": "Adoucir la forme sans trahir le fond, et reconnaître son rôle de lien dans le groupe.",
+   "guerrier": "Clarifier tôt ce qui est commun et ce qui est non négociable, pour éviter l'affrontement de principes.",
+   "visionnaire": "Donner le temps de la réflexion et ne pas forcer une prise de position immédiate.",
+   "creatif": "Accepter une forme plus légère et laisser de la liberté, en rappelant les engagements essentiels.",
+   "competiteur": "S'accorder sur l'objectif et les règles du jeu, puis laisser chacun agir à son rythme."
+  }
+ },
+ "visionnaire": {
+  "perception": "Perçoit le monde avec du recul : elle observe, imagine, relie les idées et les possibilités. Une situation est d'abord regardée de l'intérieur, dans le calme, avant qu'une réaction ne se manifeste.",
+  "recoit": "Reçoit l'information au mieux dans le calme, par écrit ou dans un échange à deux, avec des consignes simples et du temps pour s'en imprégner.",
+  "traite": "Traite l'information en profondeur et à son rythme : elle réfléchit, imagine des scénarios et fait ses liens avant de se prononcer. Les décisions rapides l'inconfortent.",
+  "restitue": "Restitue de manière réfléchie et brève, souvent après coup. Elle parle peu en réunion mais apporte des idées originales quand on lui ménage de l'espace.",
+  "style_com": "Posé, discret, réfléchi. Préfère les échanges à deux ou l'écrit, laisse des silences, va à l'essentiel.",
+  "com_atouts": [
+   "Recul et capacité d'analyse en profondeur",
+   "Imagination et vision d'ensemble",
+   "Calme et autonomie dans le travail"
+  ],
+  "com_vigilance": [
+   "Rester en retrait et ne pas faire entendre ses idées",
+   "Attendre d'être sollicitée pour agir",
+   "Être perçue comme distante ou passive"
+  ],
+  "encadre": "Encadre en laissant de l'espace : confiance, autonomie, vision à moyen terme. L'équipe respire, mais peut manquer de direction claire au quotidien.",
+  "encadree": "Apprécie d'être encadrée par quelqu'un qui donne des consignes claires, respecte son rythme et lui laisse du temps de réflexion et d'autonomie.",
+  "angle": "Prendre l'initiative de la parole et de l'action, et expliciter ses attentes.",
+  "recharge": [
+   "Des moments de solitude pour se recentrer",
+   "Un environnement calme, sans sollicitation permanente",
+   "Du temps pour imaginer, lire, réfléchir"
+  ],
+  "oui": [
+   "Donner des consignes claires et simples",
+   "Laisser du temps avant une réponse",
+   "Proposer un échange à deux plutôt qu'en public"
+  ],
+  "non": [
+   "La mettre en avant sans prévenir",
+   "Exiger une réaction immédiate",
+   "Remplir le silence à sa place"
+  ],
+  "plan": [
+   "Préparer une idée et la dire à voix haute à chaque réunion",
+   "Fixer une petite action par jour, avec une heure précise",
+   "Expliquer à son entourage son envie de calme plutôt que de se retirer sans un mot"
+  ],
+  "autres": {
+   "architecte": "Préparer ses idées et les présenter avec un fil logique, sans attendre qu'il les demande.",
+   "connecteur": "Partager un peu de soi pour l'aider à ne pas lire le retrait comme un rejet.",
+   "guerrier": "Annoncer clairement sa position, même brièvement, car le silence est vite interprété.",
+   "visionnaire": "S'accorder du temps et veiller à ce que quelqu'un prenne l'initiative.",
+   "creatif": "Accepter son énergie sans se sentir envahi et poser ses limites de calme.",
+   "competiteur": "Exprimer son rythme et ses délais, et proposer un premier pas concret pour avancer."
+  }
+ },
+ "creatif": {
+  "perception": "Perçoit le monde comme un terrain d'expériences : sensations, humour, nouveauté, plaisir de faire. Une situation est vécue d'abord de façon immédiate et spontanée.",
+  "recoit": "Reçoit l'information au mieux quand elle est courte, vivante et concrète : un exemple, une démonstration, un échange rapide. Les longs exposés la perdent.",
+  "traite": "Traite l'information en essayant, en réagissant et en ajustant. Elle apprend par l'expérience et décide avec ses sensations plus qu'avec de longs raisonnements.",
+  "restitue": "Restitue avec énergie, humour et spontanéité. Le risque est de rester en surface, de se disperser ou de négliger les détails.",
+  "style_com": "Vif, ludique, spontané. Utilise l'humour et les images, passe volontiers d'un sujet à l'autre.",
+  "com_atouts": [
+   "Énergie communicative et bonne humeur",
+   "Capacité à dédramatiser et à innover",
+   "Adaptation rapide à l'imprévu"
+  ],
+  "com_vigilance": [
+   "Perdre le fil ou se disperser",
+   "Ne pas tenir les délais et la forme attendus",
+   "Prendre à la légère un sujet que l'autre juge sérieux"
+  ],
+  "encadre": "Encadre en donnant de l'élan : énergie, liberté, esprit d'essai. L'équipe est stimulée, mais peut manquer de cadre et de suivi.",
+  "encadree": "Apprécie d'être encadrée par quelqu'un de souple : liberté de s'organiser, retours rapides, ambiance détendue et ouverte à l'essai.",
+  "angle": "Poser un cadre, des échéances et un suivi, et aller au bout de ce qui est lancé.",
+  "recharge": [
+   "Des activités variées, ludiques, en mouvement",
+   "Des moments de plaisir et d'humour partagés",
+   "La liberté d'essayer sans pression excessive"
+  ],
+  "oui": [
+   "Rester bref, concret et positif",
+   "Introduire de l'humour et de la variété",
+   "Laisser la liberté d'essayer"
+  ],
+  "non": [
+   "Imposer des procédures lourdes sans explication",
+   "Critiquer son goût de la nouveauté",
+   "Faire des exposés longs et monotones"
+  ],
+  "plan": [
+   "Découper chaque projet en trois étapes datées et en terminer une avant d'en commencer une autre",
+   "Faire un point écrit de dix minutes chaque fin de semaine",
+   "Demander à un proche si le message est passé comme prévu"
+  ],
+  "autres": {
+   "architecte": "Respecter les délais et la précision, et prévenir à l'avance quand quelque chose change.",
+   "connecteur": "Partager le plaisir, tout en écoutant vraiment ce qu'il a à dire.",
+   "guerrier": "Montrer que l'on prend l'essentiel au sérieux, même avec légèreté sur la forme.",
+   "visionnaire": "Baisser le rythme, laisser des pauses et des silences.",
+   "creatif": "L'énergie est au rendez-vous : veiller à ce que quelqu'un tienne le cadre et le suivi.",
+   "competiteur": "Se fixer ensemble un défi et une échéance, et rendre le rythme visible."
+  }
+ },
+ "competiteur": {
+  "perception": "Perçoit le monde comme un ensemble d'objectifs à atteindre et d'obstacles à franchir. Une situation est d'abord évaluée en termes d'enjeux, d'efficacité et de résultat.",
+  "recoit": "Reçoit l'information au mieux quand elle est directe, synthétique et orientée vers l'action : l'essentiel, les options, la décision attendue.",
+  "traite": "Traite l'information vite, en cherchant le levier d'action. Elle décide rapidement avec les éléments disponibles et corrige en route.",
+  "restitue": "Restitue de façon directe, concise et orientée résultat. Le risque est d'aller trop vite, de manquer de nuance ou de couper la parole.",
+  "style_com": "Direct, rapide, énergique. Va au but, aime les défis, les échanges efficaces et les résultats mesurables.",
+  "com_atouts": [
+   "Rapidité de décision et sens de l'action",
+   "Capacité à mobiliser vers un objectif",
+   "Aisance sous pression et goût du défi"
+  ],
+  "com_vigilance": [
+   "Aller trop vite et négliger l'avis des autres",
+   "Un ton perçu comme autoritaire ou impatient",
+   "Voir chaque situation comme une compétition"
+  ],
+  "encadre": "Encadre par l'objectif : défis, rythme, résultats. L'équipe progresse vite, mais peut s'épuiser ou se sentir pressée.",
+  "encadree": "Apprécie d'être encadrée par quelqu'un de décidé : objectifs ambitieux, autonomie, reconnaissance de la réussite.",
+  "angle": "Ralentir pour écouter, expliquer et prendre en compte le rythme et les émotions des autres.",
+  "recharge": [
+   "Relever des défis et mesurer ses progrès",
+   "Être reconnue pour ses réussites",
+   "Bouger, agir et voir des résultats concrets"
+  ],
+  "oui": [
+   "Aller à l'essentiel",
+   "Proposer des options et un défi clair",
+   "Valoriser ses résultats"
+  ],
+  "non": [
+   "Tourner autour du sujet",
+   "Ralentir par trop de procédures",
+   "Remettre en cause son autorité en public"
+  ],
+  "plan": [
+   "Poser une question avant chaque décision et écouter la réponse en entier",
+   "Fixer un objectif de repos aussi précis que les autres objectifs",
+   "Féliciter ouvertement un effort, et pas seulement un résultat"
+  ],
+  "autres": {
+   "architecte": "Fournir les données, laisser du temps de vérification et éviter la pression immédiate.",
+   "connecteur": "Prendre un instant pour la relation avant de passer à l'action.",
+   "guerrier": "Expliquer le sens et respecter ses valeurs, sans chercher à gagner le débat.",
+   "visionnaire": "Ralentir, poser des questions ouvertes et attendre la réponse.",
+   "creatif": "Entrer dans son jeu pour le motiver, et garder le suivi comme point d'accord.",
+   "competiteur": "Se rappeler que l'on joue dans la même équipe : partager les objectifs et les mérites."
+  }
+ }
+}

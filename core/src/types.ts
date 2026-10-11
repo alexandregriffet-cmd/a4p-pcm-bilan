@@ -470,3 +470,22 @@ export interface ResultByTest {
   psycho: PsychoResult
   pcm: PcmResult
 }
+
+/** Fiche approfondie d'un profil (commune à tous les publics, rédigée à la troisième personne). */
+export interface PcmDetail {
+  perception: string
+  recoit: string
+  traite: string
+  restitue: string
+  style_com: string
+  com_atouts: string[]
+  com_vigilance: string[]
+  encadre: string
+  encadree: string
+  angle: string
+  recharge: string[]
+  oui: string[]
+  non: string[]
+  plan: string[]
+  autres: Record<PcmType, string>
+}

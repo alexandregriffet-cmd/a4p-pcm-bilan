@@ -31,3 +31,11 @@ export function getTestData<T extends TestId>(test: T, audience: AudienceId): Da
   if (!data) throw new Error(`Test absent de cette plateforme : ${test}`)
   return data as DataByTest[T]
 }
+
+import detailJson from '../data/detail.json'
+import type { PcmDetail, PcmType } from './types'
+
+/** Fiche approfondie d'un profil. */
+export function getDetail(type: PcmType): PcmDetail {
+  return (detailJson as unknown as Record<PcmType, PcmDetail>)[type]
+}

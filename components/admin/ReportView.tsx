@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { PcmType, PcmTypeData } from '@core/types'
 import { getAudience } from '@core/audiences'
+import { getDetail } from '@core/data'
 import { categoryLabel, formatDate, REPORT_TITLE, SIGNATURE } from '@/lib/format'
 import type { StoredResult } from '@/lib/types'
 import { TYPE_ACCENT } from './accent'
@@ -18,8 +19,34 @@ const ADVICE_TITLE: Record<string, string> = {
 
 const STRESS_LEVELS = ['Signaux de tension', 'Tension en montée', 'Saturation']
 
+const LEAD_TITLE: Record<string, string> = {
+  'adulte-sport': 'Quand la personne encadre ou est encadrée',
+  'ado-etudes': 'En groupe, en classe et en équipe',
+  'ado-sport': 'En groupe et en équipe',
+  'adulte-hors-sport': 'Quand la personne encadre ou est encadrée',
+  manager: 'Style de management',
+}
+
+function List({ items }: { items: string[] }) {
+  return (
+    <ul>
+      {items.map((x) => (
+        <li key={x}>{x}</li>
+      ))}
+    </ul>
+  )
+}
+
 function Reading({ profile, which, category }: { profile: Profile; which: 'base' | 'phase'; category: string }) {
   const accent = TYPE_ACCENT[profile.type]
+  const d = getDetail(profile.type)
+  const full = which === 'base'
+  const four: [string, string][] = [
+    ['Percevoir le monde', d.perception],
+    ['Recevoir l\u2019information', d.recoit],
+    ['La traiter', d.traite],
+    ['La restituer', d.restitue],
+  ]
   const stress = [profile.distress1, profile.distress2, profile.distress3]
   return (
     <div className={`card profile-card reading-pane ${which === 'phase' ? 'page-break' : ''}`} style={{ ['--accent' as string]: accent }}>
@@ -31,12 +58,69 @@ function Reading({ profile, which, category }: { profile: Profile; which: 'base'
         {which === 'phase' && <p className="lead">{profile.phase_description}</p>}
         <p>{profile.description}</p>
 
+        <h3>Fonctionnement en quatre temps</h3>
+        <div className="stress">
+          {four.map(([t, x]) => (
+            <div key={t} className="stress-item">
+              <div>
+                <strong>{t}</strong>
+                <div>{x}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3>Style de communication</h3>
+        <p>{d.style_com}</p>
+        <div className="duo">
+          <div>
+            <p className="duo-t">Atouts</p>
+            <List items={d.com_atouts} />
+          </div>
+          <div>
+            <p className="duo-t">Points de vigilance</p>
+            <List items={d.com_vigilance} />
+          </div>
+        </div>
+
+        {full && (
+          <>
+            <h3>{LEAD_TITLE[category] ?? 'Encadrer et être encadré'}</h3>
+            <ul>
+              <li>
+                <strong>Quand la personne encadre.</strong> {d.encadre}
+              </li>
+              <li>
+                <strong>Quand la personne est encadrée.</strong> {d.encadree}
+              </li>
+              <li>
+                <strong>Point de progression.</strong> {d.angle}
+              </li>
+            </ul>
+          </>
+        )}
+
         <h3>Moteurs</h3>
         <ul>
           {profile.besoins.map((b) => (
             <li key={b}>{b}</li>
           ))}
         </ul>
+
+        <h3>Se ressourcer au quotidien</h3>
+        <List items={d.recharge} />
+
+        <h3>Comment lui parler</h3>
+        <div className="duo">
+          <div>
+            <p className="duo-t">À privilégier</p>
+            <List items={d.oui} />
+          </div>
+          <div>
+            <p className="duo-t">À éviter</p>
+            <List items={d.non} />
+          </div>
+        </div>
 
         <h3>Sous pression</h3>
         <p className="muted small">Quand la pression augmente, les réactions évoluent en trois temps.</p>
@@ -179,11 +263,10 @@ function Presentation({ person, stored, cat }: { person: ReportPerson; stored: S
           <strong>Le profil du moment</strong> est le deuxième : il décrit ce qui est particulièrement actif en ce moment et peut évoluer.
         </li>
         <li>
-          <strong>La répartition</strong> montre la place des six profils. Chacun porte tous les profils, à des degrés divers.
+          <strong>La lecture complète</strong> détaille les deux profils : fonctionnement, communication, moteurs et signaux de tension.
         </li>
         <li>
-          <strong>La lecture complète</strong> détaille pour chacun des deux profils les moteurs, les signaux de tension, les pistes d&apos;accompagnement et de
-          communication.
+          <strong>Les fiches pratiques</strong> comparent les profils et proposent un plan d&apos;action.
         </li>
       </ol>
 
@@ -330,6 +413,78 @@ export function ReportView({
         <Reading profile={r.baseProfile} which="base" category={stored.category} />
         <div style={{ height: 14 }} />
         <Reading profile={r.phaseProfile} which="phase" category={stored.category} />
+      </section>
+
+      <section className="section page-break" aria-label="Fiche comparée">
+        <h2>Fiche comparée : fondamental et moment</h2>
+        <p className="muted">
+          Cette fiche met côte à côte les deux profils les plus présents. Les écarts indiquent où la personne peut se sentir tiraillée, ou au contraire
+          disposer de deux ressources complémentaires.
+        </p>
+        <table className="compare">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{r.baseProfile.label} (fondamental)</th>
+              <th>{r.phaseProfile.label} (du moment)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {([
+              ['Perception', 'perception'],
+              ['Réception de l\u2019information', 'recoit'],
+              ['Traitement', 'traite'],
+              ['Restitution', 'restitue'],
+              ['Style de communication', 'style_com'],
+            ] as [string, 'perception' | 'recoit' | 'traite' | 'restitue' | 'style_com'][]).map(([lbl, k]) => (
+              <tr key={k}>
+                <th scope="row">{lbl}</th>
+                <td>{getDetail(r.baseType)[k]}</td>
+                <td>{getDetail(r.phaseType)[k]}</td>
+              </tr>
+            ))}
+            <tr>
+              <th scope="row">Se ressourcer</th>
+              <td>{getDetail(r.baseType).recharge.join(' ; ')}</td>
+              <td>{getDetail(r.phaseType).recharge.join(' ; ')}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section className="section" aria-label="Communiquer avec les autres profils">
+        <h2>Communiquer avec les autres profils</h2>
+        <p className="muted">
+          Repères pour ajuster sa façon de communiquer selon la personne que l&apos;on a en face, à partir du profil fondamental ({r.baseProfile.label}).
+        </p>
+        <table className="compare">
+          <thead>
+            <tr>
+              <th>Face à un profil</th>
+              <th>Pour mieux se comprendre</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ORDER.map((t) => (
+              <tr key={t}>
+                <th scope="row">
+                  <span className="type-dot" style={{ background: TYPE_ACCENT[t as PcmType] }} aria-hidden="true" /> {r.ranking.find((x) => x.type === t)?.label ?? t}
+                </th>
+                <td>{getDetail(r.baseType).autres[t as PcmType]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="section" aria-label="Plan d'action">
+        <h2>Plan d&apos;action sur 30 jours</h2>
+        <p className="muted">Trois pistes simples, à essayer une à la fois, puis à discuter lors de l&apos;entretien de restitution.</p>
+        <ol className="plan">
+          {[...getDetail(r.baseType).plan.slice(0, 2), getDetail(r.phaseType).plan[0]].map((x) => (
+            <li key={x}>{x}</li>
+          ))}
+        </ol>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
