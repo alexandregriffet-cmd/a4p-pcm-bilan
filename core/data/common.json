@@ -1,0 +1,413 @@
+{
+  "description": "Donnees communes a tous les publics : profils de synthese et correspondances non reformules, seuils et ponderations du bareme.",
+  "PMP_PROFILES": {
+    "Compétiteur": [
+      "activation",
+      "engagement",
+      "confiance"
+    ],
+    "Stratège": [
+      "cognition",
+      "attention",
+      "regulation"
+    ],
+    "Créatif": [
+      "cognition",
+      "activation",
+      "motricite"
+    ],
+    "Régulateur": [
+      "regulation",
+      "attention",
+      "resilience"
+    ],
+    "Endurant": [
+      "resilience",
+      "engagement",
+      "confiance"
+    ],
+    "Méthodique": [
+      "attention",
+      "motricite",
+      "cognition"
+    ]
+  },
+  "MBTI_TO_MOTOR": {
+    "ESTP": "D1",
+    "ISTP": "D2",
+    "ESTJ": "D3",
+    "ISTJ": "D4",
+    "ESFP": "G1",
+    "ISFP": "G2",
+    "ESFJ": "G3",
+    "ISFJ": "G4",
+    "ENFP": "R1",
+    "INFP": "R2",
+    "ENFJ": "R3",
+    "INFJ": "R4",
+    "ENTP": "C1",
+    "INTP": "C2",
+    "ENTJ": "C3",
+    "INTJ": "C4"
+  },
+  "MOTOR_FAMILIES": {
+    "D": "ST",
+    "G": "SF",
+    "R": "NF",
+    "C": "NT"
+  },
+  "ponderations": {
+    "pmp": {
+      "globalIndex": {
+        "activation": 1,
+        "attention": 1.2,
+        "regulation": 1.3,
+        "engagement": 1,
+        "confiance": 1.2,
+        "resilience": 1,
+        "cognition": 0.9,
+        "motricite": 0.8
+      },
+      "globalDivisor": 8.4,
+      "pressureIndex": {
+        "regulation": 0.4,
+        "confiance": 0.3,
+        "resilience": 0.3
+      }
+    },
+    "pcm": {
+      "premier": 6,
+      "deuxieme": 4,
+      "troisieme": 2
+    },
+    "cmp": {
+      "echelleMax": 5
+    },
+    "psycho": {
+      "echelleSituation": 5,
+      "echelleLikert": 5
+    }
+  },
+  "seuils": {
+    "pmp": {
+      "dimensionOrder": [
+        "activation",
+        "attention",
+        "regulation",
+        "engagement",
+        "confiance",
+        "resilience",
+        "cognition",
+        "motricite"
+      ],
+      "dimensionBands": [
+        {
+          "min": 80,
+          "label": "force mentale"
+        },
+        {
+          "min": 60,
+          "label": "zone solide"
+        },
+        {
+          "min": 40,
+          "label": "zone moyenne"
+        },
+        {
+          "min": 0,
+          "label": "zone de travail"
+        }
+      ],
+      "globalBands": [
+        {
+          "min": 80,
+          "label": "mental performant"
+        },
+        {
+          "min": 65,
+          "label": "mental solide"
+        },
+        {
+          "min": 50,
+          "label": "mental en développement"
+        },
+        {
+          "min": 0,
+          "label": "mental fragile"
+        }
+      ],
+      "seuilTexteForce": 60,
+      "coherence": {
+        "base": [
+          "motricite",
+          "cognition"
+        ],
+        "min": 30,
+        "max": 96,
+        "bonus": [
+          {
+            "familles": [
+              "R",
+              "C"
+            ],
+            "dimension": "cognition",
+            "seuil": 60,
+            "points": 8
+          },
+          {
+            "familles": [
+              "D",
+              "G"
+            ],
+            "dimension": "attention",
+            "seuil": 60,
+            "points": 5
+          }
+        ]
+      },
+      "stylesApprentissage": [
+        {
+          "label": "Analytique",
+          "dimensions": [
+            "cognition",
+            "attention"
+          ]
+        },
+        {
+          "label": "Expérientiel",
+          "dimensions": [
+            "motricite",
+            "activation"
+          ]
+        },
+        {
+          "label": "Compétitif",
+          "dimensions": [
+            "engagement",
+            "activation"
+          ]
+        },
+        {
+          "label": "Méthodique",
+          "dimensions": [
+            "attention",
+            "motricite"
+          ]
+        }
+      ],
+      "axesBinaires": {
+        "ei": [
+          "E",
+          "I"
+        ],
+        "sn": [
+          "S",
+          "N"
+        ],
+        "tf": [
+          "T",
+          "F"
+        ],
+        "jp": [
+          "J",
+          "P"
+        ]
+      },
+      "stabilite": [
+        "regulation",
+        "attention",
+        "resilience"
+      ],
+      "nbPointsForts": 3,
+      "nbPointsVigilance": 3
+    },
+    "mpa": {
+      "axes": {
+        "SR": {
+          "premier": "S",
+          "second": "R"
+        },
+        "CI": {
+          "premier": "C",
+          "second": "I"
+        },
+        "LH": {
+          "premier": "L",
+          "second": "H"
+        },
+        "StF": {
+          "premier": "St",
+          "second": "F"
+        }
+      },
+      "seuilPole": 50,
+      "mbtiVersPoles": {
+        "E": "S",
+        "I": "R",
+        "S": "C",
+        "N": "I",
+        "T": "L",
+        "F": "H",
+        "J": "St",
+        "P": "F"
+      },
+      "indiceClarte": [
+        {
+          "min": 88,
+          "label": "Profil d'action élite",
+          "desc": {
+            "tu": "Une clarté exceptionnelle de tes préférences d'action",
+            "vous": "Une clarté exceptionnelle de vos préférences d'action"
+          }
+        },
+        {
+          "min": 75,
+          "label": "Profil d'action affirmé",
+          "desc": {
+            "tu": "Des préférences nettes et bien ancrées",
+            "vous": "Des préférences nettes et bien ancrées"
+          }
+        },
+        {
+          "min": 60,
+          "label": "Profil d'action confirmé",
+          "desc": {
+            "tu": "Des préférences claires avec de la souplesse",
+            "vous": "Des préférences claires avec de la souplesse"
+          }
+        },
+        {
+          "min": 45,
+          "label": "Profil d'action en développement",
+          "desc": {
+            "tu": "Des préférences en cours de consolidation",
+            "vous": "Des préférences en cours de consolidation"
+          }
+        },
+        {
+          "min": 0,
+          "label": "Profil d'action mixte",
+          "desc": {
+            "tu": "Grande adaptabilité et profil polyvalent",
+            "vous": "Grande adaptabilité et profil polyvalent"
+          }
+        }
+      ]
+    },
+    "cmp": {
+      "niveaux": [
+        {
+          "min": 85,
+          "code": "CMP-5"
+        },
+        {
+          "min": 70,
+          "code": "CMP-4"
+        },
+        {
+          "min": 55,
+          "code": "CMP-3"
+        },
+        {
+          "min": 40,
+          "code": "CMP-2"
+        },
+        {
+          "min": 0,
+          "code": "CMP-1"
+        }
+      ]
+    },
+    "psycho": {
+      "typesOrder": [
+        "combatif",
+        "expressif",
+        "analytique",
+        "absorbant"
+      ],
+      "regulationInversees": [
+        "PE14",
+        "PE18"
+      ],
+      "neurochimie": {
+        "dopamine": {
+          "items": [
+            {
+              "id": "PE21"
+            },
+            {
+              "id": "PE22"
+            },
+            {
+              "id": "PE28",
+              "inverse": true
+            }
+          ],
+          "diviseur": 9
+        },
+        "serotonine": {
+          "items": [
+            {
+              "id": "PE23"
+            },
+            {
+              "id": "PE24"
+            },
+            {
+              "id": "PE30"
+            }
+          ],
+          "diviseur": 9
+        },
+        "noradrenaline": {
+          "items": [
+            {
+              "id": "PE25"
+            },
+            {
+              "id": "PE26",
+              "inverse": true
+            },
+            {
+              "id": "PE29"
+            }
+          ],
+          "diviseur": 9
+        },
+        "gaba": {
+          "items": [
+            {
+              "id": "PE30",
+              "inverse": true
+            }
+          ],
+          "diviseur": 3
+        },
+        "acetylcholine": {
+          "items": [
+            {
+              "id": "PE27"
+            }
+          ],
+          "diviseur": 3
+        }
+      },
+      "itca": {
+        "seuilEleve": 3.8,
+        "seuilPresent": 2.8,
+        "defaut": 2.5
+      },
+      "regulationDefaut": 50
+    },
+    "pcm": {
+      "typesOrder": [
+        "architecte",
+        "connecteur",
+        "guerrier",
+        "visionnaire",
+        "creatif",
+        "competiteur"
+      ]
+    }
+  }
+}
