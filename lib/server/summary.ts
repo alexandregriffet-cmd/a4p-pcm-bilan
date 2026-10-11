@@ -50,8 +50,8 @@ export function summaryCsv(rows: SummaryRow[]): string {
     'Statut',
     'Date de passage',
     'Passages',
-    'Profil de base',
-    'Profil de phase',
+    'Profil fondamental',
+    'Profil du moment',
     ...TYPE_ORDER.map((t) => `${labels[t]} (%)`),
   ]
   const lines = [header, ...rows.map((r) => {

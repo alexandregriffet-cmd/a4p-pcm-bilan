@@ -37,7 +37,7 @@ export default async function EspacePage() {
     return (
       <div className="wrap-narrow section thanks" style={{ paddingTop: 48 }}>
         <div className="card card-hero">
-          <span className="kicker">Bilan PCM</span>
+          <span className="kicker">Construction mentale</span>
           <h1 data-testid="thanks-title">{tx.thanks.title}</h1>
           <p className="lead">{tx.thanks.text}</p>
           <p className="muted small" style={{ marginBottom: 18 }}>{tx.thanks.sign}</p>

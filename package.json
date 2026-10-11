@@ -2,7 +2,7 @@
   "name": "a4p-pcm-bilan",
   "version": "1.0.0",
   "private": true,
-  "description": "A4P PCM Bilan, application privee de bilans PCM (administrateur unique et clients)",
+  "description": "A4P Bilan de Construction Mentale, application privee de bilans (administrateur unique et clients)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

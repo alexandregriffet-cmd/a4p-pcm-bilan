@@ -18,7 +18,7 @@ export default async function ExportPage() {
   return (
     <div className="wrap section sheet-landscape" style={{ paddingTop: 10 }}>
       <div className="print-only print-head">
-        <p className="brand-line">Synthèse PCM, confidentiel</p>
+        <p className="brand-line">Synthèse de construction mentale, confidentiel</p>
         <p className="sub-line">Édité le {today} | {rows.length} client(s)</p>
       </div>
 
@@ -50,8 +50,8 @@ export default async function ExportPage() {
                 <th>Catégorie</th>
                 <th>Statut</th>
                 <th>Date de passage</th>
-                <th>Profil de base</th>
-                <th>Profil de phase</th>
+                <th>Profil fondamental</th>
+                <th>Profil du moment</th>
                 {TYPE_ORDER.map((t) => (
                   <th key={t} className="num-col">{labels[t]} %</th>
                 ))}

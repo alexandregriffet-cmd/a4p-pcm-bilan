@@ -11,7 +11,7 @@ import type { AudienceId, CommonData, DataByTest, TestId } from './types'
 export const common = commonJson as unknown as CommonData
 
 /**
- * COPIE ALLEGEE pour la plateforme PCM : seules les données du test PCM sont embarquées
+ * COPIE ALLEGEE pour la plateforme : seules les données du bilan sont embarquées
  * (les données BIPM n'ont pas à être livrées au navigateur de cette plateforme).
  * Le reste du noyau (src) est identique au noyau du dépôt de référence.
  */

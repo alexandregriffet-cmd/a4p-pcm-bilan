@@ -9,8 +9,8 @@ import { getCaller } from '@/lib/server/guards'
 import { getMode } from '@/lib/server/mode'
 
 export const metadata: Metadata = {
-  title: 'A4P PCM Bilan',
-  description: 'Bilans PCM privés, A4P Mental.',
+  title: 'A4P Bilan de Construction Mentale',
+  description: 'Bilans de construction mentale privés, A4P Mental.',
   robots: { index: false, follow: false },
 }
 

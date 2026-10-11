@@ -396,13 +396,12 @@ export interface PcmQuestion {
   options: PcmOption[]
 }
 
-/** Textes d'un profil PCM. Les champs `base` et `driver` n'existent pas dans ces données. */
+/** Textes d'un profil du Bilan de Construction Mentale. */
 export interface PcmTypeData {
   label: string
   emoji: string
   color: string
   bg: string
-  canal: string
   besoins: string[]
   distress1: string
   distress2: string

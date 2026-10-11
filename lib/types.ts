@@ -1,7 +1,7 @@
 import type { AudienceId } from '@core/audiences'
 import type { PcmResult } from '@core/types'
 
-/** Catégorie d'un client : les quatre publics du noyau PCM. */
+/** Catégorie d'un client : les cinq publics du noyau. */
 export type Category = AudienceId
 export type Role = 'admin' | 'client'
 

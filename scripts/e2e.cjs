@@ -1,5 +1,5 @@
 /*
- * Parcours automatisé de A4P PCM Bilan en mode de test local (NEXT_PUBLIC_LOCAL_TEST=1).
+ * Parcours automatisé de A4P Bilan de Construction Mentale en mode de test local (NEXT_PUBLIC_LOCAL_TEST=1).
  *
  * Prérequis : le serveur tourne déjà (construit avec NEXT_PUBLIC_LOCAL_TEST=1) sur E2E_BASE, avec un dossier
  * de données vide (LOCAL_DATA_DIR). Exemple :
@@ -245,7 +245,7 @@ async function finishAndValidate(page) {
   await admin.waitForURL('**/admin')
   check('administrateur: redirection vers /admin', new URL(admin.url()).pathname === '/admin')
   const head = (await admin.innerText('header.hdr')).replace(/\s+/g, ' ')
-  check('en-tête « A4P PCM · Espace administrateur » et Déconnexion', /A4P PCM\s*·\s*ESPACE ADMINISTRATEUR/i.test(head) && /Déconnexion/.test(head), head)
+  check('en-tête « A4P Bilan · Espace administrateur » et Déconnexion', /A4P BILAN\s*·\s*ESPACE ADMINISTRATEUR/i.test(head) && /Déconnexion/.test(head), head)
   check('tableau de bord vide: Clients 0', (await admin.textContent('[data-testid=stat-clients]')).trim() === '0')
   await admin.screenshot({ path: path.join(SHOTS, '02-dashboard-vide-1280.png') })
 
@@ -490,13 +490,13 @@ async function finishAndValidate(page) {
     await admin.waitForSelector('.report')
     const txt = (await admin.textContent('.report')).replace(/\s+/g, ' ')
     check(`résultat (${cat}): en-tête nom, e-mail, catégorie, date`, txt.includes(c.name) && txt.includes(c.email) && txt.includes(CATS[cat].label) && /Date de passage/.test(txt))
-    check(`résultat (${cat}): profil de base = ${c.exp.base}`, new RegExp(`Profil de base\\s*${c.exp.base}`).test(txt), txt.slice(0, 400))
-    check(`résultat (${cat}): profil de phase = ${c.exp.phase}`, new RegExp(`Profil de phase\\s*${c.exp.phase}`).test(txt))
+    check(`résultat (${cat}): profil fondamental = ${c.exp.base}`, new RegExp(`Profil fondamental\\s*${c.exp.base}`).test(txt), txt.slice(0, 400))
+    check(`résultat (${cat}): profil du moment = ${c.exp.phase}`, new RegExp(`Profil du moment\\s*${c.exp.phase}`).test(txt))
     // pourcentages affichés = pourcentages recalculés indépendamment
     const shown = await admin.$$eval('.dist-row', (rows) => rows.map((r) => ({ label: r.querySelector('strong').textContent.trim(), pct: r.querySelector('.dist-head > strong').textContent.trim() })))
     const okPct = shown.length === 6 && shown.every((s) => s.pct === `${c.exp.percents[TYPES[LABELS.indexOf(s.label)]]} %`)
     check(`résultat (${cat}): répartition des six profils exacte`, okPct, JSON.stringify(shown) + JSON.stringify(c.exp.percents))
-    for (const w of ['Besoins', 'Comportements sous stress', 'Premier niveau', 'Deuxième niveau', 'Troisième niveau', 'Recommandations de coaching', 'Communication', 'Personne ne se résume à un seul profil', 'pas un diagnostic']) {
+    for (const w of ['Moteurs', 'Sous pression', 'Signaux de tension', 'Tension en montée', 'Saturation', 'Recommandations de coaching', 'Communication', 'Personne ne se résume à un seul profil', 'pas un diagnostic']) {
       if (!txt.includes(w)) check(`résultat (${cat}): contient « ${w} »`, false)
     }
     check(`résultat (${cat}): lecture complète présente (besoins, stress, coaching, communication, conseils, rappel, prudence)`, true)
@@ -746,7 +746,7 @@ async function finishAndValidate(page) {
     check('CSV: téléchargement réel (200, attachment)', res.status() === 200 && /attachment; filename=".*\.csv"/.test(res.headers()['content-disposition'] || ''), res.headers()['content-disposition'])
     check('CSV: UTF-8 avec BOM', buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf)
     const lines = csv.replace(/^﻿/, '').trim().split('\r\n')
-    check('CSV: séparateur point-virgule et en-tête', lines[0].startsWith('Nom;E-mail;Catégorie;Statut;Date de passage;Passages;Profil de base;Profil de phase;Architecte (%);Connecteur (%)'), lines[0])
+    check('CSV: séparateur point-virgule et en-tête', lines[0].startsWith('Nom;E-mail;Catégorie;Statut;Date de passage;Passages;Profil fondamental;Profil du moment;Architecte (%);Connecteur (%)'), lines[0])
     check(`CSV: une ligne par client (${lines.length - 1})`, lines.length - 1 === 7, String(lines.length))
     const rowL = lines.find((l) => l.includes('camille.sportif@exemple.fr'))
     check('CSV: ligne de Camille avec ses pourcentages', rowL && rowL.includes(clients['adulte-sport'].exp.base) && rowL.endsWith(TYPES.map((t) => clients['adulte-sport'].exp.percents[t]).join(';')), rowL)
@@ -757,7 +757,7 @@ async function finishAndValidate(page) {
     const dl = admin.waitForEvent('download')
     await admin.click('[data-testid=csv-link]')
     const d = await dl
-    check('CSV: téléchargement depuis la page Exports', /synthese-pcm-\d{4}-\d{2}-\d{2}\.csv/.test(d.suggestedFilename()), d.suggestedFilename())
+    check('CSV: téléchargement depuis la page Exports', /synthese-construction-mentale-\d{4}-\d{2}-\d{2}\.csv/.test(d.suggestedFilename()), d.suggestedFilename())
     check('page Exports: tableau avec tous les clients', (await admin.locator('[data-testid=summary-table] tbody tr').count()) === 7)
 
     // PDF d'un résultat
@@ -779,23 +779,28 @@ async function finishAndValidate(page) {
     const c1 = clients['adulte-sport']
     const pdf1 = await pdfOf(`/admin/clients/${c1.id}/resultat`, 'rapport-camille.pdf')
     check(`PDF résultat: ${pdf1.pages} pages A4`, pdf1.pages >= 2 && /A4|595/.test(pdf1.info), pdf1.info.match(/Page size:.*/)?.[0])
-    check('PDF résultat: en-tête « Rapport PCM, confidentiel » avec nom, catégorie, date', /Rapport PCM, confidentiel/.test(pdf1.text) && pdf1.text.includes('Camille Sportif') && pdf1.text.includes('Adulte sportif') && /Passage du \d/.test(pdf1.text))
+    check('PDF résultat: en-tête « Rapport de construction mentale, confidentiel » avec nom, catégorie, date', /Rapport de construction mentale, confidentiel/.test(pdf1.text) && pdf1.text.includes('Camille Sportif') && pdf1.text.includes('Adulte sportif') && /Passage du \d/.test(pdf1.text))
     check('PDF résultat: pied de page A4P Mental, Alexandre Griffet sur chaque page', pdf1.text.split('\f').filter((t) => t.trim()).every((t) => t.includes('A4P Mental, Alexandre Griffet')), String(pdf1.text.split('\f').map((t) => t.includes('A4P Mental')).join(',')))
     check('PDF résultat: aucun bouton ni navigation', !/Exporter en PDF|Déconnexion|Tableau de bord|Retour à la fiche/.test(pdf1.text), pdf1.text.match(/Exporter en PDF|Déconnexion|Tableau de bord|Retour à la fiche/)?.[0])
-    check('PDF résultat: six profils et lecture complète', LABELS.every((l) => pdf1.text.includes(l)) && /Besoins/.test(pdf1.text) && /Recommandations de coaching/.test(pdf1.text))
-    for (const n of [1, 2, 3]) {
+    check('PDF résultat: six profils et lecture complète', LABELS.every((l) => pdf1.text.includes(l)) && /Moteurs/.test(pdf1.text) && /Recommandations de coaching/.test(pdf1.text))
+    const p1 = pdf1.text.split('\f')
+    check('PDF résultat: aucune mention de PCM, Process Communication, canal, base ou phase', !/PCM|Process Communication|\bcanal\b|profil de base|profil de phase|\bbesoins\b/i.test(pdf1.text), pdf1.text.match(/PCM|Process Communication|\bcanal\b|profil de base|profil de phase|\bbesoins\b/i)?.[0])
+    check('PDF résultat: page 1 = couverture (nom, catégorie, confidentiel)', /Document confidentiel/i.test(p1[0]) && /Camille Sportif/.test(p1[0]) && /Adulte sportif/.test(p1[0]) && !/Moteurs/.test(p1[0]))
+    check('PDF résultat: page 2 = présentation du bilan', /À propos de ce bilan/.test(p1[1]) && /Les six profils/.test(p1[1]) && /Comment lire ce rapport/.test(p1[1]))
+    check('PDF résultat: page 3 = en-tête du rapport puis synthèse', /Rapport de construction mentale, confidentiel/.test(p1[2]) && /Synthèse du profil/.test(p1[2]))
+    for (const n of [1, 2, 3, 4]) {
       if (n <= pdf1.pages) spawnSync('pdftoppm', ['-png', '-r', '70', '-f', String(n), '-l', String(n), pdf1.file, path.join(SHOTS, `pdf-rapport-p${n}`)])
     }
     const pdf2 = await pdfOf('/admin/export', 'synthese.pdf')
-    check('PDF synthèse: tableau de tous les clients, en-tête et pied de page', /Synthèse PCM, confidentiel/.test(pdf2.text) && pdf2.text.includes('Camille') && pdf2.text.includes('manon.manager@exemple.fr') && pdf2.text.includes('A4P Mental, Alexandre Griffet'))
+    check('PDF synthèse: tableau de tous les clients, en-tête et pied de page', /Synthèse de construction mentale, confidentiel/.test(pdf2.text) && pdf2.text.includes('Camille') && pdf2.text.includes('manon.manager@exemple.fr') && pdf2.text.includes('A4P Mental, Alexandre Griffet'))
     check('PDF synthèse: sans boutons', !/Exporter la synthèse|Rapports complets de tous/.test(pdf2.text))
     spawnSync('pdftoppm', ['-png', '-r', '60', '-f', '1', '-l', '1', pdf2.file, path.join(SHOTS, 'pdf-synthese-p1')])
     const pdf3 = await pdfOf('/admin/export/rapports', 'rapports-complets.pdf')
-    const nReports = (pdf3.text.match(/Passage du \d/g) || []).length
+    const nReports = (pdf3.text.match(/Rapport de construction mentale, confidentiel/g) || []).length
     check(`PDF rapports complets: un rapport par client (${nReports} en-têtes, ${pdf3.pages} pages)`, nReports === 7, `${nReports}`)
     // chaque rapport commence sur une nouvelle page
     const pagesText = pdf3.text.split('\f')
-    const starts = pagesText.filter((t) => /Passage du \d/.test(t)).length
+    const starts = pagesText.filter((t) => /Rapport de construction mentale, confidentiel/.test(t)).length
     check('PDF rapports complets: chaque rapport démarre sur une page distincte', starts === 7, `${starts} pages avec en-tête`)
     spawnSync('pdftoppm', ['-png', '-r', '50', '-f', '1', '-l', '1', pdf3.file, path.join(SHOTS, 'pdf-rapports-p1')])
   }

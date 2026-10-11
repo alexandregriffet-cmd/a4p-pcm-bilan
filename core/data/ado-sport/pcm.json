@@ -2167,7 +2167,6 @@
       "emoji": "🏗️",
       "color": "#1a3a6a",
       "bg": "#e8f0ff",
-      "canal": "Interrogatif / Informatif",
       "besoins": [
         "Que ton travail soit reconnu",
         "Une organisation claire et des repères précis",
@@ -2185,7 +2184,7 @@
         "Tu peux apprendre à faire la différence entre viser l'excellence et exiger la perfection"
       ],
       "communication": [
-        "Ton canal préféré : les faits et la logique",
+        "Façon de communiquer préférée : les faits et la logique",
         "Tu réagis bien aux chiffres, aux exemples et aux données concrètes",
         "Les jugements de valeur te heurtent, tu préfères qu'on reste factuel",
         "Tu as besoin de temps pour préparer tes réponses"
@@ -2202,7 +2201,6 @@
       "emoji": "🤝",
       "color": "#1a6a3a",
       "bg": "#e8fff0",
-      "canal": "Nourricier",
       "besoins": [
         "Être reconnu pour qui tu es, pas seulement pour tes notes",
         "Une bonne ambiance avec les autres",
@@ -2220,7 +2218,7 @@
         "Quand ça se passe mal, tu as besoin qu'on parle d'abord de la relation, ensuite du travail"
       ],
       "communication": [
-        "Ton canal préféré : la chaleur et l'écoute",
+        "Façon de communiquer préférée : la chaleur et l'écoute",
         "Tu réagis bien aux messages personnalisés et pleins d'empathie",
         "Tu aimes qu'on s'intéresse à toi en tant que personne avant de parler de ton travail",
         "Les remarques froides ou purement techniques te touchent plus que tu ne le montres"
@@ -2237,7 +2235,6 @@
       "emoji": "⚔️",
       "color": "#6a1a1a",
       "bg": "#fff0f0",
-      "canal": "Interrogatif / Démocratique",
       "besoins": [
         "Que tes convictions et tes valeurs soient respectées",
         "Être consulté et que ton avis compte",
@@ -2255,7 +2252,7 @@
         "Tu supportes mal qu'on remette tes valeurs en cause de façon frontale"
       ],
       "communication": [
-        "Ton canal préféré : les échanges sincères, qui font sens",
+        "Façon de communiquer préférée : les échanges sincères, qui font sens",
         "Tu réagis bien aux arguments cohérents et bien expliqués",
         "Tu apprécies qu'on cherche d'abord à comprendre tes convictions avant de te proposer autre chose",
         "Les ordres donnés sans explication te braquent facilement"
@@ -2272,7 +2269,6 @@
       "emoji": "🌙",
       "color": "#3a1a6a",
       "bg": "#f5f0ff",
-      "canal": "Directif",
       "besoins": [
         "Du temps et de l'espace pour toi",
         "Des moments de solitude pour réfléchir et créer",
@@ -2290,7 +2286,7 @@
         "Tu apprécies qu'on te laisse du temps de réflexion avant d'attendre une réponse"
       ],
       "communication": [
-        "Ton canal préféré : les messages clairs et directs",
+        "Façon de communiquer préférée : les messages clairs et directs",
         "Tu as besoin d'indications précises et de temps pour répondre",
         "Les questions trop ouvertes te laissent sans repère",
         "Tes silences font partie de ta façon de réfléchir, et tu apprécies qu'on les respecte"
@@ -2307,7 +2303,6 @@
       "emoji": "🎨",
       "color": "#8a4a00",
       "bg": "#fff8e0",
-      "canal": "Emotif / Ludique",
       "besoins": [
         "Des échanges spontanés et ludiques",
         "De la stimulation, de la nouveauté, du fun",
@@ -2325,7 +2320,7 @@
         "Tu avances mieux quand ton énergie créative est tournée vers un projet concret"
       ],
       "communication": [
-        "Ton canal préféré : l'humour et la spontanéité",
+        "Façon de communiquer préférée : l'humour et la spontanéité",
         "Tu réagis bien aux échanges vivants et pleins d'énergie",
         "Tu supportes mal la lourdeur et le sérieux excessif",
         "La légèreté et l'humour sont tes meilleurs alliés pour écouter et comprendre"
@@ -2342,7 +2337,6 @@
       "emoji": "🏆",
       "color": "#7a5a00",
       "bg": "#fffbe0",
-      "canal": "Directif",
       "besoins": [
         "De l'action, des défis, de l'excitation",
         "De la liberté d'action",
@@ -2360,7 +2354,7 @@
         "La compétition, même amicale, est un de tes meilleurs moteurs de motivation"
       ],
       "communication": [
-        "Ton canal préféré : le direct et l'action",
+        "Façon de communiquer préférée : le direct et l'action",
         "Tu réagis bien aux défis lancés de façon bienveillante",
         "Tu apprécies les messages courts et précis",
         "Tu aimes qu'on valorise tes initiatives et ton courage"

@@ -33,7 +33,7 @@ export default async function AdminHome() {
     <div className="wrap section" style={{ paddingTop: 10 }}>
       <header className="page-head">
         <span className="kicker">Tableau de bord</span>
-        <h1>Bilans PCM</h1>
+        <h1>Bilans de construction mentale</h1>
         <p className="sub">Vos clients, leur avancement et leurs résultats.</p>
       </header>
 

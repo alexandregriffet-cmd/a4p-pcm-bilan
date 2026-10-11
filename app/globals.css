@@ -1,4 +1,4 @@
-/* A4P PCM Bilan : fond marine en dégradé, cartes vitrées, titres Georgia, libellés en petites capitales.
+/* A4P Bilan de Construction Mentale : fond marine en dégradé, cartes vitrées, titres Georgia, libellés en petites capitales.
    Les fonds sont codés en dur avec valeurs de repli sur html, body et .app
    (navigateur intégré Instagram, anciens navigateurs mobiles). */
 
@@ -1260,7 +1260,7 @@ a.lrow:hover {
 
 
 /* ------------------------------------------------------------------ */
-/* A4P PCM Bilan : ajouts                                              */
+/* A4P Bilan de Construction Mentale : ajouts                                              */
 /* ------------------------------------------------------------------ */
 
 .local-bar {
@@ -1574,3 +1574,200 @@ table.sheet .num-col {
 .logo-img { height: 30px; width: auto; display: block; }
 .logo-img-lg { width: 200px; max-width: 70%; height: auto; display: block; margin: 0 auto; }
 .logo.logo-lg { display: block; text-align: center; }
+
+/* Couverture et page de présentation des rapports (export PDF) */
+@page cover {
+  size: A4;
+  margin: 16mm 14mm 20mm;
+  @bottom-center {
+    content: none;
+  }
+}
+@media print {
+  .report-cover.print-only {
+    display: flex !important;
+    page: cover;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 256mm;
+    margin: 0;
+    padding: 22mm 20mm 18mm;
+    border-radius: 3mm;
+    background: #0d1b3e !important;
+    color: #ffffff !important;
+    break-after: page;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .report-cover p {
+    color: #ffffff !important;
+    margin: 0;
+  }
+  .cover-logo {
+    width: 58mm;
+    height: auto;
+    display: block;
+  }
+  .cover-dots {
+    display: flex;
+    gap: 3mm;
+    margin-bottom: 14mm;
+  }
+  .cover-dots span {
+    width: 9mm;
+    height: 3mm;
+    border-radius: 1.5mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .report-cover .cover-kicker {
+    font-size: 10.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #ffbd59 !important;
+    margin-bottom: 6mm;
+  }
+  .report-cover .cover-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40pt;
+    line-height: 1.1;
+    font-weight: 700;
+    margin: 0;
+  }
+  .cover-rule {
+    width: 28mm;
+    height: 1.2mm;
+    background: #ffbd59 !important;
+    margin: 12mm 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .report-cover .cover-name {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 26pt;
+    line-height: 1.2;
+  }
+  .report-cover .cover-sub {
+    font-size: 12pt;
+    margin-top: 3mm;
+    color: #c9d3ee !important;
+  }
+  .report-cover .cover-conf {
+    font-size: 9.5pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9d3ee !important;
+    margin-bottom: 3mm;
+  }
+  .report-cover .cover-sign {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 13pt;
+  }
+  .report-cover .cover-tag {
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #c9d3ee !important;
+    margin-top: 2mm;
+  }
+
+  .report-intro.print-only {
+    break-after: page;
+    padding-top: 6mm;
+  }
+  .report-intro p,
+  .report-intro li {
+    color: #222222 !important;
+  }
+  .report-intro .intro-kicker {
+    font-size: 9.5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8a5a00 !important;
+    margin: 0 0 2mm;
+  }
+  .report-intro .intro-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 26pt;
+    margin: 0;
+  }
+  .intro-rule {
+    width: 24mm;
+    height: 1mm;
+    background: #ffbd59 !important;
+    margin: 5mm 0 6mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .intro-lead {
+    font-size: 12pt;
+    line-height: 1.55;
+    margin: 0 0 7mm;
+  }
+  .intro-id {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4mm;
+    padding: 4mm 5mm;
+    border: 1px solid #bbbbbb;
+    border-left: 1.5mm solid #0d1b3e;
+    margin-bottom: 8mm;
+    break-inside: avoid;
+  }
+  .intro-id span {
+    display: block;
+    font-size: 8.5pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #555555;
+  }
+  .intro-id strong {
+    font-size: 11.5pt;
+    color: #0d1b3e;
+  }
+  .report-intro .intro-h {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14pt;
+    margin: 0 0 3mm;
+  }
+  .intro-types {
+    list-style: none;
+    margin: 0 0 8mm;
+    padding: 0;
+  }
+  .intro-types li {
+    display: grid;
+    grid-template-columns: 5mm 32mm 1fr;
+    align-items: center;
+    gap: 2mm;
+    padding: 2mm 0;
+    border-bottom: 1px solid #dddddd;
+    break-inside: avoid;
+  }
+  .intro-types .type-dot {
+    width: 3.2mm;
+    height: 3.2mm;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .intro-steps {
+    margin: 0 0 8mm;
+    padding-left: 6mm;
+  }
+  .intro-steps li {
+    margin-bottom: 2.5mm;
+    line-height: 1.45;
+    break-inside: avoid;
+  }
+  .intro-note {
+    border: 1px solid #bbbbbb;
+    border-left: 1.5mm solid #ffbd59;
+    padding: 3.5mm 5mm;
+    break-inside: avoid;
+  }
+  .intro-note p {
+    margin: 0;
+    font-size: 10.5pt;
+  }
+}

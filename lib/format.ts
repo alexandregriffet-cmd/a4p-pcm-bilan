@@ -2,8 +2,8 @@ import { AUDIENCES } from '@core/audiences'
 import type { Category } from './types'
 
 export const SIGNATURE = 'A4P Mental, Alexandre Griffet'
-export const APP_NAME = 'A4P PCM'
-export const REPORT_TITLE = 'PCM Personnalité et Communication'
+export const APP_NAME = 'A4P Bilan'
+export const REPORT_TITLE = 'Bilan de Construction Mentale'
 
 /** Libellés des cinq catégories, tels que définis dans le cahier des charges. */
 const LABELS: Record<Category, string> = {

@@ -65,7 +65,7 @@ const VOUS: ClientTexts = {
     bullets: [
       'Responsable du traitement : A4P Mental, Alexandre Griffet.',
       'Données traitées : votre identité (nom et e-mail), la catégorie de votre test et vos réponses.',
-      'Finalité : établir votre bilan PCM (personnalité et communication) dans le cadre de votre accompagnement.',
+      'Finalité : établir votre Bilan de Construction Mentale dans le cadre de votre accompagnement.',
       `Durée de conservation : ${RETENTION}.`,
       'Votre rapport complet vous est communiqué par votre coach, en dehors de cette plateforme. Il ne s\'affiche jamais ici.',
       'Le test ne peut être passé qu\'une seule fois. Vos réponses sont enregistrées au fur et à mesure : vous pouvez vous arrêter et reprendre plus tard.',
@@ -92,7 +92,7 @@ const VOUS: ClientTexts = {
     sign: 'A4P Mental, Alexandre Griffet',
   },
   test: {
-    kicker: 'Bilan PCM',
+    kicker: 'Construction mentale',
     intro: 'Pour chaque situation, classez trois réponses sur six.',
     start: 'Commencer',
     back: '← Retour',
@@ -140,7 +140,7 @@ const TU: ClientTexts = {
     bullets: [
       'Responsable du traitement : A4P Mental, Alexandre Griffet.',
       'Données traitées : ton identité (nom et e-mail), la catégorie de ton test et tes réponses.',
-      'Finalité : établir ton bilan PCM (personnalité et communication) dans le cadre de ton accompagnement.',
+      'Finalité : établir ton Bilan de Construction Mentale dans le cadre de ton accompagnement.',
       `Durée de conservation : ${RETENTION}.`,
       'Ton rapport complet t\'est communiqué par ton coach, en dehors de cette plateforme. Il ne s\'affiche jamais ici.',
       'Le test ne peut être passé qu\'une seule fois. Tes réponses sont enregistrées au fur et à mesure : tu peux t\'arrêter et reprendre plus tard.',
@@ -167,7 +167,7 @@ const TU: ClientTexts = {
     sign: 'A4P Mental, Alexandre Griffet',
   },
   test: {
-    kicker: 'Bilan PCM',
+    kicker: 'Construction mentale',
     intro: 'Pour chaque situation, classe trois réponses sur six.',
     start: 'Commencer',
     back: '← Retour',

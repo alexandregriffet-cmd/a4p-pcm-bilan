@@ -1,5 +1,5 @@
 -- =====================================================================
--- A4P PCM Bilan : donner le role administrateur a votre compte
+-- A4P Bilan de Construction Mentale : donner le role administrateur a votre compte
 --
 -- Avant de lancer ce script :
 --   1. Dans Supabase : Authentication, Users, Add user, Create new user.

@@ -2167,7 +2167,6 @@
       "emoji": "🏗️",
       "color": "#1a3a6a",
       "bg": "#e8f0ff",
-      "canal": "Interrogatif / Informatif",
       "besoins": [
         "Reconnaissance du travail accompli",
         "Structure et organisation claires",
@@ -2185,7 +2184,7 @@
         "Aidez-le à distinguer l'excellence de la perfection"
       ],
       "communication": [
-        "Canal privilégié : informatif et logique",
+        "Façon de communiquer préférée : informatif et logique",
         "Il ou elle répond bien aux données, aux statistiques et aux faits concrets",
         "Évitez les jugements de valeur : restez factuel",
         "Laissez-lui le temps de préparer ses réponses"
@@ -2202,7 +2201,6 @@
       "emoji": "🤝",
       "color": "#1a6a3a",
       "bg": "#e8fff0",
-      "canal": "Nourricier",
       "besoins": [
         "Reconnaissance de la personne",
         "Harmonie relationnelle",
@@ -2220,7 +2218,7 @@
         "En cas de difficulté, abordez la relation avant la technique"
       ],
       "communication": [
-        "Canal privilégié : chaleureux et attentionné",
+        "Façon de communiquer préférée : chaleureux et attentionné",
         "Il ou elle répond bien aux messages personnalisés et empathiques",
         "Commencez par reconnaître la personne avant le sportif",
         "Évitez la froideur et les retours purement techniques"
@@ -2237,7 +2235,6 @@
       "emoji": "⚔️",
       "color": "#6a1a1a",
       "bg": "#fff0f0",
-      "canal": "Interrogatif / Démocratique",
       "besoins": [
         "Reconnaissance des convictions et des valeurs",
         "Être consulté et voir son avis respecté",
@@ -2255,7 +2252,7 @@
         "Évitez de remettre en question ses valeurs frontalement"
       ],
       "communication": [
-        "Canal privilégié : basé sur les valeurs et le dialogue",
+        "Façon de communiquer préférée : basé sur les valeurs et le dialogue",
         "Il ou elle répond bien aux arguments qui font sens et qui sont cohérents",
         "Cherchez à comprendre ses convictions avant de proposer une alternative",
         "Évitez les injonctions sans justification"
@@ -2272,7 +2269,6 @@
       "emoji": "🌙",
       "color": "#3a1a6a",
       "bg": "#f5f0ff",
-      "canal": "Directif",
       "besoins": [
         "Temps et espace pour soi",
         "Solitude créatrice",
@@ -2290,7 +2286,7 @@
         "Laissez-lui un temps de réflexion avant d'attendre une réponse"
       ],
       "communication": [
-        "Canal privilégié : clair et direct",
+        "Façon de communiquer préférée : clair et direct",
         "Il ou elle a besoin d'instructions précises et de temps",
         "Évitez les questions ouvertes qui le ou la laissent sans repère",
         "Respectez les silences : ils font partie de son processus"
@@ -2307,7 +2303,6 @@
       "emoji": "🎨",
       "color": "#8a4a00",
       "bg": "#fff8e0",
-      "canal": "Emotif / Ludique",
       "besoins": [
         "Contact ludique et spontané",
         "Stimulation, nouveauté, plaisir",
@@ -2325,7 +2320,7 @@
         "Canalisez son énergie créative vers l'action sportive"
       ],
       "communication": [
-        "Canal privilégié : spontané et ludique",
+        "Façon de communiquer préférée : spontané et ludique",
         "Il ou elle répond bien aux échanges spontanés et énergiques",
         "Évitez la lourdeur et le sérieux excessif",
         "La légèreté et l'humour sont des outils efficaces"
@@ -2342,7 +2337,6 @@
       "emoji": "🏆",
       "color": "#7a5a00",
       "bg": "#fffbe0",
-      "canal": "Directif",
       "besoins": [
         "Action, défi, excitation",
         "Liberté d'action",
@@ -2360,7 +2354,7 @@
         "Utilisez la compétition comme principal levier de motivation"
       ],
       "communication": [
-        "Canal privilégié : direct et orienté action",
+        "Façon de communiquer préférée : direct et orienté action",
         "Il ou elle répond bien aux défis bienveillants",
         "Soyez concis et précis : évitez les longs discours",
         "Valorisez ses prises d'initiative et son courage"

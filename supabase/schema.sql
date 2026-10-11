@@ -1,5 +1,5 @@
 -- =====================================================================
--- A4P PCM Bilan : schema Supabase
+-- A4P Bilan de Construction Mentale : schema Supabase
 -- A coller en entier dans l'editeur SQL de Supabase (SQL Editor, New query, Run).
 -- Le script est idempotent : il peut etre execute plusieurs fois sans erreur ni perte de donnees.
 --

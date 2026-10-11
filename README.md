@@ -1,12 +1,12 @@
-# A4P PCM Bilan
+# A4P Bilan de Construction Mentale
 
-Application privée de bilans PCM (personnalité et communication) pour A4P Mental, Alexandre Griffet.
+Application privée de bilans de construction mentale pour A4P Mental, Alexandre Griffet.
 
 - Un seul administrateur (le coach) crée les clients, choisit leur catégorie et génère leur mot de passe.
 - Chaque client se connecte, passe son test une seule fois, puis ne voit qu'une page de remerciement. **Aucun résultat n'est jamais envoyé au navigateur d'un client.**
 - Seul l'administrateur consulte les résultats, les exporte en PDF et en CSV, puis envoie le rapport au client hors plateforme.
 
-Stack : Next.js 14.2.15 (App Router), React 18.3.1, TypeScript 5.6.3, @supabase/ssr, @supabase/supabase-js, CSS simple. Le noyau de calcul PCM est copié dans `core/` (alias `@core/*`).
+Stack : Next.js 14.2.15 (App Router), React 18.3.1, TypeScript 5.6.3, @supabase/ssr, @supabase/supabase-js, CSS simple. Le noyau de calcul est copié dans `core/` (alias `@core/*`).
 
 ## Catégories
 
@@ -73,7 +73,7 @@ lib/server/                     code serveur uniquement (import 'server-only')
   guards.ts                     contrôle de session et de rôle à chaque appel
 components/admin/               composants de l'espace administrateur
 components/TestRunner.tsx       passation (reçoit seulement le texte des situations)
-core/                           noyau PCM copié (données et calcul)
+core/                           noyau copié (données et calcul)
 supabase/schema.sql             tables, droits, RLS, déclencheurs
 supabase/tests/                 tests SQL (voir ci-dessous)
 ```

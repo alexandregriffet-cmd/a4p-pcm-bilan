@@ -16,7 +16,7 @@ const ADVICE_TITLE: Record<string, string> = {
   manager: 'Conseils pour le management',
 }
 
-const STRESS_LEVELS = ['Premier niveau', 'Deuxième niveau', 'Troisième niveau']
+const STRESS_LEVELS = ['Signaux de tension', 'Tension en montée', 'Saturation']
 
 function Reading({ profile, which, category }: { profile: Profile; which: 'base' | 'phase'; category: string }) {
   const accent = TYPE_ACCENT[profile.type]
@@ -25,21 +25,21 @@ function Reading({ profile, which, category }: { profile: Profile; which: 'base'
     <div className={`card profile-card reading-pane ${which === 'phase' ? 'page-break' : ''}`} style={{ ['--accent' as string]: accent }}>
       <div className="reading-block">
         <span className="kicker" style={{ marginBottom: 4 }}>
-          {which === 'base' ? 'Lecture du profil de base' : 'Lecture du profil de phase'}
+          {which === 'base' ? 'Lecture du profil fondamental' : 'Lecture du profil du moment'}
         </span>
         <h2 style={{ marginBottom: 10 }}>{profile.label}</h2>
         {which === 'phase' && <p className="lead">{profile.phase_description}</p>}
         <p>{profile.description}</p>
 
-        <h3>Besoins</h3>
+        <h3>Moteurs</h3>
         <ul>
           {profile.besoins.map((b) => (
             <li key={b}>{b}</li>
           ))}
         </ul>
 
-        <h3>Comportements sous stress</h3>
-        <p className="muted small">Quand la pression monte, les comportements évoluent en trois niveaux successifs.</p>
+        <h3>Sous pression</h3>
+        <p className="muted small">Quand la pression augmente, les réactions évoluent en trois temps.</p>
         <div className="stress">
           {stress.map((t, i) => (
             <div key={i} className="stress-item">
@@ -60,9 +60,6 @@ function Reading({ profile, which, category }: { profile: Profile; which: 'base'
         </ul>
 
         <h3>Communication</h3>
-        <p>
-          <strong>Canal de communication privilégié :</strong> {profile.canal}
-        </p>
         <ul>
           {profile.communication.map((c) => (
             <li key={c}>{c}</li>
@@ -89,6 +86,117 @@ export interface ReportPerson {
  * Lecture complète d'un client, côté administrateur uniquement (composant serveur, aucune interaction).
  * `standalone` ajoute les boutons et le lien de retour ; `separate` force un saut de page avant le rapport.
  */
+
+const ORDER = ['architecte', 'connecteur', 'guerrier', 'visionnaire', 'creatif', 'competiteur']
+
+const TYPE_LINES: Record<string, string> = {
+  architecte: 'Rigueur, organisation et exigence de qualité.',
+  connecteur: 'Relations, chaleur humaine et sens du collectif.',
+  guerrier: 'Valeurs, convictions et engagement.',
+  visionnaire: 'Réflexion, imagination et recul intérieur.',
+  creatif: 'Spontanéité, jeu et énergie créative.',
+  competiteur: 'Action, défi et goût de la réussite.',
+}
+
+/** Page de couverture (export PDF uniquement). */
+function Cover({ person, stored, cat }: { person: ReportPerson; stored: StoredResult; cat: string }) {
+  const order = ORDER as PcmType[]
+  return (
+    <section className="print-only report-cover" aria-label="Couverture">
+      <div className="cover-top">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-a4p.png" alt="A4P Mental, Alexandre Griffet" className="cover-logo" />
+      </div>
+      <div className="cover-mid">
+        <div className="cover-dots" aria-hidden="true">
+          {order.map((t) => (
+            <span key={t} style={{ background: TYPE_ACCENT[t] }} />
+          ))}
+        </div>
+        <p className="cover-kicker">Fonctionnement, moteurs et communication</p>
+        <p className="cover-title">{REPORT_TITLE}</p>
+        <div className="cover-rule" />
+        <p className="cover-name">{person.fullName}</p>
+        <p className="cover-sub">
+          {cat} &middot; Passage du {formatDate(stored.createdAt)}
+        </p>
+      </div>
+      <div className="cover-bottom">
+        <p className="cover-conf">Document confidentiel</p>
+        <p className="cover-sign">{SIGNATURE}</p>
+        <p className="cover-tag">Une architecture mentale. Pas une béquille émotionnelle.</p>
+      </div>
+    </section>
+  )
+}
+
+/** Page de présentation du bilan (export PDF uniquement). */
+function Presentation({ person, stored, cat }: { person: ReportPerson; stored: StoredResult; cat: string }) {
+  return (
+    <section className="print-only report-intro" aria-label="Présentation du bilan">
+      <p className="intro-kicker">Présentation</p>
+      <h2 className="intro-title">À propos de ce bilan</h2>
+      <div className="intro-rule" />
+      <p className="intro-lead">
+        Ce bilan décrit la façon dont une personne fonctionne et communique, à partir de ses réponses à 72 situations de la vie courante. Pour chacune,
+        elle a classé ses trois réactions préférées parmi six propositions.
+      </p>
+
+      <div className="intro-id">
+        <div>
+          <span>Participant</span>
+          <strong>{person.fullName}</strong>
+        </div>
+        <div>
+          <span>Catégorie</span>
+          <strong>{cat}</strong>
+        </div>
+        <div>
+          <span>Date de passage</span>
+          <strong>{formatDate(stored.createdAt)}</strong>
+        </div>
+      </div>
+
+      <h3 className="intro-h">Les six profils</h3>
+      <ul className="intro-types">
+        {[...stored.result.ranking]
+          .sort((a, b) => ORDER.indexOf(a.type) - ORDER.indexOf(b.type))
+          .map((x) => (
+          <li key={x.type}>
+            <span className="type-dot" style={{ background: TYPE_ACCENT[x.type] }} aria-hidden="true" />
+            <strong>{x.label}</strong>
+            <span>{TYPE_LINES[x.type]}</span>
+          </li>
+        ))}
+      </ul>
+
+      <h3 className="intro-h">Comment lire ce rapport</h3>
+      <ol className="intro-steps">
+        <li>
+          <strong>Le profil fondamental</strong> est le plus présent dans les réponses : il structure la personne dans la durée.
+        </li>
+        <li>
+          <strong>Le profil du moment</strong> est le deuxième : il décrit ce qui est particulièrement actif en ce moment et peut évoluer.
+        </li>
+        <li>
+          <strong>La répartition</strong> montre la place des six profils. Chacun porte tous les profils, à des degrés divers.
+        </li>
+        <li>
+          <strong>La lecture complète</strong> détaille pour chacun des deux profils les moteurs, les signaux de tension, les pistes d&apos;accompagnement et de
+          communication.
+        </li>
+      </ol>
+
+      <div className="intro-note">
+        <p>
+          Cet outil est un support d&apos;accompagnement, pas un diagnostic. Il invite à la réflexion et à l&apos;échange. Ce document est confidentiel et
+          destiné à la personne concernée.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export function ReportView({
   person,
   stored,
@@ -110,8 +218,15 @@ export function ReportView({
 
   return (
     <article className={`report ${separate ? 'report-sep' : ''}`}>
+      <Cover person={person} stored={stored} cat={cat} />
+      <Presentation person={person} stored={stored} cat={cat} />
+      {standalone && (
+        <p className="no-print muted small" style={{ margin: '8px 0 0' }}>
+          L&apos;export PDF ajoute une page de couverture et une page de présentation avant le rapport.
+        </p>
+      )}
       <div className="print-only print-head">
-        <p className="brand-line">Rapport PCM, confidentiel</p>
+        <p className="brand-line">Rapport de construction mentale, confidentiel</p>
         <p className="sub-line">
           {person.fullName} | {cat} | Passage du {formatDate(stored.createdAt)}
         </p>
@@ -173,16 +288,16 @@ export function ReportView({
       <section className="section" style={{ paddingTop: 8 }} aria-label="Synthèse">
         <h2>Synthèse du profil</h2>
         <p className="muted">
-          Le profil de base décrit ce qui structure la personne dans la durée. Le profil de phase décrit ce qui est particulièrement actif en ce moment.
+          Le profil fondamental décrit ce qui structure la personne dans la durée. Le profil du moment décrit ce qui est particulièrement actif en ce moment.
         </p>
         <div className="grid grid-2">
           <div className="card profile-card" style={{ ['--accent' as string]: TYPE_ACCENT[r.baseType] }}>
-            <span className="kicker" style={{ marginBottom: 2 }}>Profil de base</span>
+            <span className="kicker" style={{ marginBottom: 2 }}>Profil fondamental</span>
             <p className="profile-name">{r.baseProfile.label}</p>
             <p className="muted small" style={{ margin: 0 }}>Le plus présent dans les réponses</p>
           </div>
           <div className="card profile-card" style={{ ['--accent' as string]: TYPE_ACCENT[r.phaseType] }}>
-            <span className="kicker" style={{ marginBottom: 2 }}>Profil de phase</span>
+            <span className="kicker" style={{ marginBottom: 2 }}>Profil du moment</span>
             <p className="profile-name">{r.phaseProfile.label}</p>
             <p className="muted small" style={{ margin: 0 }}>Le deuxième, actif en ce moment</p>
           </div>
@@ -197,8 +312,8 @@ export function ReportView({
                 <span className="row" style={{ gap: 10 }}>
                   <span className="type-dot" style={{ background: TYPE_ACCENT[x.type] }} aria-hidden="true" />
                   <strong>{x.label}</strong>
-                  {x.type === r.baseType && <span className="badge badge-amber">Base</span>}
-                  {x.type === r.phaseType && <span className="badge badge-line">Phase</span>}
+                  {x.type === r.baseType && <span className="badge badge-amber">Fondamental</span>}
+                  {x.type === r.phaseType && <span className="badge badge-line">Du moment</span>}
                 </span>
                 <strong>{x.percent} %</strong>
               </div>
@@ -221,8 +336,8 @@ export function ReportView({
         <div className="reminder">
           <h3 style={{ color: 'var(--amber)' }}>Personne ne se résume à un seul profil</h3>
           <p style={{ margin: 0 }}>
-            Chacun porte les six profils, à des degrés divers. Le profil de base et le profil de phase ne sont que les deux plus présents aujourd&apos;hui. La
-            phase peut évoluer au fil des événements et des périodes de vie, et les autres profils restent des ressources.
+            Chacun porte les six profils, à des degrés divers. Le profil fondamental et le profil du moment ne sont que les deux plus présents aujourd&apos;hui. Le
+            profil du moment peut évoluer au fil des événements et des périodes de vie, et les autres profils restent des ressources.
           </p>
         </div>
         <p className="muted small" style={{ marginTop: 16 }}>

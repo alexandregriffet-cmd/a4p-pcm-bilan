@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { CONTACT, HOST, POSTAL, RETENTION } from '@/lib/legal'
 import { SIGNATURE } from '@/lib/format'
 
-export const metadata = { title: 'Confidentialité, A4P PCM Bilan' }
+export const metadata = { title: 'Confidentialité, A4P Bilan' }
 
 export default function ConfidentialitePage() {
   return (
     <div className="wrap-narrow section" style={{ paddingTop: 30 }}>
-      <span className="kicker">A4P PCM</span>
+      <span className="kicker">A4P Bilan</span>
       <h1>Politique de confidentialité</h1>
       <p className="muted">Les champs entre crochets sont à compléter avant la mise en ligne.</p>
 
@@ -40,7 +40,7 @@ export default function ConfidentialitePage() {
         <div className="card">
           <h3>Finalité et base légale</h3>
           <p style={{ margin: 0 }}>
-            Les données servent uniquement à établir le bilan PCM (personnalité et communication) et à l&apos;accompagnement. Elles reposent sur le
+            Les données servent uniquement à établir le Bilan de Construction Mentale et à l&apos;accompagnement. Elles reposent sur le
             consentement recueilli à la première connexion. Pour un mineur, l&apos;accord du représentant légal est recueilli avant l&apos;ouverture de
             l&apos;accès.
           </p>

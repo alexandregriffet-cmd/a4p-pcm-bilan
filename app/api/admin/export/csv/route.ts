@@ -17,7 +17,7 @@ export async function GET(req: Request) {
     status: 200,
     headers: {
       'Content-Type': 'text/csv; charset=utf-8',
-      'Content-Disposition': `attachment; filename="synthese-pcm-${day}.csv"`,
+      'Content-Disposition': `attachment; filename="synthese-construction-mentale-${day}.csv"`,
       'Cache-Control': 'no-store',
     },
   })

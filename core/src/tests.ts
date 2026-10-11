@@ -72,21 +72,21 @@ export const TESTS: readonly TestMeta[] = [
   },
   {
     id: 'pcm',
-    nom: 'PCM',
-    nomLong: 'PCM Personnalité et Communication',
+    nom: 'Construction mentale',
+    nomLong: 'Bilan de Construction Mentale',
     groupe: 'pcm',
     nbQuestions: 72,
     formatDeReponse: 'classement-3-sur-6',
     formatLibelle: '72 situations, trois réponses à classer parmi six',
     dureeEstimee: { minMinutes: 20, maxMinutes: 30, libelle: '20 à 30 minutes' },
-    description: 'Le PCM dégage six profils de personnalité et de communication. Il distingue le profil de base, stable dans la durée, du profil de phase, qui reflète la période actuelle.',
+    description: 'Le Bilan de Construction Mentale dégage six profils de fonctionnement et de communication. Il distingue le profil fondamental, stable dans la durée, du profil du moment, qui reflète la période actuelle.',
   },
 ] as const
 
 /** Tests de la plateforme BIPM. */
 export const BIPM_TESTS: readonly TestId[] = ['pmp', 'mpa', 'cmp', 'psycho']
 
-/** Le PCM est une plateforme à part, hors groupe BIPM. */
+/** Le Bilan de Construction Mentale est une plateforme à part, hors groupe BIPM. */
 export const PCM_TEST: TestId = 'pcm'
 
 export const TEST_IDS: readonly TestId[] = TESTS.map((t) => t.id)

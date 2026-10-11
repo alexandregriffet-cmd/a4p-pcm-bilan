@@ -2167,7 +2167,6 @@
       "emoji": "🏗️",
       "color": "#1a3a6a",
       "bg": "#e8f0ff",
-      "canal": "Interrogatif / Informatif",
       "besoins": [
         "Reconnaissance du travail accompli",
         "Structure et organisation claires",
@@ -2185,7 +2184,7 @@
         "Aidez-le à distinguer l'exigence de qualité de la recherche du résultat irréprochable"
       ],
       "communication": [
-        "Canal privilégié : informatif et logique",
+        "Façon de communiquer préférée : informatif et logique",
         "Il ou elle répond bien aux données, aux chiffres et aux faits concrets",
         "Évitez les jugements de valeur : restez factuel, que vous soyez son manager ou son collaborateur",
         "Laissez-lui le temps de préparer ses réponses avant une réunion ou un entretien"
@@ -2202,7 +2201,6 @@
       "emoji": "🤝",
       "color": "#1a6a3a",
       "bg": "#e8fff0",
-      "canal": "Nourricier",
       "besoins": [
         "Reconnaissance de la personne",
         "Harmonie relationnelle",
@@ -2220,7 +2218,7 @@
         "En cas de difficulté, abordez la relation avant le sujet technique"
       ],
       "communication": [
-        "Canal privilégié : chaleureux et bienveillant",
+        "Façon de communiquer préférée : chaleureux et bienveillant",
         "Il ou elle répond bien aux messages personnalisés et attentionnés",
         "Commencez par reconnaître la personne avant d'évoquer le dossier, que vous soyez son manager ou son collaborateur",
         "Évitez la froideur et les retours purement techniques"
@@ -2237,7 +2235,6 @@
       "emoji": "⚔️",
       "color": "#6a1a1a",
       "bg": "#fff0f0",
-      "canal": "Interrogatif / Démocratique",
       "besoins": [
         "Reconnaissance des convictions et des valeurs",
         "Être consulté et voir son avis respecté",
@@ -2255,7 +2252,7 @@
         "Évitez de remettre en question ses valeurs de façon frontale"
       ],
       "communication": [
-        "Canal privilégié : le dialogue fondé sur les valeurs et le sens",
+        "Façon de communiquer préférée : le dialogue fondé sur les valeurs et le sens",
         "Il ou elle répond bien aux arguments cohérents qui font sens",
         "Cherchez à comprendre ses convictions avant de proposer une alternative, que vous soyez son manager ou son collaborateur",
         "Évitez les consignes sans justification"
@@ -2272,7 +2269,6 @@
       "emoji": "🌙",
       "color": "#3a1a6a",
       "bg": "#f5f0ff",
-      "canal": "Directif",
       "besoins": [
         "Temps et espace pour soi",
         "Moments de calme propices à la réflexion",
@@ -2290,7 +2286,7 @@
         "Laissez-lui un temps de réflexion avant d'attendre une réponse"
       ],
       "communication": [
-        "Canal privilégié : directif et clair",
+        "Façon de communiquer préférée : directif et clair",
         "Il ou elle a besoin de consignes précises et de temps",
         "Évitez les questions trop ouvertes qui le ou la laissent sans repère, que vous soyez son manager ou son collaborateur",
         "Respectez les silences : ils font partie de son processus de réflexion"
@@ -2307,7 +2303,6 @@
       "emoji": "🎨",
       "color": "#8a4a00",
       "bg": "#fff8e0",
-      "canal": "Emotif / Ludique",
       "besoins": [
         "Contact léger et spontané",
         "Stimulation, nouveauté, plaisir de faire",
@@ -2325,7 +2320,7 @@
         "Orientez son énergie créative vers des résultats concrets"
       ],
       "communication": [
-        "Canal privilégié : spontané et ludique",
+        "Façon de communiquer préférée : spontané et ludique",
         "Il ou elle répond bien aux échanges vivants et énergiques",
         "Évitez la lourdeur et le sérieux excessif, que vous soyez son manager ou son collaborateur",
         "La légèreté et l'humour sont des outils efficaces"
@@ -2342,7 +2337,6 @@
       "emoji": "🏆",
       "color": "#7a5a00",
       "bg": "#fffbe0",
-      "canal": "Directif",
       "besoins": [
         "Action, défi, stimulation",
         "Liberté d'action",
@@ -2360,7 +2354,7 @@
         "Utilisez l'émulation et les objectifs ambitieux comme leviers de motivation"
       ],
       "communication": [
-        "Canal privilégié : direct et orienté action",
+        "Façon de communiquer préférée : direct et orienté action",
         "Il ou elle répond bien aux défis posés avec bienveillance",
         "Soyez concis et précis, que vous soyez son manager ou son collaborateur : évitez les longs discours",
         "Valorisez ses prises d'initiative et son courage"

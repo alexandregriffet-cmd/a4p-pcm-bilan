@@ -41,7 +41,7 @@ export function LoginForm({ localHint, sessionNotice }: { localHint?: { email: s
         <div className="login-logo">
           <Logo large href={null} />
         </div>
-        <p className="login-aud">Bilan PCM</p>
+        <p className="login-aud">Construction mentale</p>
         <hr className="rule" />
         <h1>Connexion à votre espace</h1>
         <form onSubmit={submit} noValidate={false}>
@@ -70,7 +70,7 @@ export function LoginForm({ localHint, sessionNotice }: { localHint?: { email: s
             <div className="small">Mot de passe : {localHint.password}</div>
           </div>
         )}
-        <p className="login-foot">A4P Mental &middot; Bilan PCM</p>
+        <p className="login-foot">A4P Mental &middot; Construction mentale</p>
       </div>
     </div>
   )
