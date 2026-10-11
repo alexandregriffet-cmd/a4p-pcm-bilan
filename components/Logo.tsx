@@ -1,13 +1,15 @@
 import Link from 'next/link'
 
-/** Wordmark A4P en CSS (aucune image externe). */
+/** Logo A4P Mental (images dans /public). Version large : emblème, nom et signature. */
 export function Logo({ large, href = '/' }: { large?: boolean; href?: string | null }) {
-  const inner = (
+  const inner = large ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/logo-a4p.png" alt="" className="logo-img-lg" width={900} height={743} />
+  ) : (
     <>
-      <span className="logo-mark" aria-hidden="true">A4P</span>
-      <span className="logo-sig">
-        A4P Mental <span aria-hidden="true">&middot;</span> Alexandre Griffet
-      </span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo-a4p-emblem.png" alt="" className="logo-img" width={400} height={156} />
+      <span className="logo-sig">A4P Mental</span>
     </>
   )
   const cls = large ? 'logo logo-lg' : 'logo'

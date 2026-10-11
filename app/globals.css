@@ -1569,3 +1569,8 @@ table.sheet .num-col {
   }
 }
 .opt { scroll-margin-bottom: 130px; scroll-margin-top: 150px; }
+
+/* Logo image A4P Mental */
+.logo-img { height: 30px; width: auto; display: block; }
+.logo-img-lg { width: 200px; max-width: 70%; height: auto; display: block; margin: 0 auto; }
+.logo.logo-lg { display: block; text-align: center; }
