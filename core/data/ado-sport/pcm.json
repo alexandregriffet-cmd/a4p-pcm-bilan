@@ -1,0 +1,2376 @@
+{
+  "questions": [
+    {
+      "id": "Q1",
+      "situation": "La veille d'un match important, tu passes ta soirée à...",
+      "options": [
+        {
+          "text": "Revoir tes notes, analyser l'adversaire et vérifier que tu as tout préparé dans les moindres détails.",
+          "type": "architecte"
+        },
+        {
+          "text": "Appeler ou retrouver des proches pour te ressourcer et te sentir entouré.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Réfléchir au sens de ce match et à ce pour quoi tu te bats depuis le début.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Rester seul dans le calme, laissant ton esprit se poser naturellement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Faire quelque chose de complètement différent pour décompresser et te changer les idées.",
+          "type": "creatif"
+        },
+        {
+          "text": "Visualiser ta victoire et te préparer mentalement à dominer l'adversaire.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "situation": "Le matin d'une compétition, ce qui te met dans le meilleur état c'est...",
+      "options": [
+        {
+          "text": "Suivre ta routine de préparation habituelle étape par étape sans en déroger.",
+          "type": "architecte"
+        },
+        {
+          "text": "Recevoir un message de soutien d'une personne qui compte pour toi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Te rappeler pourquoi tu as travaillé si dur et ce que cette journée représente.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prendre le temps de te retrouver seul dans le calme avant de partir.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une surprise agréable ou quelque chose d'inattendu qui allège l'atmosphère.",
+          "type": "creatif"
+        },
+        {
+          "text": "Sentir la montée d'adrénaline et l'excitation de la compétition qui approche.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "situation": "Dans les 30 minutes avant le début, tu te trouves naturellement à...",
+      "options": [
+        {
+          "text": "Vérifier une dernière fois tes notes tactiques et ton plan de match.",
+          "type": "architecte"
+        },
+        {
+          "text": "Échanger des regards et des mots avec tes coéquipiers pour sentir la cohésion.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Te concentrer sur tes valeurs et sur ce qui donne du sens à cette compétition.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Chercher un coin tranquille pour être seul avec toi-même quelques minutes.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Plaisanter, bouger, créer de l'énergie positive autour de toi.",
+          "type": "creatif"
+        },
+        {
+          "text": "Analyser l'adversaire et chercher ses failles pour adapter ta stratégie.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "situation": "Quand tu arrives dans un lieu de compétition inconnu, ta première réaction est...",
+      "options": [
+        {
+          "text": "Observer et analyser l'environnement pour te l'approprier mentalement.",
+          "type": "architecte"
+        },
+        {
+          "text": "Chercher à créer du lien avec les personnes présentes pour te sentir à l'aise.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Te rappeler que peu importe le lieu, tes valeurs et ton engagement restent les mêmes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prendre le temps de t'imprégner silencieusement de l'atmosphère du lieu.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Trouver quelque chose d'intéressant ou d'amusant dans cet environnement nouveau.",
+          "type": "creatif"
+        },
+        {
+          "text": "Évaluer immédiatement les conditions et adapter ta stratégie en conséquence.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "situation": "Ton échauffement idéal avant une compétition ressemble à...",
+      "options": [
+        {
+          "text": "Un protocole précis, testé et validé que tu suis à la lettre.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un moment de connexion avec l'équipe, de rires et d'échanges positifs.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Une montée en intensité progressive qui aligne ton corps sur tes convictions.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Un moment calme et intérieur où tu laisses ton corps se préparer naturellement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Quelque chose de dynamique et de spontané qui te met de bonne humeur.",
+          "type": "creatif"
+        },
+        {
+          "text": "Une phase d'activation intense pour arriver au top de ton niveau dès le départ.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q6",
+      "situation": "Tu apprends au dernier moment un changement de programme inattendu. Tu...",
+      "options": [
+        {
+          "text": "Prends le temps de réorganiser mentalement ton plan en fonction de la nouvelle situation.",
+          "type": "architecte"
+        },
+        {
+          "text": "Vérifies comment les autres vivent ce changement et les rassures si besoin.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Acceptes si ça te semble juste ou contests si ça va à l'encontre de tes principes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Absorbes l'information tranquillement et t'y adaptes à ton rythme.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "T'adaptes spontanément, le changement ne te dérange pas vraiment.",
+          "type": "creatif"
+        },
+        {
+          "text": "Analyses immédiatement comment ce changement peut devenir un avantage pour toi.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q7",
+      "situation": "Tu commets une erreur technique décisive au mauvais moment. Sur le coup, tu...",
+      "options": [
+        {
+          "text": "Analyses rapidement ce qui s'est passé pour ne pas répéter la même chose.",
+          "type": "architecte"
+        },
+        {
+          "text": "Cherches un regard bienveillant autour de toi pour ne pas te sentir seul avec ça.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Puises dans ta détermination, cette erreur va devenir un moteur.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Laisses passer l'émotion et retrouves ton calme intérieur avant d'agir.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Passes à autre chose rapidement, une erreur c'est une erreur, pas une catastrophe.",
+          "type": "creatif"
+        },
+        {
+          "text": "Transformes immédiatement la frustration en énergie pour la prochaine action.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q8",
+      "situation": "Tu es en train de perdre alors que tu t'attendais à gagner facilement. Tu...",
+      "options": [
+        {
+          "text": "Identifies les ajustements tactiques nécessaires et les appliques méthodiquement.",
+          "type": "architecte"
+        },
+        {
+          "text": "Cherches à renouer le contact émotionnel avec tes coéquipiers pour relancer la dynamique.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Puises dans tes valeurs, tu te bats jusqu'au bout quoi qu'il arrive.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Restes calme et présent, convaincu que la situation peut encore évoluer.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Essaies quelque chose d'inattendu pour renverser la dynamique.",
+          "type": "creatif"
+        },
+        {
+          "text": "Montes en intensité, les situations difficiles t'activent plutôt qu'elles ne te paralysent.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q9",
+      "situation": "En pleine compétition, tu dois prendre une décision rapide. Tu t'appuies sur...",
+      "options": [
+        {
+          "text": "Ce qui a été travaillé et répété à l'entraînement, tes automatismes.",
+          "type": "architecte"
+        },
+        {
+          "text": "Ce qui semble le mieux pour l'équipe dans ce moment précis.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Ce qui correspond à tes valeurs et à ce en quoi tu crois profondément.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Ton instinct profond qui émerge du silence intérieur.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "La solution la plus créative et inattendue qui te vient spontanément.",
+          "type": "creatif"
+        },
+        {
+          "text": "La décision qui te donne le maximum de chances de gagner, quitte à prendre des risques.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "situation": "L'arbitre prend une décision que tu juges clairement injuste. Ta réaction immédiate est...",
+      "options": [
+        {
+          "text": "Continuer à performer, perdre du temps avec l'arbitre ne sert à rien.",
+          "type": "architecte"
+        },
+        {
+          "text": "Gérer l'émotion collective et éviter que l'équipe ne se désorganise.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Exprimer clairement ton désaccord, l'injustice ne doit pas rester sans réponse.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Absorber l'information et ne pas laisser ça te sortir de ton état intérieur.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Faire de l'humour pour désamorcer la tension et repartir de l'avant.",
+          "type": "creatif"
+        },
+        {
+          "text": "Utiliser cette injustice comme carburant, ça t'active encore plus.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "situation": "Tu es en état de flow, tout fonctionne parfaitement. Qu'est-ce qui t'a amené là ?",
+      "options": [
+        {
+          "text": "Une préparation rigoureuse qui te permet de faire confiance à tes automatismes.",
+          "type": "architecte"
+        },
+        {
+          "text": "Une atmosphère collective positive et une énergie partagée avec l'équipe.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Un alignement total entre ce que tu fais et ce en quoi tu crois.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Un état intérieur de calme profond où tout semble couler naturellement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Un moment de spontanéité totale où tu joues sans pression ni calcul.",
+          "type": "creatif"
+        },
+        {
+          "text": "L'intensité de l'enjeu qui t'a poussé à dépasser tes propres limites.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "situation": "Ton adversaire cherche à te déstabiliser mentalement. Tu réponds en...",
+      "options": [
+        {
+          "text": "Ignorant ses provocations et en restant concentré sur ton plan de jeu.",
+          "type": "architecte"
+        },
+        {
+          "text": "Maintenant une attitude sereine qui montre que ça ne t'affecte pas.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Montrant par ton attitude et ta performance que tu es au-dessus de ça.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Rentrant encore plus dans ta bulle pour te couper de l'extérieur.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Retournant la situation avec humour ou un comportement inattendu.",
+          "type": "creatif"
+        },
+        {
+          "text": "Intensifiant ton niveau de jeu, les provocations te donnent de l'énergie.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "situation": "Dans les minutes qui suivent une défaite douloureuse, tu as besoin de...",
+      "options": [
+        {
+          "text": "Comprendre rapidement ce qui n'a pas fonctionné pour ne pas répéter les mêmes erreurs.",
+          "type": "architecte"
+        },
+        {
+          "text": "Être entouré de personnes bienveillantes qui te soutiennent sans te juger.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Trouver un sens à cette défaite, elle doit servir à quelque chose.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Être seul pour digérer ce qui s'est passé à ton propre rythme.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Passer rapidement à autre chose pour ne pas rester dans cette énergie négative.",
+          "type": "creatif"
+        },
+        {
+          "text": "Identifier immédiatement comment tu vas rebondir et préparer ta revanche.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "situation": "Le lendemain d'une défaite difficile, tu reprends l'entraînement en...",
+      "options": [
+        {
+          "text": "Travaillant spécifiquement sur les points techniques qui ont fait défaut.",
+          "type": "architecte"
+        },
+        {
+          "text": "Cherchant à retrouver l'énergie collective et la complicité avec l'équipe.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Retrouvant ta combativité en te rappelant pourquoi tu fais tout ça.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prenant le temps de retrouver ton équilibre intérieur avant de reprendre à plein régime.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Repartant avec légèreté, une défaite n'est qu'une étape dans le chemin.",
+          "type": "creatif"
+        },
+        {
+          "text": "Reprenant avec une intensité décuplée, la défaite t'a rendu encore plus affamé.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q15",
+      "situation": "Une défaite révèle une faiblesse dans ton jeu que tu n'avais pas vue. Ta réaction est...",
+      "options": [
+        {
+          "text": "D'analyser en profondeur cette faiblesse et de construire un plan de travail précis.",
+          "type": "architecte"
+        },
+        {
+          "text": "D'en parler avec des personnes de confiance pour avoir leur regard bienveillant.",
+          "type": "connecteur"
+        },
+        {
+          "text": "De l'accepter comme une vérité utile et de t'engager à la corriger avec conviction.",
+          "type": "guerrier"
+        },
+        {
+          "text": "De prendre le temps d'y réfléchir seul avant d'agir.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "De la voir comme une opportunité intéressante de te réinventer.",
+          "type": "creatif"
+        },
+        {
+          "text": "De la transformer immédiatement en objectif de progression concret.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q16",
+      "situation": "Tu enchaînes plusieurs défaites consécutives. Ce qui te maintient debout c'est...",
+      "options": [
+        {
+          "text": "La rigueur de ton analyse, tu sais que tu vas trouver la solution.",
+          "type": "architecte"
+        },
+        {
+          "text": "Le soutien de ceux qui t'entourent et croient en toi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Tes convictions profondes, tu ne lâches pas ce en quoi tu crois.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Une forme de sagesse intérieure qui te dit que les cycles se retournent.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Ta capacité à rebondir et à voir les choses sous un autre angle.",
+          "type": "creatif"
+        },
+        {
+          "text": "Ta faim de gagner qui devient de plus en plus intense.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q17",
+      "situation": "Après une défaite, quelqu'un cherche à te consoler. Tu préfères qu'il te dise...",
+      "options": [
+        {
+          "text": "Ce qui concrètement n'a pas fonctionné et comment y remédier.",
+          "type": "architecte"
+        },
+        {
+          "text": "Que tu n'es pas seul et qu'il est là pour toi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Que tu as tout donné et que ta valeur ne se mesure pas à ce résultat.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Rien, juste être présent en silence à tes côtés.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Quelque chose qui allège l'atmosphère et te fait sourire malgré tout.",
+          "type": "creatif"
+        },
+        {
+          "text": "Que c'est une occasion de prouver ce que tu vaux au prochain match.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q18",
+      "situation": "Une défaite te fait douter de ton niveau. Pour retrouver confiance tu...",
+      "options": [
+        {
+          "text": "Retournes aux fondamentaux et travailles méthodiquement chaque aspect de ton jeu.",
+          "type": "architecte"
+        },
+        {
+          "text": "Recherches le contact et le soutien de ceux qui croient en toi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Te rappelles les combats difficiles que tu as déjà surmontés.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends du recul et laisses le temps faire son travail.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Essaies quelque chose de nouveau qui te redonne du plaisir.",
+          "type": "creatif"
+        },
+        {
+          "text": "Te fixes un défi immédiat pour te prouver que tu es encore là.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q19",
+      "situation": "Juste après une grande victoire, ton premier geste est...",
+      "options": [
+        {
+          "text": "Analyser mentalement ce qui a bien fonctionné pour pouvoir le reproduire.",
+          "type": "architecte"
+        },
+        {
+          "text": "Partager ce moment avec ceux qui comptent, coéquipiers, proches, supporters.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Ressentir la profonde satisfaction d'avoir été fidèle à tes valeurs jusqu'au bout.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Savourer le moment en silence avant de le partager.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Célébrer avec spontanéité et enthousiasme, c'est fait pour ça les victoires !",
+          "type": "creatif"
+        },
+        {
+          "text": "Penser immédiatement au prochain objectif, cette victoire n'est qu'une étape.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q20",
+      "situation": "Une victoire inattendue contre un adversaire supérieur. Ce que tu retiens avant tout c'est...",
+      "options": [
+        {
+          "text": "La stratégie qui a fonctionné et que tu vas analyser pour la reproduire.",
+          "type": "architecte"
+        },
+        {
+          "text": "La communion avec l'équipe et le partage de cet exploit collectif.",
+          "type": "connecteur"
+        },
+        {
+          "text": "La preuve que la conviction et le travail finissent toujours par payer.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Un sentiment de grâce, comme si quelque chose de plus grand t'avait porté.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Le fun et la liberté avec lesquels tu as joué ce jour-là.",
+          "type": "creatif"
+        },
+        {
+          "text": "Ta capacité à performer quand l'enjeu est à son maximum.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q21",
+      "situation": "Tu reçois des félicitations publiques après une performance exceptionnelle. Tu te sens...",
+      "options": [
+        {
+          "text": "Satisfait mais déjà concentré sur ce qu'il faut encore améliorer.",
+          "type": "architecte"
+        },
+        {
+          "text": "Touché et reconnaissant, la reconnaissance des autres compte vraiment pour toi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Fier d'avoir été fidèle à tes principes et de l'avoir prouvé.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Un peu gêné par l'attention mais intérieurement serein.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Content et léger, tu aimes quand l'atmosphère est positive et festive.",
+          "type": "creatif"
+        },
+        {
+          "text": "Énergisé, la reconnaissance te donne envie d'aller encore plus loin.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q22",
+      "situation": "Après une série de victoires, comment tu maintiens ton niveau d'exigence ?",
+      "options": [
+        {
+          "text": "En analysant chaque performance pour identifier ce qui peut encore être amélioré.",
+          "type": "architecte"
+        },
+        {
+          "text": "En maintenant la qualité des relations et de la dynamique collective.",
+          "type": "connecteur"
+        },
+        {
+          "text": "En restant fidèle à tes valeurs, la réussite ne change pas qui tu es.",
+          "type": "guerrier"
+        },
+        {
+          "text": "En prenant le temps de te ressourcer pour rester dans ton meilleur état.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "En cherchant de nouveaux défis qui maintiennent l'enthousiasme.",
+          "type": "creatif"
+        },
+        {
+          "text": "En fixant un nouvel objectif encore plus ambitieux qui te pousse vers l'avant.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q23",
+      "situation": "Ton coach te demande de changer radicalement ta façon de jouer. Tu...",
+      "options": [
+        {
+          "text": "Demandes une explication précise et un plan de travail clair avant de te lancer.",
+          "type": "architecte"
+        },
+        {
+          "text": "Acceptes si tu sens que le coach est sincèrement dans ton intérêt.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Acceptes si ça fait sens selon tes valeurs, contestes si ça ne les respecte pas.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends le temps d'y réfléchir seul avant de donner ta réponse.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "L'accueilles comme une opportunité d'explorer quelque chose de nouveau.",
+          "type": "creatif"
+        },
+        {
+          "text": "Évalues si ce changement te donne plus de chances de gagner et agis en conséquence.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q24",
+      "situation": "Ton coach ne te titularise pas pour un match important. Ta réaction intérieure est...",
+      "options": [
+        {
+          "text": "Chercher à comprendre les raisons objectives de cette décision.",
+          "type": "architecte"
+        },
+        {
+          "text": "Ressentir de la déception mais ne pas vouloir créer de tension dans le groupe.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Exprimer ton désaccord si tu penses que c'est injuste, tu as le droit à la vérité.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Accepter la décision en silence et attendre ton heure.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Relativiser et profiter de cette position pour observer et préparer ton retour.",
+          "type": "creatif"
+        },
+        {
+          "text": "Te motiver encore plus, tu vas prouver que cette décision était une erreur.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q25",
+      "situation": "Ton coach est très exigeant et parfois dur dans ses retours. Tu vis ça comme...",
+      "options": [
+        {
+          "text": "Un signal utile qui t'aide à identifier tes points d'amélioration.",
+          "type": "architecte"
+        },
+        {
+          "text": "Quelque chose de difficile si la dureté s'accompagne d'un manque de considération humaine.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Acceptable si le coach est lui-même exemplaire et cohérent avec ses exigences.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Perturbant si ça ne laisse pas de place à la réflexion et à l'assimilation.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Ok dans la mesure où ça ne devient pas trop lourd et étouffant.",
+          "type": "creatif"
+        },
+        {
+          "text": "Un moteur, la pression et les exigences élevées t'activent positivement.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q26",
+      "situation": "Ton coach te fait entièrement confiance et te laisse beaucoup d'autonomie. Tu...",
+      "options": [
+        {
+          "text": "Structures toi-même ton travail avec rigueur et méthode.",
+          "type": "architecte"
+        },
+        {
+          "text": "Apprécies mais as besoin d'un lien humain régulier pour te sentir soutenu.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Prends cette responsabilité très au sérieux, tu ne veux pas trahir sa confiance.",
+          "type": "guerrier"
+        },
+        {
+          "text": "T'épanouis dans cet espace, tu as besoin de liberté pour fonctionner au mieux.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Explores et expérimentes avec enthousiasme, la liberté te convient parfaitement.",
+          "type": "creatif"
+        },
+        {
+          "text": "Prends les commandes naturellement et montres ce que tu es capable de faire seul.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q27",
+      "situation": "Tu n'es pas d'accord avec la stratégie proposée par ton coach. Tu...",
+      "options": [
+        {
+          "text": "Argumentes factuellement avec des données et des exemples concrets.",
+          "type": "architecte"
+        },
+        {
+          "text": "En parles en privé avec diplomatie pour ne pas créer de tension.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Exprimes clairement ton point de vue, tu as le droit d'être entendu.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Absorbes l'information, y réfléchis, et en parles quand tu es prêt.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Proposes une alternative créative qui pourrait satisfaire les deux parties.",
+          "type": "creatif"
+        },
+        {
+          "text": "Évalues si cette stratégie te permet de gagner et adaptes ton positionnement.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q28",
+      "situation": "Ton coach te demande ton avis sur la préparation de l'équipe. Tu...",
+      "options": [
+        {
+          "text": "Prépares une analyse structurée avant de répondre.",
+          "type": "architecte"
+        },
+        {
+          "text": "Partages ce que tu ressens de la dynamique humaine dans le groupe.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Dis franchement ce que tu penses même si ce n'est pas ce qu'il veut entendre.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Partages une perspective intérieure et nuancée que les autres n'ont pas vue.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Proposes des idées originales pour rendre la préparation plus dynamique.",
+          "type": "creatif"
+        },
+        {
+          "text": "Focalises sur ce qui peut maximiser les chances de performance collective.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q29",
+      "situation": "Un coéquipier traverse une période difficile et ses performances baissent. Tu...",
+      "options": [
+        {
+          "text": "Lui proposes une analyse de ses erreurs et un plan de travail pour se relever.",
+          "type": "architecte"
+        },
+        {
+          "text": "Lui montres que tu es là pour lui inconditionnellement, sans le juger.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Lui parles franchement, il a besoin de vérité plus que de ménagement.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Lui laisses de l'espace, parfois la meilleure aide c'est de ne pas envahir.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Trouves un moyen original et léger pour lui remonter le moral.",
+          "type": "creatif"
+        },
+        {
+          "text": "Le pousses à se dépasser, la complaisance ne lui rendra pas service.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q30",
+      "situation": "Ton équipe manque de cohésion avant une échéance importante. Tu...",
+      "options": [
+        {
+          "text": "Proposes un plan de travail collectif structuré pour aligner tout le monde.",
+          "type": "architecte"
+        },
+        {
+          "text": "Crées des moments de partage et de connexion qui renforcent les liens.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Rappelles à chacun les valeurs communes et l'engagement collectif.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Observes ce qui se passe et interviens quand le moment est opportun.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Injectes de l'énergie positive et de la légèreté pour détendre l'atmosphère.",
+          "type": "creatif"
+        },
+        {
+          "text": "Prends les choses en main et recadres directement ce qui doit l'être.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q31",
+      "situation": "Un coéquipier te reproche une erreur qui appartient en réalité aux deux. Tu...",
+      "options": [
+        {
+          "text": "Rectifies les faits objectivement et proposes une analyse équilibrée.",
+          "type": "architecte"
+        },
+        {
+          "text": "Essaies de comprendre ce qu'il ressent avant de te défendre.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Exprimes clairement que la responsabilité est partagée, l'injustice ne passe pas.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends du recul et ne réagis pas à chaud.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Désamorces avec humour et passes à autre chose rapidement.",
+          "type": "creatif"
+        },
+        {
+          "text": "Défends tes arguments sans te laisser imposer une responsabilité qui n'est pas la tienne.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q32",
+      "situation": "Un nouveau coéquipier arrive dans l'équipe. Ton attitude naturelle est de...",
+      "options": [
+        {
+          "text": "L'aider à comprendre le fonctionnement et les process de l'équipe.",
+          "type": "architecte"
+        },
+        {
+          "text": "L'accueillir chaleureusement et lui faire sentir qu'il est le bienvenu.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Évaluer ses valeurs et voir s'il est aligné avec ce que l'équipe représente.",
+          "type": "guerrier"
+        },
+        {
+          "text": "L'observer discrètement avant de créer du lien.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Créer une atmosphère détendue et amusante pour briser la glace rapidement.",
+          "type": "creatif"
+        },
+        {
+          "text": "Évaluer son niveau et voir s'il peut être un atout pour la performance collective.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q33",
+      "situation": "Tu répètes la même erreur pour la troisième fois consécutive. Tu...",
+      "options": [
+        {
+          "text": "Analyses en profondeur la cause racine de cette erreur pour la corriger définitivement.",
+          "type": "architecte"
+        },
+        {
+          "text": "En parles avec quelqu'un de confiance pour avoir un regard extérieur bienveillant.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Prends un engagement ferme avec toi-même de ne plus la reproduire.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Laisses le temps faire son travail, parfois l'assimilation prend du temps.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Essaies une approche complètement différente pour sortir de cette boucle.",
+          "type": "creatif"
+        },
+        {
+          "text": "Intensifies ton travail sur ce point précis jusqu'à le maîtriser totalement.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q34",
+      "situation": "Ton erreur a directement causé la défaite de ton équipe. Le soir, tu...",
+      "options": [
+        {
+          "text": "Analyses ce qui s'est passé et prépares un plan de travail pour corriger.",
+          "type": "architecte"
+        },
+        {
+          "text": "As besoin que tes proches te rappellent que tu as de la valeur au-delà de ce résultat.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Assumes pleinement ta responsabilité mais refuses de te flageller indéfiniment.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends de la distance et laisses ta conscience traiter ça à son rythme.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Essaies de ne pas ruminer et de passer à autre chose pour garder l'énergie.",
+          "type": "creatif"
+        },
+        {
+          "text": "Transformes la honte en rage de performer, tu vas te racheter.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q35",
+      "situation": "Face à une erreur que tu ne comprends pas, tu...",
+      "options": [
+        {
+          "text": "Collectes méthodiquement des informations pour comprendre d'où elle vient.",
+          "type": "architecte"
+        },
+        {
+          "text": "Cherches l'aide de quelqu'un qui a déjà vécu une situation similaire.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Ne lâches pas tant que tu n'as pas trouvé la réponse, la vérité compte.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Attends que la réponse émerge d'elle-même, parfois il faut laisser décanter.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Explores différentes pistes avec curiosité sans te bloquer sur une seule.",
+          "type": "creatif"
+        },
+        {
+          "text": "Testes différentes solutions en situation réelle pour trouver ce qui marche.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q36",
+      "situation": "C'est le match le plus important de ta carrière. Dans les heures qui précèdent tu...",
+      "options": [
+        {
+          "text": "Revérifies mentalement chaque élément de ta préparation.",
+          "type": "architecte"
+        },
+        {
+          "text": "Cherches la présence de ceux qui te donnent de la force.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Te connectes à tes valeurs profondes et à ce que ce match représente vraiment.",
+          "type": "guerrier"
+        },
+        {
+          "text": "T'isoles pour trouver ton équilibre intérieur loin de l'agitation.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Cherches à rester léger et à ne pas te laisser étouffer par l'importance de l'enjeu.",
+          "type": "creatif"
+        },
+        {
+          "text": "Ressens une montée d'énergie, les grands moments t'activent au plus haut niveau.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q37",
+      "situation": "Tu sens la pression monter de façon incontrôlable. Ta stratégie de régulation est...",
+      "options": [
+        {
+          "text": "Appliquer ta routine de régulation mentale que tu as travaillée à l'entraînement.",
+          "type": "architecte"
+        },
+        {
+          "text": "Chercher le regard ou le contact d'une personne de confiance.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Te rappeler pourquoi tu es là et transformer cette pression en engagement.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Rentrer dans ta bulle et retrouver ton centre.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Faire quelque chose qui te détend et allège l'atmosphère.",
+          "type": "creatif"
+        },
+        {
+          "text": "Accueillir la pression comme un signal que l'enjeu est réel, et que tu es prêt.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q38",
+      "situation": "Tu dois performer devant des sélectionneurs qui vont décider de ton avenir. Tu...",
+      "options": [
+        {
+          "text": "Te concentres sur l'exécution parfaite de ce que tu maîtrises.",
+          "type": "architecte"
+        },
+        {
+          "text": "T'appuies sur l'énergie de ton équipe pour ne pas te sentir seul face à cet enjeu.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Te rappelles que tu vas montrer qui tu es vraiment, pas ce qu'on attend de toi.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Cherches ton état intérieur optimal et fais confiance au processus.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Joues avec liberté, c'est quand tu t'amuses que tu performes le mieux.",
+          "type": "creatif"
+        },
+        {
+          "text": "Vois ça comme une occasion parfaite de prouver ta valeur face à un vrai enjeu.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q39",
+      "situation": "La pression vient de ton entourage qui attend beaucoup de toi. Tu...",
+      "options": [
+        {
+          "text": "Gères ça rationnellement, leurs attentes sont une information, pas une obligation.",
+          "type": "architecte"
+        },
+        {
+          "text": "Es sensible à leurs attentes mais as besoin qu'ils t'aiment aussi dans l'échec.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Performes pour toi et tes valeurs, les attentes des autres ne dictent pas qui tu es.",
+          "type": "guerrier"
+        },
+        {
+          "text": "T'en coupes pour préserver ton espace intérieur.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "T'efforces de ne pas te laisser alourdir par ça et de garder ta légèreté.",
+          "type": "creatif"
+        },
+        {
+          "text": "Utilises cette pression comme carburant supplémentaire.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q40",
+      "situation": "Un entraînement est particulièrement difficile et tu n'en vois pas l'utilité. Tu...",
+      "options": [
+        {
+          "text": "Demandes une explication sur les objectifs de cet entraînement.",
+          "type": "architecte"
+        },
+        {
+          "text": "Tiens grâce à l'énergie collective, si l'équipe y croit, tu y crois.",
+          "type": "connecteur"
+        },
+        {
+          "text": "T'engages pleinement, si le coach a décidé ça, il doit y avoir une raison valable.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Fais le travail à ton rythme sans te forcer à aimer quelque chose que tu ne comprends pas.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Trouves un moyen de rendre cet entraînement plus intéressant pour toi.",
+          "type": "creatif"
+        },
+        {
+          "text": "T'imposes de le faire parfaitement, chaque entraînement est une compétition contre toi-même.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q41",
+      "situation": "Tu traverses une routine d'entraînement répétitive depuis plusieurs semaines. Tu...",
+      "options": [
+        {
+          "text": "Apprécies la régularité, c'est dans la répétition que se construisent les automatismes.",
+          "type": "architecte"
+        },
+        {
+          "text": "Maintiens l'engagement grâce aux relations avec l'équipe.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Tiens grâce à la conviction que ce travail de fond finira par payer.",
+          "type": "guerrier"
+        },
+        {
+          "text": "T'adaptes à ce rythme sans te forcer, tu trouves ton propre espace dedans.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Commences à t'ennuyer et cherches comment introduire de la variété.",
+          "type": "creatif"
+        },
+        {
+          "text": "Utilises la répétition pour pousser tes limites chaque fois un peu plus loin.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q42",
+      "situation": "Tu as la possibilité de t'entraîner seul ou en groupe. Tu choisis...",
+      "options": [
+        {
+          "text": "Selon l'objectif précis, parfois seul pour la technique, parfois en groupe pour le jeu.",
+          "type": "architecte"
+        },
+        {
+          "text": "En groupe, l'énergie collective te donne plus d'envie et d'engagement.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Selon ce qui te semble le plus utile pour progresser et atteindre tes objectifs.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Seul, tu as besoin de cet espace pour te retrouver et progresser à ta façon.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "En groupe si l'ambiance est bonne, c'est là que tu t'épanouis le mieux.",
+          "type": "creatif"
+        },
+        {
+          "text": "En groupe pour te mesurer, la compétition à l'entraînement te pousse vers le haut.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q43",
+      "situation": "Tu traverses un plateau depuis plusieurs semaines, plus de progression visible. Tu...",
+      "options": [
+        {
+          "text": "Analyses en détail ton entraînement pour identifier ce qui bloque.",
+          "type": "architecte"
+        },
+        {
+          "text": "Cherches du soutien autour de toi pour ne pas te sentir seul dans cette période.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Maintiens ton niveau d'engagement, les plateaux font partie du chemin.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Fais confiance au processus, la progression n'est pas toujours visible mais elle est là.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Changes quelque chose dans ton approche pour relancer la dynamique.",
+          "type": "creatif"
+        },
+        {
+          "text": "Intensifies tes efforts, le plateau est un défi à surmonter.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q44",
+      "situation": "Malgré un travail intense, les résultats ne viennent pas. Tu te demandes...",
+      "options": [
+        {
+          "text": "Si ta méthode est la bonne et comment l'optimiser.",
+          "type": "architecte"
+        },
+        {
+          "text": "Si tu as le bon soutien autour de toi pour traverser ça.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Si tu es sur la bonne voie en accord avec tes valeurs profondes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Si ce que tu cherches est vraiment ce dont tu as besoin.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Si tu ne t'ennuies pas trop et si tu as encore du plaisir dans ce que tu fais.",
+          "type": "creatif"
+        },
+        {
+          "text": "Si tu travailles vraiment assez fort et avec la bonne intensité.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q45",
+      "situation": "Un conflit éclate entre deux coéquipiers et crée de la tension dans le groupe. Tu...",
+      "options": [
+        {
+          "text": "Cherches à comprendre objectivement les causes du conflit avant d'intervenir.",
+          "type": "architecte"
+        },
+        {
+          "text": "Joues le rôle de médiateur pour restaurer l'harmonie dans le groupe.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Interviens si le conflit viole les valeurs de l'équipe.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Observes la situation sans intervenir tant que ça ne t'implique pas directement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Essaies d'alléger la tension avec humour ou une diversion positive.",
+          "type": "creatif"
+        },
+        {
+          "text": "Recadres directement si ça nuit à la performance collective.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q46",
+      "situation": "Tu es en désaccord profond avec une décision collective. Tu...",
+      "options": [
+        {
+          "text": "Argumentes rationnellement en t'appuyant sur des faits.",
+          "type": "architecte"
+        },
+        {
+          "text": "Exprimes ton désaccord en prenant soin de ne pas blesser les relations.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Dis clairement ce que tu penses, ta conviction mérite d'être entendue.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Gardes ton opinion pour toi le temps de bien la formuler.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Proposes une alternative créative qui pourrait satisfaire tout le monde.",
+          "type": "creatif"
+        },
+        {
+          "text": "Défends fermement ta position si tu crois qu'elle est la meilleure pour gagner.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q47",
+      "situation": "L'atmosphère dans l'équipe est toxique et ça affecte les performances. Tu...",
+      "options": [
+        {
+          "text": "Analyses les causes et proposes des solutions structurées.",
+          "type": "architecte"
+        },
+        {
+          "text": "Travailles à restaurer la qualité des relations une par une.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Prends position clairement, cette situation est inacceptable.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Te protèges intérieurement en créant de la distance émotionnelle.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Cherches à réintroduire de la légèreté et du plaisir dans le groupe.",
+          "type": "creatif"
+        },
+        {
+          "text": "Prends les choses en main et recadres ce qui doit l'être sans attendre.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q48",
+      "situation": "Tu es blessé et contraint de t'arrêter pendant plusieurs semaines. Tu gères ça en...",
+      "options": [
+        {
+          "text": "Structurant une rééducation précise et en planifiant ton retour étape par étape.",
+          "type": "architecte"
+        },
+        {
+          "text": "Maintenant le lien avec l'équipe pour ne pas te sentir exclu.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Traversant cette épreuve comme un test de ta détermination.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prenant ce temps comme une occasion de te retrouver et de réfléchir à ton chemin.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Explorant d'autres aspects de ta vie pour rester stimulé.",
+          "type": "creatif"
+        },
+        {
+          "text": "Travaillant ce que tu peux et planifiant ton retour avec une ambition renforcée.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q49",
+      "situation": "Tu dois performer avec une contrainte physique importante. Tu...",
+      "options": [
+        {
+          "text": "Adaptes précisément ta stratégie en fonction de tes limitations actuelles.",
+          "type": "architecte"
+        },
+        {
+          "text": "Puises dans le soutien de l'équipe pour compenser.",
+          "type": "connecteur"
+        },
+        {
+          "text": "T'engages pleinement malgré la douleur, ta volonté est plus forte.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Écoutes ton corps et ajustes au moment par moment.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Trouves une façon créative de performer différemment.",
+          "type": "creatif"
+        },
+        {
+          "text": "Utilises cette contrainte comme défi supplémentaire qui t'active.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q50",
+      "situation": "Tu dois choisir entre deux clubs, l'un offre plus d'argent, l'autre plus de progression. Tu...",
+      "options": [
+        {
+          "text": "Analyses les deux options en détail avec tous les critères pertinents.",
+          "type": "architecte"
+        },
+        {
+          "text": "Prends en compte la qualité humaine de l'environnement dans chaque club.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Choisis selon ce qui est aligné avec tes valeurs et ton projet sportif profond.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends le temps d'écouter ton intuition avant de décider.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Choisis là où tu penses que tu vas t'éclater le plus.",
+          "type": "creatif"
+        },
+        {
+          "text": "Choisis là où tu auras le plus de chances de gagner et de te mesurer aux meilleurs.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q51",
+      "situation": "Tu dois décider rapidement si tu continues dans ton sport ou si tu changes de direction. Tu...",
+      "options": [
+        {
+          "text": "Fais un bilan objectif de tes résultats et de tes perspectives réelles.",
+          "type": "architecte"
+        },
+        {
+          "text": "Consultes les personnes importantes dans ta vie avant de décider.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Interroges tes valeurs, est-ce que ce sport porte encore ce qui compte pour toi ?",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends le temps d'écouter ce qui résonne profondément en toi.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Écoutes si tu as encore du plaisir, c'est le principal indicateur.",
+          "type": "creatif"
+        },
+        {
+          "text": "Évalues si tu peux encore progresser et atteindre tes objectifs ambitieux.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q52",
+      "situation": "Tu dois faire un discours de motivation à ton équipe avant un match décisif. Tu...",
+      "options": [
+        {
+          "text": "Prépares un discours structuré avec des points clés et des données concrètes.",
+          "type": "architecte"
+        },
+        {
+          "text": "Parles du cœur en adressant chacun personnellement.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Rappelles les valeurs qui unissent l'équipe et ce pour quoi vous vous battez.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Dis peu mais dis-le avec profondeur, quelques mots qui résonnent vraiment.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Utilises humour et spontanéité pour créer de l'énergie positive.",
+          "type": "creatif"
+        },
+        {
+          "text": "Parles de victoire, de dépassement et de ce que vous pouvez accomplir ensemble.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q53",
+      "situation": "Tu dois expliquer à ton coach pourquoi tu n'as pas suivi ses consignes. Tu...",
+      "options": [
+        {
+          "text": "Expliques factuellement les raisons de ton choix avec des arguments précis.",
+          "type": "architecte"
+        },
+        {
+          "text": "Trouves d'abord un terrain d'entente humain avant d'expliquer.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Dis la vérité directement, tu avais tes raisons et tu les assumes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends le temps de bien formuler avant de répondre.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Expliques avec légèreté, sans en faire un drame.",
+          "type": "creatif"
+        },
+        {
+          "text": "Expliques que ta décision visait à maximiser les chances de performance.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q54",
+      "situation": "Tu dois donner un feedback difficile à un coéquipier sur sa performance. Tu...",
+      "options": [
+        {
+          "text": "Prépares ton feedback avec des exemples précis et des pistes concrètes.",
+          "type": "architecte"
+        },
+        {
+          "text": "Choisis le bon moment et le bon cadre pour que ce soit bien reçu.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Dis la vérité avec franchise, il en a besoin même si c'est dur à entendre.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Attends d'avoir la bonne formulation avant de te lancer.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Glisses le feedback dans une conversation détendue pour l'alléger.",
+          "type": "creatif"
+        },
+        {
+          "text": "Vas droit au but, les détours ne l'aideront pas à progresser.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q55",
+      "situation": "Tu découvres la préparation mentale. Ce qui t'attire le plus c'est...",
+      "options": [
+        {
+          "text": "Les techniques précises et mesurables qui améliorent la performance.",
+          "type": "architecte"
+        },
+        {
+          "text": "L'aspect humain, mieux se comprendre pour mieux se connecter aux autres.",
+          "type": "connecteur"
+        },
+        {
+          "text": "L'alignement entre valeurs, sens et performance.",
+          "type": "guerrier"
+        },
+        {
+          "text": "L'exploration de ton monde intérieur et de ton potentiel profond.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Les approches créatives et innovantes du fonctionnement mental.",
+          "type": "creatif"
+        },
+        {
+          "text": "Les outils concrets pour performer encore mieux dans les moments qui comptent.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q56",
+      "situation": "Tu as du temps libre entre deux compétitions. Comment tu l'utilises mentalement ?",
+      "options": [
+        {
+          "text": "Pour analyser tes dernières performances et préparer les suivantes.",
+          "type": "architecte"
+        },
+        {
+          "text": "Pour entretenir les liens avec les personnes importantes dans ta vie.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Pour te ressourcer et te reconnecter à ce qui donne du sens à ton sport.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Pour te retrouver seul et recharger tes batteries intérieures.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Pour faire des choses complètement différentes et te stimuler autrement.",
+          "type": "creatif"
+        },
+        {
+          "text": "Pour travailler des aspects spécifiques qui te donneront un avantage compétitif.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q57",
+      "situation": "Quelle phrase résume le mieux ta philosophie de la préparation mentale ?",
+      "options": [
+        {
+          "text": "La performance est le résultat d'une préparation rigoureuse et méthodique.",
+          "type": "architecte"
+        },
+        {
+          "text": "On performe mieux quand on se sent bien entouré et en connexion avec les autres.",
+          "type": "connecteur"
+        },
+        {
+          "text": "La vraie performance naît de l'alignement entre ce qu'on fait et ce en quoi on croit.",
+          "type": "guerrier"
+        },
+        {
+          "text": "La performance la plus haute vient d'un état intérieur de calme et de présence totale.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "On performe mieux quand on joue librement, avec plaisir et sans se prendre la tête.",
+          "type": "creatif"
+        },
+        {
+          "text": "La performance vient de la faim de gagner et de la volonté de se dépasser sans limite.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q58",
+      "situation": "Tu viens d'atteindre un objectif important que tu t'étais fixé. Immédiatement tu...",
+      "options": [
+        {
+          "text": "Fais le bilan de ce qui a permis d'y arriver pour reproduire la méthode.",
+          "type": "architecte"
+        },
+        {
+          "text": "Partages cette réussite avec ceux qui t'ont soutenu tout au long du chemin.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Ressens une profonde satisfaction d'avoir été fidèle à tes engagements.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends le temps de savourer ce moment avant de regarder vers la suite.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Célèbres avec enthousiasme avant de te demander quelle nouvelle aventure t'attend.",
+          "type": "creatif"
+        },
+        {
+          "text": "Te fixes immédiatement un objectif encore plus ambitieux.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q59",
+      "situation": "Quelqu'un te demande où tu te vois dans 5 ans. Tu réponds...",
+      "options": [
+        {
+          "text": "Avec un plan précis, des étapes définies et des objectifs mesurables.",
+          "type": "architecte"
+        },
+        {
+          "text": "Entouré de personnes qui comptent, dans un environnement humain riche.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Fidèle à mes valeurs, ayant accompli quelque chose qui a vraiment du sens.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Je ne sais pas exactement, je fais confiance au chemin.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Dans quelque chose qui me stimule encore et me donne du plaisir.",
+          "type": "creatif"
+        },
+        {
+          "text": "Au sommet de ce que je peux accomplir, j'aurai tout donné pour y arriver.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q60",
+      "situation": "Ce qui te donne le plus envie de progresser chaque jour c'est...",
+      "options": [
+        {
+          "text": "Voir concrètement l'amélioration de tes performances grâce à ton travail.",
+          "type": "architecte"
+        },
+        {
+          "text": "Sentir que tu apportes quelque chose à ceux qui t'entourent.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Rester fidèle à l'engagement que tu t'es pris envers toi-même.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Explorer ton potentiel profond et découvrir ce que tu es vraiment capable de faire.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Le plaisir de jouer, d'apprendre et de te surprendre toi-même.",
+          "type": "creatif"
+        },
+        {
+          "text": "La perspective de te mesurer aux meilleurs et de prouver ta valeur.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q61",
+      "situation": "Face à un objectif que tout le monde juge inaccessible pour toi, tu...",
+      "options": [
+        {
+          "text": "Analyses objectivement si c'est réellement atteignable et comment.",
+          "type": "architecte"
+        },
+        {
+          "text": "Cherches ceux qui croient en toi malgré le scepticisme ambiant.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Refuses d'abandonner un objectif qui correspond à tes valeurs profondes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Écoutes ta voix intérieure, si ça résonne vraiment, tu continues.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Trouves ça stimulant, les défis impossibles t'intriguent.",
+          "type": "creatif"
+        },
+        {
+          "text": "L'acceptes comme le défi ultime, rien ne te motive plus que ce qu'on dit impossible.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q62",
+      "situation": "Comment tu vis l'échec dans ton parcours de progression ?",
+      "options": [
+        {
+          "text": "Comme une donnée d'apprentissage précieuse à analyser et intégrer.",
+          "type": "architecte"
+        },
+        {
+          "text": "Difficile à vivre seul, j'ai besoin du soutien des autres pour rebondir.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Comme une épreuve qui teste la solidité de mes convictions.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Comme une partie naturelle du chemin, les cycles d'échec et de réussite alternent.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Comme une opportunité de me réinventer et d'explorer d'autres voies.",
+          "type": "creatif"
+        },
+        {
+          "text": "Comme un carburant, chaque échec me donne plus faim de réussir.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q63",
+      "situation": "Quelle est ta définition personnelle du succès dans le sport ?",
+      "options": [
+        {
+          "text": "Atteindre ses objectifs grâce à une préparation rigoureuse et un travail excellent.",
+          "type": "architecte"
+        },
+        {
+          "text": "Créer des liens forts, vivre des moments de partage intenses et laisser un impact humain.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Être fidèle à ses valeurs et se battre pour quelque chose qui dépasse le simple résultat.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Trouver un état de grâce où l'expression sportive devient une forme d'art.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "S'éclater, jouer librement et vivre des expériences qui te font te sentir vivant.",
+          "type": "creatif"
+        },
+        {
+          "text": "Gagner, se mesurer aux meilleurs et repousser constamment ses propres limites.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q64",
+      "situation": "Qu'est-ce qui pourrait te faire arrêter le sport prématurément ?",
+      "options": [
+        {
+          "text": "Sentir que je ne progresse plus malgré tous mes efforts.",
+          "type": "architecte"
+        },
+        {
+          "text": "Perdre les relations humaines qui donnent du sens à ma pratique.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Devoir trahir mes valeurs pour continuer à pratiquer.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Perdre le sentiment d'espace et de liberté intérieure dans ma pratique.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Ne plus avoir de plaisir et me sentir enfermé dans une routine étouffante.",
+          "type": "creatif"
+        },
+        {
+          "text": "Ne plus avoir d'adversaires à ma hauteur ou d'objectifs suffisamment ambitieux.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q65",
+      "situation": "Tu atteins la fin de ta carrière sportive. Ce dont tu veux être le plus fier c'est...",
+      "options": [
+        {
+          "text": "D'avoir construit une carrière rigoureuse et d'avoir exploité au maximum ton potentiel.",
+          "type": "architecte"
+        },
+        {
+          "text": "Des relations que tu as créées et de l'impact humain que tu as eu.",
+          "type": "connecteur"
+        },
+        {
+          "text": "D'avoir été fidèle à tes valeurs du début à la fin, sans jamais trahir qui tu es.",
+          "type": "guerrier"
+        },
+        {
+          "text": "D'avoir exprimé quelque chose d'unique et d'authentique dans ta façon de pratiquer.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Des moments de pure joie et de liberté que tu as vécus dans ton sport.",
+          "type": "creatif"
+        },
+        {
+          "text": "Des victoires, des titres et des records, la trace concrète de ton excellence.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q66",
+      "situation": "Ce qui te différencie vraiment des autres sportifs selon toi, c'est...",
+      "options": [
+        {
+          "text": "Ta rigueur, ta méthode et ta capacité à t'améliorer continuellement.",
+          "type": "architecte"
+        },
+        {
+          "text": "Ta capacité à créer des liens et à élever ceux qui t'entourent.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Ton engagement total et la solidité de tes convictions.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Ta façon unique de voir les choses et d'exprimer quelque chose de singulier.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Ta spontanéité et ta capacité à faire des choses que personne n'attendait.",
+          "type": "creatif"
+        },
+        {
+          "text": "Ta mentalité de champion et ton refus absolu de te contenter de moins.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q67",
+      "situation": "Quel conseil tu donnerais à un jeune sportif qui commence ?",
+      "options": [
+        {
+          "text": "Travaille avec méthode, sois rigoureux et construis des bases solides.",
+          "type": "architecte"
+        },
+        {
+          "text": "Chéris les relations humaines, c'est elles qui donnent du sens au sport.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Reste fidèle à tes valeurs, c'est ta boussole dans les moments difficiles.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prends le temps de te connaître vraiment avant de chercher à performer.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Amuse-toi, le jour où tu ne t'éclates plus, il faut se poser des questions.",
+          "type": "creatif"
+        },
+        {
+          "text": "Sois ambitieux, ne te fixe pas de limites et bats-toi pour tes rêves.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q68",
+      "situation": "La saison se termine et tu fais ton bilan personnel. Tu es satisfait quand...",
+      "options": [
+        {
+          "text": "Tes statistiques et objectifs sont atteints ou dépassés.",
+          "type": "architecte"
+        },
+        {
+          "text": "Les liens avec l'équipe sont forts et tu te sens appartenir à quelque chose.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Tu as été fidèle à tes engagements et tes valeurs tout au long de la saison.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Tu as vécu des moments d'expression authentique qui t'appartiennent vraiment.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Tu as eu du plaisir, des surprises et des moments de jeu intense.",
+          "type": "creatif"
+        },
+        {
+          "text": "Tu as progressé, gagné et donné le maximum de toi-même.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q69",
+      "situation": "Tu rencontres un sportif professionnel que tu admires. Tu veux lui demander...",
+      "options": [
+        {
+          "text": "Sa méthode de travail et comment il a structuré sa progression.",
+          "type": "architecte"
+        },
+        {
+          "text": "Comment il gère les relations et l'humain dans son quotidien de sportif.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Ce qui lui donne du sens et ce pour quoi il continue à se battre.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Ce qu'il pense vraiment de son sport quand personne ne regarde.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Quel moment de sa carrière lui a procuré le plus de joie et de liberté.",
+          "type": "creatif"
+        },
+        {
+          "text": "Comment il a développé sa mentalité de compétiteur et son instinct du gagnant.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q70",
+      "situation": "Tu dois choisir ton prochain objectif de saison. Tu choisis...",
+      "options": [
+        {
+          "text": "L'objectif le plus précis et mesurable qui correspond à ton niveau actuel.",
+          "type": "architecte"
+        },
+        {
+          "text": "L'objectif qui te permettra de vivre les meilleures expériences collectives.",
+          "type": "connecteur"
+        },
+        {
+          "text": "L'objectif qui a le plus de sens en accord avec tes valeurs profondes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "L'objectif qui résonne le plus profondément en toi intérieurement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "L'objectif le plus stimulant et innovant qui t'enthousiasme vraiment.",
+          "type": "creatif"
+        },
+        {
+          "text": "L'objectif le plus ambitieux qui te poussera à te dépasser.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q71",
+      "situation": "On te propose une opportunité exceptionnelle mais risquée pour ta carrière. Tu...",
+      "options": [
+        {
+          "text": "Analyses minutieusement les risques et les bénéfices avant de décider.",
+          "type": "architecte"
+        },
+        {
+          "text": "Consultes les personnes de confiance dont l'avis compte pour toi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Évalues si cette opportunité est alignée avec ce en quoi tu crois profondément.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Écoutes ce que ça te dit intérieurement avant d'analyser rationnellement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Y vas si ça t'enthousiasme vraiment, la prise de risque fait partie du jeu.",
+          "type": "creatif"
+        },
+        {
+          "text": "Fonces si c'est une occasion de te mesurer à un niveau supérieur.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q72",
+      "situation": "Si tu devais résumer en une phrase ce que le sport t'a appris sur toi-même, ce serait...",
+      "options": [
+        {
+          "text": "Que la rigueur et la méthode permettent de transformer n'importe quel potentiel.",
+          "type": "architecte"
+        },
+        {
+          "text": "Que les relations et le collectif sont au cœur de toute grande performance.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Que les valeurs et les convictions sont la fondation de tout ce qu'on construit.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Que la vraie performance vient du silence intérieur et de la pleine présence.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Que le plaisir et la liberté sont les conditions de ma meilleure expression.",
+          "type": "creatif"
+        },
+        {
+          "text": "Que je suis fait pour me dépasser et que les défis révèlent le meilleur de moi.",
+          "type": "competiteur"
+        }
+      ]
+    }
+  ],
+  "types": {
+    "architecte": {
+      "label": "Architecte",
+      "emoji": "🏗️",
+      "color": "#1a3a6a",
+      "bg": "#e8f0ff",
+      "canal": "Interrogatif / Informatif",
+      "besoins": [
+        "Que ton travail soit reconnu",
+        "Une organisation claire et des repères précis",
+        "Être valorisé pour ton sérieux et ta rigueur"
+      ],
+      "distress1": "Quand le stress monte, tu peux t'enfermer dans les détails et vouloir que tout soit absolument impeccable",
+      "distress2": "Sous pression, il peut t'arriver de vouloir tout contrôler et de dire aux autres comment faire, parfois de façon un peu tranchante",
+      "distress3": "Quand tu es à bout, tu peux avoir l'impression de ne jamais être assez bien et ressentir un gros épuisement mental",
+      "description": "Ta personnalité s'appuie sur la rigueur, l'organisation et l'envie de bien faire. Tu penses en logique, en étapes et en résultats que l'on peut mesurer. Tu prépares tout à l'avance, tu anticipes les problèmes et tu ne laisses rien au hasard, que ce soit pour un match ou pour concilier entraînements et études. Dans ton sport, on peut compter sur toi pour tenir un niveau d'exigence élevé, même si tu te sens vite mal quand ta performance n'est pas à la hauteur de ce que tu t'étais fixé.",
+      "phase_description": "En ce moment, ton besoin de contrôle et de travail bien fait est particulièrement présent. Tu exiges beaucoup de toi-même, et peut-être aussi un peu des autres.",
+      "coaching": [
+        "Ça t'aide quand on reconnaît ton travail avant de te donner un conseil",
+        "Tu avances mieux avec des objectifs précis et mesurables",
+        "Les consignes floues te gênent : tu préfères du concret et de la clarté",
+        "Tu peux apprendre à faire la différence entre viser l'excellence et exiger la perfection"
+      ],
+      "communication": [
+        "Ton canal préféré : les faits et la logique",
+        "Tu réagis bien aux chiffres, aux exemples et aux données concrètes",
+        "Les jugements de valeur te heurtent, tu préfères qu'on reste factuel",
+        "Tu as besoin de temps pour préparer tes réponses"
+      ],
+      "sport_conseils": [
+        "Mets en place des routines de préparation bien structurées avant les matchs et les compétitions",
+        "Utilise des check-lists mentales pour libérer ton esprit le jour J",
+        "Apprends à voir l'erreur comme une information utile pour progresser, pas comme un échec",
+        "Soigne ta récupération : on s'épuise souvent en silence quand on veut tout bien faire, surtout avec les entraînements et les cours"
+      ]
+    },
+    "connecteur": {
+      "label": "Connecteur",
+      "emoji": "🤝",
+      "color": "#1a6a3a",
+      "bg": "#e8fff0",
+      "canal": "Nourricier",
+      "besoins": [
+        "Être reconnu pour qui tu es, pas seulement pour tes notes",
+        "Une bonne ambiance avec les autres",
+        "Te sentir accepté et aimé tel que tu es"
+      ],
+      "distress1": "Quand le stress monte, tu peux chercher à faire plaisir à tout le monde et éviter les désaccords, même quand ils seraient utiles",
+      "distress2": "Sous pression, il peut t'arriver de te tromper à force de t'adapter aux autres et de perdre un peu tes propres repères",
+      "distress3": "Quand tu es à bout, tu peux avoir l'impression d'être de trop ou utilisé, et ressentir un gros coup de blues",
+      "description": "Ta personnalité est centrée sur les relations, les émotions et la chaleur humaine. Tu perçois le monde à travers ce que tu ressens, et tu as un talent naturel pour créer des liens sincères. Dans ton sport, tu es le ciment de l'équipe : tu sens l'ambiance du vestiaire, tu soutiens tes coéquipiers et tu favorises la cohésion.",
+      "phase_description": "En ce moment, tu es particulièrement tourné vers les relations et le besoin d'appartenir à un groupe. Ton bien-être dépend beaucoup de l'ambiance autour de toi.",
+      "coaching": [
+        "Ça t'aide quand on crée d'abord un lien de confiance avant de te faire un retour sur ton travail",
+        "Tu avances mieux quand l'échange se passe dans une ambiance bienveillante",
+        "Tu apprécies qu'on voie tes qualités humaines, pas seulement tes résultats",
+        "Quand ça se passe mal, tu as besoin qu'on parle d'abord de la relation, ensuite du travail"
+      ],
+      "communication": [
+        "Ton canal préféré : la chaleur et l'écoute",
+        "Tu réagis bien aux messages personnalisés et pleins d'empathie",
+        "Tu aimes qu'on s'intéresse à toi en tant que personne avant de parler de ton travail",
+        "Les remarques froides ou purement techniques te touchent plus que tu ne le montres"
+      ],
+      "sport_conseils": [
+        "Crée des rituels d'équipe pour garder le lien et la motivation",
+        "Apprends à dire ce dont tu as besoin à ton coach et à tes coéquipiers sans attendre qu'ils le devinent",
+        "Entraîne-toi à dire non sans craindre de casser une relation",
+        "Cherche un environnement d'entraînement où tu te sens vraiment bien"
+      ]
+    },
+    "guerrier": {
+      "label": "Guerrier",
+      "emoji": "⚔️",
+      "color": "#6a1a1a",
+      "bg": "#fff0f0",
+      "canal": "Interrogatif / Démocratique",
+      "besoins": [
+        "Que tes convictions et tes valeurs soient respectées",
+        "Être consulté et que ton avis compte",
+        "Faire partie de quelque chose qui a du sens"
+      ],
+      "distress1": "Quand le stress monte, tu peux avoir du mal à entendre une autre opinion et vouloir convaincre à tout prix",
+      "distress2": "Sous pression, il peut t'arriver de défendre tes idées avec tant d'énergie que les relations passent au second plan",
+      "distress3": "Quand tu es à bout, tu peux ressentir une grosse colère, un sentiment de trahison et l'envie de couper les ponts",
+      "description": "Ta personnalité est construite autour de tes valeurs, de tes convictions et de ton engagement. Tu as une idée forte de ce qui est juste et tu te mobilises pour défendre tes principes. Dans ton sport, tu es celui ou celle qui ne lâche rien et qui donne l'exemple par sa détermination.",
+      "phase_description": "En ce moment, ton sens du combat et tes convictions sont particulièrement actifs. Ce qui te paraît injuste te mobilise fortement.",
+      "coaching": [
+        "Ça t'aide quand on respecte tes convictions, même si on ne les partage pas",
+        "Tu apprécies qu'on te demande ton avis : tu as besoin d'être consulté",
+        "Tu avances mieux quand chaque objectif a du sens et se relie à ce qui compte pour toi",
+        "Tu supportes mal qu'on remette tes valeurs en cause de façon frontale"
+      ],
+      "communication": [
+        "Ton canal préféré : les échanges sincères, qui font sens",
+        "Tu réagis bien aux arguments cohérents et bien expliqués",
+        "Tu apprécies qu'on cherche d'abord à comprendre tes convictions avant de te proposer autre chose",
+        "Les ordres donnés sans explication te braquent facilement"
+      ],
+      "sport_conseils": [
+        "Relie chaque entraînement à un sens plus grand : pourquoi tu fais ce sport, ce que tu veux construire",
+        "Utilise ta combativité comme un moteur, pas comme une armure",
+        "Apprends à distinguer le combat utile de celui qui t'épuise",
+        "Entraîne-toi à accepter que tes coéquipiers et ton coach aient des valeurs différentes des tiennes"
+      ]
+    },
+    "visionnaire": {
+      "label": "Visionnaire",
+      "emoji": "🌙",
+      "color": "#3a1a6a",
+      "bg": "#f5f0ff",
+      "canal": "Directif",
+      "besoins": [
+        "Du temps et de l'espace pour toi",
+        "Des moments de solitude pour réfléchir et créer",
+        "Être invité à agir plutôt que poussé"
+      ],
+      "distress1": "Quand le stress monte, tu peux attendre sans agir et te réfugier dans l'inaction",
+      "distress2": "Sous pression, il peut t'arriver de te couper des autres et de moins communiquer",
+      "distress3": "Quand tu es à bout, tu peux te sentir incapable de prendre la moindre initiative et avoir besoin que les autres décident pour toi",
+      "description": "Ta personnalité est tournée vers l'intérieur : tu es imaginatif, réfléchi et tu aimes prendre du recul. Tu as une vie intérieure riche et une façon unique de voir les choses. Dans ton sport, tu es capable d'une concentration et d'une visualisation remarquables quand tu t'entraînes dans de bonnes conditions.",
+      "phase_description": "En ce moment, tu es plutôt dans une période de retrait intérieur. Les sollicitations extérieures te pèsent et tu as tendance à te mettre un peu à l'écart.",
+      "coaching": [
+        "Ça t'aide quand les consignes sont claires, directes et sans ambiguïté",
+        "Tu as besoin de moments de calme et de solitude pour travailler",
+        "Tu préfères qu'on t'invite à passer à l'action plutôt qu'on te pousse",
+        "Tu apprécies qu'on te laisse du temps de réflexion avant d'attendre une réponse"
+      ],
+      "communication": [
+        "Ton canal préféré : les messages clairs et directs",
+        "Tu as besoin d'indications précises et de temps pour répondre",
+        "Les questions trop ouvertes te laissent sans repère",
+        "Tes silences font partie de ta façon de réfléchir, et tu apprécies qu'on les respecte"
+      ],
+      "sport_conseils": [
+        "Mets en place une routine de visualisation avant les matchs : c'est un vrai point fort pour toi",
+        "Prévois des moments de calme dans ta préparation pour te ressourcer",
+        "Apprends à te donner à toi-même des consignes simples et directes pour passer à l'action",
+        "Parle à ton coach et à tes proches de ton besoin d'espace, pour qu'ils comprennent ta façon de fonctionner"
+      ]
+    },
+    "creatif": {
+      "label": "Créatif",
+      "emoji": "🎨",
+      "color": "#8a4a00",
+      "bg": "#fff8e0",
+      "canal": "Emotif / Ludique",
+      "besoins": [
+        "Des échanges spontanés et ludiques",
+        "De la stimulation, de la nouveauté, du fun",
+        "Être reconnu pour ton originalité"
+      ],
+      "distress1": "Quand le stress monte, tu peux repousser ce qui t'ennuie et chercher des distractions, comme les écrans",
+      "distress2": "Sous pression, il peut t'arriver de te laisser aller à des oublis ou des erreurs qui t'évitent une contrainte",
+      "distress3": "Quand tu es à bout, tu peux avoir tendance à rejeter la faute sur les autres et à te dire que plus rien n'a d'importance",
+      "description": "Ta personnalité est spontanée, créative et tournée vers le jeu et la nouveauté. Tu as un talent naturel pour mettre de l'énergie et de l'enthousiasme autour de toi. Dans ton sport, tu es celui ou celle qui surprend, qui ose et qui sort des sentiers battus.",
+      "phase_description": "En ce moment, tu as besoin de stimulation et de moments de légèreté. La routine et la répétition te pèsent fortement.",
+      "coaching": [
+        "Ça t'aide quand on met de la variété et du ludique dans ta façon d'apprendre",
+        "Tu apprécies l'humour et la légèreté dans les échanges",
+        "Les routines trop rigides te pèsent : tu as besoin de liberté créative",
+        "Tu avances mieux quand ton énergie créative est tournée vers un projet concret"
+      ],
+      "communication": [
+        "Ton canal préféré : l'humour et la spontanéité",
+        "Tu réagis bien aux échanges vivants et pleins d'énergie",
+        "Tu supportes mal la lourdeur et le sérieux excessif",
+        "La légèreté et l'humour sont tes meilleurs alliés pour écouter et comprendre"
+      ],
+      "sport_conseils": [
+        "Varie tes façons de t'entraîner pour garder ta motivation",
+        "Cherche le côté ludique de la compétition : tu donnes le meilleur de toi quand tu t'amuses",
+        "Apprends à rester engagé même quand le travail est répétitif",
+        "Entoure-toi de coéquipiers qui apprécient ton énergie"
+      ]
+    },
+    "competiteur": {
+      "label": "Compétiteur",
+      "emoji": "🏆",
+      "color": "#7a5a00",
+      "bg": "#fffbe0",
+      "canal": "Directif",
+      "besoins": [
+        "De l'action, des défis, de l'excitation",
+        "De la liberté d'action",
+        "Prouver ta valeur quand c'est difficile"
+      ],
+      "distress1": "Quand le stress monte, tu peux avoir tendance à t'appuyer sur les autres pour atteindre ton but",
+      "distress2": "Sous pression, il peut t'arriver de tester les limites et de prendre des risques un peu trop grands",
+      "distress3": "Quand tu es à bout, tu peux dire ou faire des choses qui blessent les autres, sans t'en rendre compte sur le moment",
+      "description": "Ta personnalité est tournée vers l'action, le défi et la réussite. Tu te sens à ton aise dans les situations à fort enjeu. Dans ton sport, tu montes en puissance dans les moments décisifs et tu es à l'aise quand d'autres se figent.",
+      "phase_description": "En ce moment, tu as un fort besoin d'action et de défi. Les environnements trop calmes ou trop cadrés te donnent l'impression d'étouffer.",
+      "coaching": [
+        "Ça t'aide quand on te propose des défis clairs avec de vrais enjeux",
+        "Tu préfères qu'on soit direct, sans longs discours",
+        "Tu avances mieux quand tu as de la liberté d'action dans un cadre défini",
+        "La compétition, même amicale, est un de tes meilleurs moteurs de motivation"
+      ],
+      "communication": [
+        "Ton canal préféré : le direct et l'action",
+        "Tu réagis bien aux défis lancés de façon bienveillante",
+        "Tu apprécies les messages courts et précis",
+        "Tu aimes qu'on valorise tes initiatives et ton courage"
+      ],
+      "sport_conseils": [
+        "Appuie-toi sur ta capacité à donner le meilleur de toi sous pression, notamment les jours de match",
+        "Apprends à doser ta prise de risque : distingue le courage de l'imprudence",
+        "Soigne ta relation avec tes coéquipiers : trop d'individualisme peut t'isoler",
+        "Prends conscience de l'effet de tes actes et de tes mots sur les autres"
+      ]
+    }
+  }
+}

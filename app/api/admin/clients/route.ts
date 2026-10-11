@@ -4,6 +4,7 @@ import { apiAdmin } from '@/lib/server/guards'
 import { cleanEmail, cleanText, json, readJson } from '@/lib/server/http'
 import { generatePassword, PASSWORD_MIN, validPassword } from '@/lib/server/password'
 import { isCategory } from '@/lib/format'
+import { isMinorCategory } from '@/lib/minor'
 
 export const dynamic = 'force-dynamic'
 
@@ -25,7 +26,7 @@ export async function POST(req: Request) {
   if (!email) return json({ error: 'email-invalide' }, 400)
   if (!isCategory(category)) return json({ error: 'categorie-invalide' }, 400)
   const guardianConsent = body.guardianConsent === true
-  if (category === 'ado-etudes' && !guardianConsent) return json({ error: 'accord-representant-requis' }, 400)
+  if (isMinorCategory(category) && !guardianConsent) return json({ error: 'accord-representant-requis' }, 400)
 
   let password: string
   if (body.password === undefined || body.password === null || body.password === '') {

@@ -5,12 +5,13 @@ export const SIGNATURE = 'A4P Mental, Alexandre Griffet'
 export const APP_NAME = 'A4P PCM'
 export const REPORT_TITLE = 'PCM Personnalité et Communication'
 
-/** Libellés des quatre catégories, tels que définis dans le cahier des charges. */
+/** Libellés des cinq catégories, tels que définis dans le cahier des charges. */
 const LABELS: Record<Category, string> = {
   'adulte-sport': 'Adulte sportif',
   'adulte-hors-sport': 'Adulte, hors sport',
   manager: 'Manager',
   'ado-etudes': 'Adolescent, études',
+  'ado-sport': 'Adolescent, sport',
 }
 
 export const CATEGORIES = AUDIENCES.map((a) => ({ id: a.id as Category, label: LABELS[a.id as Category] }))

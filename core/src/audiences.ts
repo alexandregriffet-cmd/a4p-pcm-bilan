@@ -1,4 +1,4 @@
-export type AudienceId = 'adulte-sport' | 'ado-etudes' | 'adulte-hors-sport' | 'manager'
+export type AudienceId = 'adulte-sport' | 'ado-etudes' | 'ado-sport' | 'adulte-hors-sport' | 'manager'
 export type Adresse = 'tu' | 'vous'
 
 export interface Audience {
@@ -19,6 +19,12 @@ export const AUDIENCES: readonly Audience[] = [
     id: 'ado-etudes',
     label: 'Adolescent et études',
     description: 'Adolescents et étudiants, pour comprendre leur fonctionnement mental face aux études, aux contrôles et aux choix d\'orientation.',
+    adresse: 'tu',
+  },
+  {
+    id: 'ado-sport',
+    label: 'Adolescent sportif',
+    description: 'Adolescents sportifs, pour comprendre leur fonctionnement mental dans leur pratique : entraînements, matchs et compétitions.',
     adresse: 'tu',
   },
   {

@@ -4,6 +4,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import type { ClientSummary, DraftAnswers, Profile, StoredResult } from '@/lib/types'
 import { DbError, type ClientPatch, type Db, type NewClientInput, type NewResultInput } from './db'
+import { isMinorCategory } from '@/lib/minor'
 
 /**
  * Stockage du mode de test local (NEXT_PUBLIC_LOCAL_TEST=1) : un fichier JSON sur le serveur de test.
@@ -243,7 +244,7 @@ export const localDb: Db = {
     if (!p || p.role !== 'client' || !p.active || !p.consentAt) throw new DbError('refused')
     if (p.category !== input.category) throw new DbError('refused')
     if (input.attempt > p.attemptsAllowed || input.attempt !== mine.length + 1) throw new DbError('refused')
-    if (p.category === 'ado-etudes' && !p.guardianConsent) throw new DbError('refused')
+    if (isMinorCategory(p.category) && !p.guardianConsent) throw new DbError('refused')
     const row = {
       id: randomUUID(),
       userId: input.userId,

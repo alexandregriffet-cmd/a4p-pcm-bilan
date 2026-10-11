@@ -11,6 +11,7 @@ type Profile = PcmTypeData & { type: PcmType }
 const ADVICE_TITLE: Record<string, string> = {
   'adulte-sport': 'Conseils pour la pratique sportive',
   'ado-etudes': 'Conseils pour les études',
+  'ado-sport': 'Conseils pour la pratique sportive',
   'adulte-hors-sport': 'Conseils pour la vie professionnelle et personnelle',
   manager: 'Conseils pour le management',
 }

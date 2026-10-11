@@ -55,6 +55,7 @@ const CATS = {
   'adulte-hors-sport': { label: 'Adulte, hors sport', tu: false },
   manager: { label: 'Manager', tu: false },
   'ado-etudes': { label: 'Adolescent, études', tu: true },
+  'ado-sport': { label: 'Adolescent, sport', tu: true },
 }
 const TYPES = ['architecte', 'connecteur', 'guerrier', 'visionnaire', 'creatif', 'competiteur']
 const LABELS = ['Architecte', 'Connecteur', 'Guerrier', 'Visionnaire', 'Créatif', 'Compétiteur']
@@ -159,7 +160,7 @@ async function createClient(admin, { first, last, email, category, guardian }) {
   await admin.fill('#c-last', last)
   await admin.fill('#c-email', email)
   await admin.selectOption('#c-cat', category)
-  if (category === 'ado-etudes') {
+  if (/^ado-/.test(category)) {
     const btn = admin.locator('button[type=submit]')
     check(`création ado: bouton désactivé sans l'accord du représentant légal`, await btn.isDisabled())
     if (guardian) await admin.check('text=Accord du représentant légal recueilli')
@@ -254,6 +255,7 @@ async function finishAndValidate(page) {
     ['adulte-hors-sport', 'Hugo', 'Horssport', 'hugo.horssport@exemple.fr', 202],
     ['manager', 'Manon', 'Manager', 'manon.manager@exemple.fr', 303],
     ['ado-etudes', 'Léa', 'Adolescente', 'lea.ado@exemple.fr', 404],
+    ['ado-sport', 'Noah', 'Junior', 'noah.junior@exemple.fr', 505],
   ]
   for (const [cat, first, last, email, seed] of spec) {
     const c = await createClient(admin, { first, last, email, category: cat, guardian: true })
@@ -297,7 +299,7 @@ async function finishAndValidate(page) {
   await admin.screenshot({ path: path.join(SHOTS, '05-fiche-1280.png'), fullPage: true })
 
   await admin.goto(BASE + '/admin')
-  check('tableau de bord: 4 clients, 4 pas commencés', (await admin.textContent('[data-testid=stat-clients]')).trim() === '4' && (await admin.textContent('[data-testid=stat-pas-commence]')).trim() === '4')
+  check('tableau de bord: 5 clients, 5 pas commencés', (await admin.textContent('[data-testid=stat-clients]')).trim() === '5' && (await admin.textContent('[data-testid=stat-pas-commence]')).trim() === '5')
 
   /* ---------- 2. Clients : consentement, passation, remerciement (4 catégories) ---------- */
   const clientSessions = {}
@@ -318,7 +320,7 @@ async function finishAndValidate(page) {
     check(`consentement (${cat}): vouvoiement/tutoiement conforme`, tu ? /Ton accès|Prends|tes réponses/.test(consentText) && !/\bvotre\b|\bvos\b/i.test(consentText) : /Votre accès|vos réponses/.test(consentText) && !/\btu\b|\bton\b|\bta\b|\btes\b/i.test(consentText))
     const go = page.locator('button:has-text("Accéder à mon test")')
     check(`consentement (${cat}): bouton désactivé tant que la case n'est pas cochée`, await go.isDisabled())
-    if (cat === 'ado-etudes') {
+    if (/^ado-/.test(cat)) {
       const guardian = page.locator('.minor-box input[type=checkbox]')
       check('consentement ado: case du représentant légal cochée et non modifiable', (await guardian.isChecked()) && (await guardian.isDisabled()))
     } else {
@@ -461,7 +463,7 @@ async function finishAndValidate(page) {
 
   /* ---------- 4. Administrateur: tableau de bord et résultats des 4 clients ---------- */
   await admin.goto(BASE + '/admin')
-  check('tableau de bord: 4 terminés', (await admin.textContent('[data-testid=stat-termine]')).trim() === '4' && (await admin.textContent('[data-testid=stat-pas-commence]')).trim() === '0')
+  check('tableau de bord: 5 terminés', (await admin.textContent('[data-testid=stat-termine]')).trim() === '5' && (await admin.textContent('[data-testid=stat-pas-commence]')).trim() === '0')
   await admin.setViewportSize({ width: 375, height: 800 })
   await admin.screenshot({ path: path.join(SHOTS, '04-dashboard-375.png'), fullPage: true })
   await noHScroll(admin, 'tableau de bord 375')
@@ -745,7 +747,7 @@ async function finishAndValidate(page) {
     check('CSV: UTF-8 avec BOM', buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf)
     const lines = csv.replace(/^﻿/, '').trim().split('\r\n')
     check('CSV: séparateur point-virgule et en-tête', lines[0].startsWith('Nom;E-mail;Catégorie;Statut;Date de passage;Passages;Profil de base;Profil de phase;Architecte (%);Connecteur (%)'), lines[0])
-    check(`CSV: une ligne par client (${lines.length - 1})`, lines.length - 1 === 6, String(lines.length))
+    check(`CSV: une ligne par client (${lines.length - 1})`, lines.length - 1 === 7, String(lines.length))
     const rowL = lines.find((l) => l.includes('camille.sportif@exemple.fr'))
     check('CSV: ligne de Camille avec ses pourcentages', rowL && rowL.includes(clients['adulte-sport'].exp.base) && rowL.endsWith(TYPES.map((t) => clients['adulte-sport'].exp.percents[t]).join(';')), rowL)
     fs.writeFileSync(path.join(SHOTS, 'synthese.csv'), buf)
@@ -756,7 +758,7 @@ async function finishAndValidate(page) {
     await admin.click('[data-testid=csv-link]')
     const d = await dl
     check('CSV: téléchargement depuis la page Exports', /synthese-pcm-\d{4}-\d{2}-\d{2}\.csv/.test(d.suggestedFilename()), d.suggestedFilename())
-    check('page Exports: tableau avec tous les clients', (await admin.locator('[data-testid=summary-table] tbody tr').count()) === 6)
+    check('page Exports: tableau avec tous les clients', (await admin.locator('[data-testid=summary-table] tbody tr').count()) === 7)
 
     // PDF d'un résultat
     const pdfDir = SHOTS
@@ -790,11 +792,11 @@ async function finishAndValidate(page) {
     spawnSync('pdftoppm', ['-png', '-r', '60', '-f', '1', '-l', '1', pdf2.file, path.join(SHOTS, 'pdf-synthese-p1')])
     const pdf3 = await pdfOf('/admin/export/rapports', 'rapports-complets.pdf')
     const nReports = (pdf3.text.match(/Passage du \d/g) || []).length
-    check(`PDF rapports complets: un rapport par client (${nReports} en-têtes, ${pdf3.pages} pages)`, nReports === 6, `${nReports}`)
+    check(`PDF rapports complets: un rapport par client (${nReports} en-têtes, ${pdf3.pages} pages)`, nReports === 7, `${nReports}`)
     // chaque rapport commence sur une nouvelle page
     const pagesText = pdf3.text.split('\f')
     const starts = pagesText.filter((t) => /Passage du \d/.test(t)).length
-    check('PDF rapports complets: chaque rapport démarre sur une page distincte', starts === 6, `${starts} pages avec en-tête`)
+    check('PDF rapports complets: chaque rapport démarre sur une page distincte', starts === 7, `${starts} pages avec en-tête`)
     spawnSync('pdftoppm', ['-png', '-r', '50', '-f', '1', '-l', '1', pdf3.file, path.join(SHOTS, 'pdf-rapports-p1')])
   }
 

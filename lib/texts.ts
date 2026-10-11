@@ -1,7 +1,7 @@
 import { RETENTION } from './legal'
 
 /**
- * Textes de l'espace client. Vouvoiement partout, sauf pour la catégorie ado-etudes (tutoiement).
+ * Textes de l'espace client. Vouvoiement partout, sauf pour les catégories ado-etudes et ado-sport (tutoiement).
  * Aucun libellé ne mentionne un résultat ou un profil : le client ne voit jamais sa lecture.
  */
 export interface ClientTexts {

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { CredentialsCard } from './CredentialsCard'
+import { isMinorCategory } from '@/lib/minor'
 
 const ERRORS: Record<string, string> = {
   'nom-requis': 'Le prénom et le nom sont obligatoires.',
@@ -123,7 +124,7 @@ export function NewClientForm({ categories }: { categories: { id: string; label:
           ))}
         </select>
       </div>
-      {category === 'ado-etudes' && (
+      {isMinorCategory(category) && (
         <label className="check">
           <input type="checkbox" checked={guardian} onChange={(e) => setGuardian(e.target.checked)} />
           <span>Accord du représentant légal recueilli (obligatoire pour cette catégorie)</span>
@@ -146,7 +147,7 @@ export function NewClientForm({ categories }: { categories: { id: string; label:
           {error}
         </div>
       )}
-      <button type="submit" className="btn btn-primary" disabled={busy || (category === 'ado-etudes' && !guardian)}>
+      <button type="submit" className="btn btn-primary" disabled={busy || (isMinorCategory(category) && !guardian)}>
         {busy ? 'Création...' : 'Créer le client'}
       </button>
     </form>

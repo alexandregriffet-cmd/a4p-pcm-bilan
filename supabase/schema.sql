@@ -20,7 +20,7 @@ create table if not exists public.profiles (
   email text not null,
   full_name text not null default '',
   role text not null default 'client' check (role in ('admin', 'client')),
-  category text check (category in ('adulte-sport', 'adulte-hors-sport', 'manager', 'ado-etudes')),
+  category text check (category in ('adulte-sport', 'adulte-hors-sport', 'manager', 'ado-etudes', 'ado-sport')),
   active boolean not null default true,
   guardian_consent boolean not null default false,
   consent_at timestamptz,
@@ -42,7 +42,7 @@ create table if not exists public.test_results (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references public.profiles (id) on delete cascade,
   attempt integer not null check (attempt >= 1),
-  category text not null check (category in ('adulte-sport', 'adulte-hors-sport', 'manager', 'ado-etudes')),
+  category text not null check (category in ('adulte-sport', 'adulte-hors-sport', 'manager', 'ado-etudes', 'ado-sport')),
   answers jsonb not null,
   result jsonb not null,
   created_at timestamptz not null default now(),
@@ -50,6 +50,14 @@ create table if not exists public.test_results (
 );
 
 create index if not exists test_results_user_idx on public.test_results (user_id);
+
+-- Mise a jour d'une base deja creee : ajoute la categorie ado-sport (relancer le script suffit).
+alter table public.profiles drop constraint if exists profiles_category_check;
+alter table public.profiles add constraint profiles_category_check
+  check (category in ('adulte-sport', 'adulte-hors-sport', 'manager', 'ado-etudes', 'ado-sport'));
+alter table public.test_results drop constraint if exists test_results_category_check;
+alter table public.test_results add constraint test_results_category_check
+  check (category in ('adulte-sport', 'adulte-hors-sport', 'manager', 'ado-etudes', 'ado-sport'));
 
 create table if not exists public.admin_notes (
   user_id uuid primary key references public.profiles (id) on delete cascade,
@@ -143,7 +151,7 @@ begin
   if p.category is distinct from new.category then
     raise exception 'La categorie du resultat ne correspond pas a celle du client' using errcode = 'P0001';
   end if;
-  if p.category = 'ado-etudes' and not p.guardian_consent then
+  if p.category in ('ado-etudes', 'ado-sport') and not p.guardian_consent then
     raise exception 'Accord du representant legal absent' using errcode = 'P0001';
   end if;
   select count(*) into n_results from public.test_results where user_id = new.user_id;

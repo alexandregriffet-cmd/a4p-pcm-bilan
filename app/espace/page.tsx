@@ -8,6 +8,7 @@ import { clientTexts } from '@/lib/texts'
 import { getDb } from '@/lib/server/db'
 import { getCaller } from '@/lib/server/guards'
 import { clientQuestions } from '@/lib/server/questions'
+import { isMinorCategory } from '@/lib/minor'
 
 export const dynamic = 'force-dynamic'
 
@@ -51,7 +52,7 @@ export default async function EspacePage() {
   }
 
   if (state === 'consent') {
-    return <ConsentForm t={tx.consent} minor={me.category === 'ado-etudes'} />
+    return <ConsentForm t={tx.consent} minor={isMinorCategory(me.category)} />
   }
 
   // state === 'ready'

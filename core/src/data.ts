@@ -2,6 +2,7 @@ import commonJson from '../data/common.json'
 
 import adulteSportPcm from '../data/adulte-sport/pcm.json'
 import adoEtudesPcm from '../data/ado-etudes/pcm.json'
+import adoSportPcm from '../data/ado-sport/pcm.json'
 import adulteHorsSportPcm from '../data/adulte-hors-sport/pcm.json'
 import managerPcm from '../data/manager/pcm.json'
 
@@ -17,6 +18,7 @@ export const common = commonJson as unknown as CommonData
 const REGISTRY: { [A in AudienceId]: Partial<Record<TestId, unknown>> } = {
   'adulte-sport': { pcm: adulteSportPcm },
   'ado-etudes': { pcm: adoEtudesPcm },
+  'ado-sport': { pcm: adoSportPcm },
   'adulte-hors-sport': { pcm: adulteHorsSportPcm },
   manager: { pcm: managerPcm },
 }

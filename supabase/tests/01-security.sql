@@ -225,6 +225,19 @@ call t.check('cascade: resultats supprimes', '0', t.cnt($$select * from public.t
 call t.check('cascade: brouillon supprime', '0', t.cnt($$select * from public.test_drafts where user_id = 'aaaaaaaa-0000-0000-0000-00000000000a'$$)::text);
 call t.check('cascade: note supprimee', '0', t.cnt($$select * from public.admin_notes where user_id = 'aaaaaaaa-0000-0000-0000-00000000000a'$$)::text);
 
+-- Categorie ado-sport : meme exigence d'accord du representant legal
+reset role;
+update public.profiles set category = 'ado-sport', consent_at = now(), guardian_consent = false where id = :clientD;
+set role service_role;
+call t.check('ado-sport: sans accord du representant legal refuse', 'err:P0001',
+  t.try($$insert into public.test_results (user_id, attempt, category, answers, result) values ('aaaaaaaa-0000-0000-0000-00000000000d', 1, 'ado-sport', '{}', '{}')$$));
+reset role;
+update public.profiles set guardian_consent = true where id = :clientD;
+set role service_role;
+call t.check('ado-sport: avec accord accepte', 'ok:1',
+  t.try($$insert into public.test_results (user_id, attempt, category, answers, result) values ('aaaaaaaa-0000-0000-0000-00000000000d', 1, 'ado-sport', '{}', '{}')$$));
+reset role;
+
 -- Bilan
 \set QUIET 0
 select case when ok then 'PASS' else 'FAIL' end as resultat, label, expected as attendu, got as obtenu from t.log order by n;

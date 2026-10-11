@@ -6,6 +6,7 @@ import { CATEGORIES, categoryLabel, formatDate, formatDateTime } from '@/lib/for
 import { getDb } from '@/lib/server/db'
 import { isUuid, requireAdminPage } from '@/lib/server/guards'
 import { STATUS_LABEL, statusOf } from '@/lib/types'
+import { isMinorCategory } from '@/lib/minor'
 
 export const dynamic = 'force-dynamic'
 
@@ -42,7 +43,7 @@ export default async function ClientPage({ params }: { params: { id: string } })
             <div><dt>Statut</dt><dd data-testid="client-status">{STATUS_LABEL[status]}{!p.active ? ' (accès désactivé)' : ''}</dd></div>
             <div><dt>Compte créé le</dt><dd>{formatDate(p.createdAt)}</dd></div>
             <div><dt>Consentement</dt><dd>{p.consentAt ? formatDateTime(p.consentAt) : 'Pas encore donné'}</dd></div>
-            {p.category === 'ado-etudes' && <div><dt>Accord du représentant légal</dt><dd>{p.guardianConsent ? 'Recueilli' : 'Non confirmé'}</dd></div>}
+            {isMinorCategory(p.category) && <div><dt>Accord du représentant légal</dt><dd>{p.guardianConsent ? 'Recueilli' : 'Non confirmé'}</dd></div>}
             <div><dt>Passages autorisés</dt><dd>{p.attemptsAllowed} (utilisés : {results.length})</dd></div>
             {draftAnswered > 0 && !finished && <div><dt>Brouillon</dt><dd>{draftAnswered} situation(s) renseignée(s)</dd></div>}
             {latest && <div><dt>Dernier passage</dt><dd>{formatDate(latest.createdAt)}</dd></div>}

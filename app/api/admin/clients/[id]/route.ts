@@ -3,6 +3,7 @@ import { DbError, getDb, type ClientPatch } from '@/lib/server/db'
 import { apiAdmin, isUuid } from '@/lib/server/guards'
 import { json, readJson } from '@/lib/server/http'
 import { isCategory } from '@/lib/format'
+import { isMinorCategory } from '@/lib/minor'
 
 export const dynamic = 'force-dynamic'
 
@@ -25,7 +26,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
     if (body.category !== target.category) {
       if (count >= target.attemptsAllowed) return json({ error: 'test-termine' }, 409)
       const guardian = body.guardianConsent === true || target.guardianConsent
-      if (body.category === 'ado-etudes' && !guardian) return json({ error: 'accord-representant-requis' }, 400)
+      if (isMinorCategory(body.category) && !guardian) return json({ error: 'accord-representant-requis' }, 400)
       patch.category = body.category
       if (body.guardianConsent === true) patch.guardianConsent = true
     }

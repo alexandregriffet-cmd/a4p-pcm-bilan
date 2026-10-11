@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { CredentialsCard } from './CredentialsCard'
+import { isMinorCategory } from '@/lib/minor'
 
 interface Props {
   id: string
@@ -85,7 +86,7 @@ export function ClientActions({ id, email, category, categories, active, guardia
 
   async function changeCategory() {
     const body: Record<string, unknown> = { category: newCat }
-    if (newCat === 'ado-etudes' && !guardianConsent) body.guardianConsent = guardianTick
+    if (isMinorCategory(newCat) && !guardianConsent) body.guardianConsent = guardianTick
     const r = await call(`/api/admin/clients/${id}`, 'PATCH', body)
     if (!r.ok) return fail(r.data.error)
     setMsg({ kind: 'ok', text: 'Catégorie modifiée. Le brouillon éventuel a été effacé.' })
@@ -119,7 +120,7 @@ export function ClientActions({ id, email, category, categories, active, guardia
     window.location.assign('/admin')
   }
 
-  const needsGuardianTick = newCat === 'ado-etudes' && !guardianConsent
+  const needsGuardianTick = isMinorCategory(newCat) && !guardianConsent
   const catUnchanged = newCat === category
 
   return (
@@ -167,7 +168,7 @@ export function ClientActions({ id, email, category, categories, active, guardia
             )}
           </>
         )}
-        {category === 'ado-etudes' && !guardianConsent && (
+        {isMinorCategory(category) && !guardianConsent && (
           <div style={{ marginTop: 12 }}>
             <p className="muted small">L&apos;accord du représentant légal n&apos;est pas confirmé : le test n&apos;est pas accessible.</p>
             <Confirm label="Confirmer l'accord du représentant légal" confirmLabel="Oui, accord recueilli" onConfirm={confirmGuardian} testId="guardian" />

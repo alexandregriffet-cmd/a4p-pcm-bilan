@@ -16,8 +16,9 @@ Stack : Next.js 14.2.15 (App Router), React 18.3.1, TypeScript 5.6.3, @supabase/
 | adulte-hors-sport | Adulte, hors sport | vouvoiement |
 | manager | Manager | vouvoiement |
 | ado-etudes | Adolescent, études | tutoiement (espace client uniquement) |
+| ado-sport | Adolescent, sport | tutoiement (espace client uniquement) |
 
-Pour ado-etudes, l'administrateur doit confirmer l'accord du représentant légal : sans cela le test n'est pas accessible.
+Pour ado-etudes et ado-sport, l'administrateur doit confirmer l'accord du représentant légal : sans cela le test n'est pas accessible.
 
 ## Installation et lancement
 
