@@ -63,29 +63,80 @@ const LABELS = ['Architecte', 'Connecteur', 'Guerrier', 'Visionnaire', 'Créatif
 function loadData(cat) {
   return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'core', 'data', cat, 'pcm.json'), 'utf8'))
 }
+/** Ordre de passation : une situation de valorisation après chaque groupe de trois situations de style (indices dans qsOf). */
+function seq(cat) {
+  const d = loadData(cat)
+  const n = d.questions.length
+  const out = []
+  let v = 0
+  for (let i = 0; i < n; i++) {
+    out.push(i)
+    if ((i + 1) % 3 === 0 && v < (d.valorisation || []).length) out.push(n + v++)
+  }
+  while (n + v < n + (d.valorisation || []).length) out.push(n + v++)
+  return out
+}
+/** Les 72 situations de style puis les 24 situations de valorisation (ordre de données, pas de passation). */
+function qsOf(cat) {
+  const d = loadData(cat)
+  return [...d.questions, ...(d.valorisation || [])]
+}
 
-/** Réponses déterministes : 3 choix distincts par situation. */
+/** Réponses déterministes : de 3 à 6 choix distincts par situation (72 de style, puis 24 de valorisation). */
 function makeAnswers(cat, seed) {
   const data = loadData(cat)
+  const qs = qsOf(cat)
   const rnd = mulberry32(seed)
-  const answers = data.questions.map(() => {
+  const answers = qs.map(() => {
     const idx = [0, 1, 2, 3, 4, 5]
     for (let i = idx.length - 1; i > 0; i--) {
       const j = Math.floor(rnd() * (i + 1))
       ;[idx[i], idx[j]] = [idx[j], idx[i]]
     }
-    return idx.slice(0, 3)
+    const r = rnd()
+    return idx.slice(0, r < 0.5 ? 3 : r < 0.75 ? 4 : r < 0.9 ? 5 : 6)
   })
-  // Résultat attendu, recalculé ici indépendamment du noyau : 6, 4 et 2 points, maximum 432.
-  const pts = Object.fromEntries(TYPES.map((t) => [t, 0]))
-  data.questions.forEach((q, i) => {
-    answers[i].forEach((o, rank) => {
-      pts[q.options[o].type] += [6, 4, 2][rank]
-    })
-  })
-  const percents = Object.fromEntries(TYPES.map((t) => [t, Math.round((pts[t] / (data.questions.length * 6)) * 100)]))
-  const order = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'core', 'data', 'common.json'), 'utf8')).seuils.pcm.typesOrder.slice().sort((a, b) => pts[b] - pts[a])
-  return { answers, percents, base: data.types[order[0]].label, phase: data.types[order[1]].label }
+  // Résultat attendu, recalculé ici indépendamment du noyau : 6, 4, 3, 2, 1, 0 points du 1er au 6e rang,
+  // options non retenues à égalité sur la moyenne des rangs restants, maximum 6 points par situation.
+  const RP = [6, 4, 3, 2, 1, 0]
+  const scoreRange = (from, to) => {
+    const pts = Object.fromEntries(TYPES.map((t) => [t, 0]))
+    let total = 0
+    for (let i = from; i < to; i++) {
+      const q = qs[i]
+      const n = answers[i].length
+      answers[i].forEach((o, rank) => {
+        pts[q.options[o].type] += RP[rank]
+      })
+      const rest = RP.slice(n)
+      const share = rest.length ? rest.reduce((a, b) => a + b, 0) / rest.length : 0
+      q.options.forEach((opt, o) => {
+        if (!answers[i].includes(o)) pts[opt.type] += share
+      })
+      total += n
+    }
+    return { pts, total, count: to - from }
+  }
+  const nStyle = data.questions.length
+  const st = scoreRange(0, nStyle)
+  const mo = scoreRange(nStyle, qs.length)
+  const percents = Object.fromEntries(TYPES.map((t) => [t, Math.round((st.pts[t] / (nStyle * 6)) * 100)]))
+  const typesOrder = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'core', 'data', 'common.json'), 'utf8')).seuils.pcm.typesOrder
+  const order = typesOrder.slice().sort((a, b) => st.pts[b] - st.pts[a])
+  const morder = typesOrder.slice().sort((a, b) => mo.pts[b] - mo.pts[a])
+  const phaseType = morder[0] === order[0] ? morder[1] : morder[0]
+  const momentPercents = Object.fromEntries(TYPES.map((t) => [t, Math.round((mo.pts[t] / (mo.count * 6)) * 100)]))
+  return {
+    answers,
+    avg: Math.round((st.total / nStyle) * 100) / 100,
+    percents,
+    momentPercents,
+    base: data.types[order[0]].label,
+    phase: data.types[phaseType].label,
+    resource: data.types[order[1]].label,
+    momentTop: data.types[morder[0]].label,
+    inBase: morder[0] === order[0],
+  }
 }
 
 /** Retire des textes les phrases de situations (elles contiennent légitimement des mots comme « résultat »). */
@@ -98,7 +149,7 @@ function stripQuestions(text, cats) {
     return [s, html, j1, j2]
   }
   for (const c of cats) {
-    for (const q of loadData(c).questions) {
+    for (const q of qsOf(c)) {
       for (const s of [q.situation, ...q.options.map((o) => o.text)]) for (const v of variants(s)) out = out.split(v).join(' ')
     }
   }
@@ -204,7 +255,7 @@ function displayOrderJs(seed, n) {
 
 /* Les options sont affichées dans un ordre propre à chaque client : on retrouve l'option voulue par son texte. */
 async function clickOrig(page, cat, qi, o) {
-  const text = loadData(cat).questions[qi].options[o].text.replace(/\s+/g, ' ').trim()
+  const text = qsOf(cat)[qi].options[o].text.replace(/\s+/g, ' ').trim()
   const idx = await page.$$eval('.opt', (els, t) => els.findIndex((e) => e.lastElementChild.textContent.replace(/\s+/g, ' ').trim() === t), text)
   if (idx < 0) throw new Error(`option introuvable : ${text.slice(0, 40)}`)
   await page.click(`[data-opt="${idx}"]`)
@@ -212,9 +263,10 @@ async function clickOrig(page, cat, qi, o) {
 
 /* Passation : répond de la situation `from` à la dernière, puis ouvre le récapitulatif. */
 async function answerFrom(page, cat, answers, from) {
+  const order = seq(cat)
   for (let i = from; i < answers.length; i++) {
     const txt = await page.textContent('[data-testid=situation]')
-    for (const o of answers[i]) await clickOrig(page, cat, i, o)
+    for (const o of answers[order[i]]) await clickOrig(page, cat, order[i], o)
     await page.click('.btn-next')
     void txt
   }
@@ -384,7 +436,7 @@ async function finishAndValidate(page) {
         await page.screenshot({ path: path.join(SHOTS, '07-passation-classee-375.png') })
         // les libellés 1er, 2e, 3e sont visibles
         const ranks = await page.$$eval('.opt .rk', (els) => els.map((e) => e.textContent.trim()).filter(Boolean))
-        check('passation: libellés 1er, 2e, 3e affichés', ranks.sort().join(',') === '1er,2e,3e', ranks.join(','))
+        check('passation: libellés 1er, 2e, 3e affichés', ranks.sort().join(',') === ['1er', '2e', '3e', '4e', '5e', '6e'].slice(0, c.exp.answers[0].length).sort().join(','), ranks.join(','))
         check('passation: bouton suivant actif seulement quand le classement est complet', !(await page.locator('.btn-next').isDisabled()))
       }
       await page.click('.btn-next')
@@ -395,7 +447,7 @@ async function finishAndValidate(page) {
     await page.reload()
     await page.waitForSelector('[data-testid=situation]')
     const resumeText = await page.textContent('[data-testid=situation]')
-    check(`passation (${cat}): reprise après rechargement à la 4e situation`, resumeText.trim() === loadData(cat).questions[3].situation.trim(), resumeText.slice(0, 50))
+    check(`passation (${cat}): reprise après rechargement à la 4e situation`, resumeText.trim() === qsOf(cat)[seq(cat)[3]].situation.trim(), resumeText.slice(0, 50))
     check(`passation (${cat}): message de reprise`, /retrouvées/.test(await page.innerText('body')))
     // retour arrière
     await page.click('.btn-back')
@@ -438,7 +490,7 @@ async function finishAndValidate(page) {
     check(`reconnexion (${cat}): même page de remerciement`, (await page.locator('[data-testid=thanks-title]').count()) === 1)
 
     // le client ne peut pas repasser: interface et appels directs
-    const sub = await api(page, 'POST', '/api/test/submit', { answers: Object.fromEntries(loadData(cat).questions.map((q, i) => [q.id, c.exp.answers[i]])) })
+    const sub = await api(page, 'POST', '/api/test/submit', { answers: Object.fromEntries(qsOf(cat).map((q, i) => [q.id, c.exp.answers[i]])) })
     check(`repasser (${cat}): appel direct à /api/test/submit refusé (409)`, sub.status === 409, `${sub.status} ${sub.text}`)
     check(`repasser (${cat}): la réponse ne contient aucune donnée de lecture`, !LEAK_RE.test(sub.text))
     const dr = await api(page, 'PUT', '/api/test/draft', { answers: {} })
@@ -529,11 +581,16 @@ async function finishAndValidate(page) {
     const txt = (await admin.textContent('.report')).replace(/\s+/g, ' ')
     check(`résultat (${cat}): en-tête nom, e-mail, catégorie, date`, txt.includes(c.name) && txt.includes(c.email) && txt.includes(CATS[cat].label) && /Date de passage/.test(txt))
     check(`résultat (${cat}): profil fondamental = ${c.exp.base}`, new RegExp(`Profil fondamental\\s*${c.exp.base}`).test(txt), txt.slice(0, 400))
-    check(`résultat (${cat}): profil du moment = ${c.exp.phase}`, new RegExp(`Profil du moment\\s*${c.exp.phase}`).test(txt))
+    check(`résultat (${cat}): profil du moment = ${c.exp.phase}`, new RegExp(`Moteur du moment\\s*${c.exp.phase}`).test(txt))
     // pourcentages affichés = pourcentages recalculés indépendamment
     const shown = await admin.$$eval('.dist-row', (rows) => rows.map((r) => ({ label: r.querySelector('strong').textContent.trim(), pct: r.querySelector('.dist-head > strong').textContent.trim() })))
-    const okPct = shown.length === 6 && shown.every((s) => s.pct === `${c.exp.percents[TYPES[LABELS.indexOf(s.label)]]} %`)
+    const okPct = shown.length === 12 && shown.slice(0, 6).every((s) => s.pct === `${c.exp.percents[TYPES[LABELS.indexOf(s.label)]]} %`)
     check(`résultat (${cat}): répartition des six profils exacte`, okPct, JSON.stringify(shown) + JSON.stringify(c.exp.percents))
+    const okMoment = shown.slice(6).every((s) => s.pct === `${c.exp.momentPercents[TYPES[LABELS.indexOf(s.label)]]} %`)
+    const DET = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'core', 'data', 'detail.json'), 'utf8'))
+    const phaseKey = TYPES[LABELS.indexOf(c.exp.phase)]
+    check(`résultat (${cat}): moteur du moment en détail (${c.exp.phase})`, txt.includes('Le moteur du moment en détail') && txt.includes(DET[phaseKey].moment.attente) && txt.includes('Plan sur quatorze jours') && txt.includes("Questions pour l'entretien") && !/\bbesoins?\b/i.test(txt.slice(txt.indexOf('Le moteur du moment en détail'), txt.indexOf('Fiche comparée'))), txt.slice(txt.indexOf('Le moteur du moment en détail'), txt.indexOf('Le moteur du moment en détail') + 200))
+    check(`résultat (${cat}): classement de valorisation exact (moteur du moment ${c.exp.momentTop})`, okMoment && txt.includes('Ce qui valorise la personne en ce moment') && txt.includes('Ressource'), JSON.stringify(shown.slice(6)) + JSON.stringify(c.exp.momentPercents))
     for (const w of ['Moteurs', 'Sous pression', 'Signaux de tension', 'Tension en montée', 'Saturation', 'Recommandations de coaching', 'Communication', 'Personne ne se résume à un seul profil', 'pas un diagnostic']) {
       if (!txt.includes(w)) check(`résultat (${cat}): contient « ${w} »`, false)
     }
@@ -611,7 +668,7 @@ async function finishAndValidate(page) {
     // appels directs avant consentement: refus
     const mgr = loadData('manager')
     const a = makeAnswers('manager', 606)
-    const body = { answers: Object.fromEntries(mgr.questions.map((q, i) => { const ord = displayOrderJs(`${c.id}|1|${q.id}`, 6); return [q.id, a.answers[i].map((o) => ord.indexOf(o))] })), category: 'ado-etudes', audience: 'ado-etudes' }
+    const body = { answers: Object.fromEntries(qsOf('manager').map((q, i) => { const ord = displayOrderJs(`${c.id}|1|${q.id}`, 6); return [q.id, a.answers[i].map((o) => ord.indexOf(o))] })), category: 'ado-etudes', audience: 'ado-etudes' }
     let r = await api(page, 'POST', '/api/test/submit', body)
     check('soumission avant consentement refusée (403)', r.status === 403, `${r.status} ${r.text}`)
     await page.check('.card > label.check input[type=checkbox]')
@@ -620,6 +677,13 @@ async function finishAndValidate(page) {
     // incomplet
     r = await api(page, 'POST', '/api/test/submit', { answers: { Q1: [0, 1, 2] } })
     check('soumission incomplète refusée (422)', r.status === 422, `${r.status} ${r.text}`)
+    r = await api(page, 'POST', '/api/test/submit', { answers: { Q1: [0, 1] } })
+    check('moins de trois choix refusé (400)', r.status === 400, `${r.status}`)
+    r = await api(page, 'POST', '/api/test/submit', { answers: { Q1: [0, 1, 2, 3, 4, 5, 0] } })
+    check('plus de six choix refusé (400)', r.status === 400, `${r.status}`)
+    r = await api(page, 'PUT', '/api/test/draft', { answers: { Q1: [0, 1, 2, 3, 4, 5] } })
+    check('brouillon à six choix accepté', r.status === 200, `${r.status}`)
+    r = await api(page, 'PUT', '/api/test/draft', { answers: {} })
     r = await api(page, 'POST', '/api/test/submit', { answers: { Q1: [0, 0, 2] } })
     check('classement invalide (doublon) refusé (400)', r.status === 400, `${r.status}`)
     r = await api(page, 'PUT', '/api/test/draft', { answers: { Q1: [9] } })
@@ -640,6 +704,7 @@ async function finishAndValidate(page) {
     check('la catégorie envoyée par le client a été ignorée (résultat en Manager)', t.includes('Manager') && !t.includes('Adolescent'), t.slice(0, 200))
     check('résultat calculé par le serveur conforme au calcul indépendant (ordre aléatoire inclus)', t.includes(a.base))
     check('rapport: fiabilité de la lecture (netteté et cohérence) affichée', /Fiabilité de cette lecture/.test(t) && /Netteté/.test(t) && /Cohérence des réponses/.test(t) && /indice \d+ sur 100/.test(t), t.match(/Cohérence des réponses[^\n]*/)?.[0])
+    check('rapport: reconnaissance par profil et nombre moyen de choix affichés', /Reconnaissance/.test(t) && /choix par situation/.test(t) && t.includes(String(a.avg).replace('.', ',')), t.match(/Reconnaissance[^\n]*/)?.[0])
     await ctx.close()
   }
 

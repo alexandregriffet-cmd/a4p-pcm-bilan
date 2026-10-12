@@ -5,7 +5,7 @@ import { accessOf } from '@/lib/access'
 import { DbError, getDb } from '@/lib/server/db'
 import { apiClient } from '@/lib/server/guards'
 import { json, readJson } from '@/lib/server/http'
-import { orderOf, pcmData } from '@/lib/server/questions'
+import { allQuestionsOf, orderOf, pcmData } from '@/lib/server/questions'
 
 export const dynamic = 'force-dynamic'
 
@@ -34,15 +34,20 @@ export async function POST(req: Request) {
   const answers: PcmAnswers = {} // index d'origine des options (calcul du résultat)
   const shown: PcmAnswers = {} // positions affichées au client (indice de cohérence)
   const attempt = count + 1
-  for (const q of data.questions) {
+  for (const q of allQuestionsOf(category)) {
     const v = (raw as Record<string, unknown>)[q.id]
     if (v === undefined) continue
-    if (!Array.isArray(v) || v.length !== 3 || !v.every((x) => Number.isInteger(x) && (x as number) >= 0 && (x as number) < q.options.length) || new Set(v).size !== 3) {
+    if (
+      !Array.isArray(v) ||
+      v.length < 3 ||
+      v.length > q.options.length ||
+      !v.every((x) => Number.isInteger(x) && (x as number) >= 0 && (x as number) < q.options.length) ||
+      new Set(v).size !== v.length
+    ) {
       return json({ error: 'reponses-invalides' }, 400)
     }
-    shown[q.id] = [v[0], v[1], v[2]] as [number, number, number]
-    const original = toOriginalIndex(v as number[], orderOf(profile.id, attempt, q.id, q.options.length))
-    answers[q.id] = [original[0], original[1], original[2]] as [number, number, number]
+    shown[q.id] = [...(v as number[])]
+    answers[q.id] = toOriginalIndex(v as number[], orderOf(profile.id, attempt, q.id, q.options.length))
   }
   if (!isCompleteTest('pcm', category, answers)) return json({ error: 'incomplet' }, 422)
 

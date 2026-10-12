@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type { PcmType, PcmTypeData } from '@core/types'
+import type { PcmResult, PcmType, PcmTypeData } from '@core/types'
 import { getAudience } from '@core/audiences'
 import { getDetail } from '@core/data'
 import { clarityPcm } from '@core/index'
@@ -27,7 +27,7 @@ const CLARITY_TEXT = {
 
 const QUALITY_TEXT = {
   bonne: 'Réponses cohérentes : aucune habitude de réponse anormale détectée.',
-  'a-verifier': 'À vérifier en entretien : certaines habitudes de réponse reviennent souvent (position ou classement répété).',
+  'a-verifier': 'À vérifier en entretien : certaines habitudes de réponse reviennent souvent (position, classement répété ou nombre de choix toujours identique).',
   faible: 'Réponses peu cohérentes : la passation a peut-être été rapide ou peu attentive. Interpréter le résultat avec prudence.',
 } as const
 
@@ -39,6 +39,75 @@ const LEAD_TITLE: Record<string, string> = {
   'ado-sport': 'En groupe et en équipe',
   'adulte-hors-sport': 'Quand la personne encadre ou est encadrée',
   manager: 'Style de management',
+}
+
+/** Lecture détaillée du moteur du moment (ce qui valorise la personne en ce moment) et de la ressource. */
+function MomentSection({ r }: { r: PcmResult }) {
+  const m = r.moment!
+  const d = getDetail(r.phaseType)
+  const base = getDetail(r.baseType)
+  const accent = TYPE_ACCENT[r.phaseType]
+  const second = m.ranking[m.ranking.findIndex((x) => x.type === r.phaseType) + 1]
+  const resource = r.resourceType && r.resourceType !== r.phaseType ? r.resourceType : undefined
+  return (
+    <section className="section page-break" aria-label="Moteur du moment en détail">
+      <h2>Le moteur du moment en détail</h2>
+      <div className="card profile-card" style={{ ['--accent' as string]: accent }}>
+        <span className="kicker" style={{ marginBottom: 4 }}>Moteur du moment</span>
+        <h2 style={{ marginBottom: 10 }}>{r.phaseProfile.label}</h2>
+        <p className="lead">{d.moment.attente}</p>
+        <p>
+          Avec {r.baseProfile.label} en profil fondamental, la personne communique {base.moment.facon}. En ce moment, elle cherche surtout {d.moment.court}.
+          {m.inBase
+            ? ` Son premier moteur du moment est son propre profil fondamental : elle est dans sa zone naturelle. Ce qui ressort ensuite est ${r.phaseProfile.label}.`
+            : ''}
+          {m.gap12 < 10 && second ? ` Une seconde attente est proche : ${second.label}, à explorer en entretien.` : ''}
+        </p>
+
+        <div className="duo">
+          <div>
+            <p className="duo-t">Quand elle est nourrie</p>
+            <List items={d.moment.nourri} />
+          </div>
+          <div>
+            <p className="duo-t">Quand elle ne l&apos;est pas</p>
+            <List items={d.moment.manque} />
+          </div>
+        </div>
+        <p className="muted small">{d.moment.vigilance}</p>
+
+        <div className="duo">
+          <div>
+            <p className="duo-t">Se nourrir au quotidien</p>
+            <List items={d.moment.se_nourrir} />
+          </div>
+          <div>
+            <p className="duo-t">Ce que l&apos;entourage peut faire</p>
+            <List items={d.moment.entourage} />
+          </div>
+        </div>
+
+        <div className="duo">
+          <div>
+            <p className="duo-t">Questions pour l&apos;entretien</p>
+            <List items={d.moment.questions} />
+          </div>
+          <div>
+            <p className="duo-t">Plan sur quatorze jours</p>
+            <List items={d.moment.plan14} />
+          </div>
+        </div>
+      </div>
+
+      {resource && (
+        <div className="card" style={{ marginTop: 14, ['--accent' as string]: TYPE_ACCENT[resource] }}>
+          <span className="kicker" style={{ marginBottom: 4 }}>Ressource</span>
+          <h3 style={{ marginTop: 0 }}>{r.ranking.find((x) => x.type === resource)?.label}</h3>
+          <p style={{ marginBottom: 0 }}>{getDetail(resource).moment.ressource}</p>
+        </div>
+      )}
+    </section>
+  )
 }
 
 function List({ items }: { items: string[] }) {
@@ -236,8 +305,8 @@ function Presentation({ person, stored, cat }: { person: ReportPerson; stored: S
       <h2 className="intro-title">À propos de ce bilan</h2>
       <div className="intro-rule" />
       <p className="intro-lead">
-        Ce bilan décrit la façon dont une personne fonctionne et communique, à partir de ses réponses à 72 situations de la vie courante. Pour chacune,
-        elle a classé ses trois réactions préférées parmi six propositions.
+        Ce bilan décrit la façon dont une personne fonctionne et communique, à partir de ses réponses à 96 situations de la vie courante. Pour chacune,
+        elle a classé, parmi six propositions, les réactions qui lui ressemblent (de trois à six).
       </p>
 
       <div className="intro-id">
@@ -385,7 +454,9 @@ export function ReportView({
       <section className="section" style={{ paddingTop: 8 }} aria-label="Synthèse">
         <h2>Synthèse du profil</h2>
         <p className="muted">
-          Le profil fondamental décrit ce qui structure la personne dans la durée. Le profil du moment décrit ce qui est particulièrement actif en ce moment.
+          {r.moment
+            ? 'Le profil fondamental décrit ce qui structure la personne dans la durée et sa façon de communiquer. Le moteur du moment décrit ce qui la valorise en ce moment.'
+            : 'Le profil fondamental décrit ce qui structure la personne dans la durée. Le profil du moment décrit ce qui est particulièrement actif en ce moment.'}
         </p>
         <div className="grid grid-2">
           <div className="card profile-card" style={{ ['--accent' as string]: TYPE_ACCENT[r.baseType] }}>
@@ -394,9 +465,15 @@ export function ReportView({
             <p className="muted small" style={{ margin: 0 }}>Le plus présent dans les réponses</p>
           </div>
           <div className="card profile-card" style={{ ['--accent' as string]: TYPE_ACCENT[r.phaseType] }}>
-            <span className="kicker" style={{ marginBottom: 2 }}>Profil du moment</span>
+            <span className="kicker" style={{ marginBottom: 2 }}>{r.moment ? 'Moteur du moment' : 'Profil du moment'}</span>
             <p className="profile-name">{r.phaseProfile.label}</p>
-            <p className="muted small" style={{ margin: 0 }}>Le deuxième, actif en ce moment</p>
+            <p className="muted small" style={{ margin: 0 }}>
+              {r.moment
+                ? r.moment.inBase
+                  ? 'Le plus valorisant après le profil fondamental, qui est aussi le premier en ce moment'
+                  : 'Ce qui valorise le plus en ce moment'
+                : 'Le deuxième, actif en ce moment'}
+            </p>
           </div>
         </div>
 
@@ -410,7 +487,8 @@ export function ReportView({
                   <span className="type-dot" style={{ background: TYPE_ACCENT[x.type] }} aria-hidden="true" />
                   <strong>{x.label}</strong>
                   {x.type === r.baseType && <span className="badge badge-amber">Fondamental</span>}
-                  {x.type === r.phaseType && <span className="badge badge-line">Du moment</span>}
+                  {!r.moment && x.type === r.phaseType && <span className="badge badge-line">Du moment</span>}
+                  {r.moment && x.type === r.resourceType && <span className="badge badge-line">Ressource</span>}
                 </span>
                 <strong>{x.percent} %</strong>
               </div>
@@ -420,6 +498,31 @@ export function ReportView({
             </div>
           ))}
         </div>
+
+        {r.moment && (
+          <div className="card" style={{ marginTop: 14 }}>
+            <h3>Ce qui valorise la personne en ce moment</h3>
+            <p className="muted small">
+              Ce que la personne a choisi comme le plus valorisant dans ses réponses. La ressource désigne le deuxième profil du style : très présent dans la façon d&apos;être, il est
+              peut-être déjà comblé aujourd&apos;hui (hypothèse à confirmer en entretien).
+            </p>
+            {r.moment.ranking.map((x) => (
+              <div key={x.type} className="dist-row">
+                <div className="dist-head">
+                  <span className="row" style={{ gap: 10 }}>
+                    <span className="type-dot" style={{ background: TYPE_ACCENT[x.type] }} aria-hidden="true" />
+                    <strong>{x.label}</strong>
+                    {x.type === r.moment!.topType && <span className="badge badge-amber">Moteur du moment</span>}
+                  </span>
+                  <strong>{x.percent} %</strong>
+                </div>
+                <div className="bar" role="img" aria-label={`${x.label} : ${x.percent} pour cent`} style={{ ['--accent' as string]: TYPE_ACCENT[x.type] }}>
+                  <span style={{ width: `${Math.max(2, Math.min(100, x.percent))}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="section" style={{ paddingTop: 0 }} aria-label="Fiabilité de la lecture">
@@ -439,6 +542,23 @@ export function ReportView({
                     ? `${QUALITY_TEXT[r.quality.level]} (indice ${r.quality.index} sur 100)`
                     : 'Non disponible pour ce passage, enregistré avant la mise en place de l\u2019ordre aléatoire des réponses.'}
                 </p>
+                {r.moment && (
+                  <p style={{ marginBottom: 6 }}>
+                    <strong>Moteur du moment.</strong>{' '}
+                    {r.moment.gap12 >= 10
+                      ? `Lecture nette (${r.moment.gap12} points d\u2019écart entre les deux premiers).`
+                      : r.moment.gap12 >= 4
+                        ? `Lecture nuancée (${r.moment.gap12} points d\u2019écart) : à confirmer en entretien.`
+                        : `Lecture mixte (${r.moment.gap12} points d\u2019écart) : plusieurs attentes proches, à explorer en entretien.`}
+                    {r.moment.inBase ? ' La personne est actuellement dans son profil fondamental.' : ''}
+                  </p>
+                )}
+                {r.recognition && (
+                  <p style={{ marginBottom: 6 }}>
+                    <strong>Reconnaissance.</strong> Part des situations où chaque profil a été retenu :{' '}
+                    {r.ranking.map((x) => `${x.label} ${r.recognition![x.type]} %`).join(', ')}. En moyenne {String(r.avgChoices).replace('.', ',')} choix par situation.
+                  </p>
+                )}
               </>
             )
           })()}
@@ -452,6 +572,8 @@ export function ReportView({
         <div style={{ height: 14 }} />
         <Reading profile={r.phaseProfile} which="phase" category={stored.category} />
       </section>
+
+      {r.moment && <MomentSection r={r} />}
 
       <section className="section page-break" aria-label="Fiche comparée">
         <h2>Fiche comparée : fondamental et moment</h2>

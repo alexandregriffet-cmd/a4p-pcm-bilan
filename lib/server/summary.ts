@@ -56,6 +56,10 @@ export function summaryCsv(rows: SummaryRow[]): string {
     'Écart 1er-2e (points)',
     'Netteté',
     'Cohérence des réponses (0-100)',
+    'Choix moyens par situation',
+    'Ressource (2e profil du style)',
+    'Écart du moteur du moment (points)',
+    ...TYPE_ORDER.map((t) => `Reconnaissance ${labels[t]} (%)`),
   ]
   const lines = [header, ...rows.map((r) => {
     const res = r.latest?.result
@@ -72,6 +76,10 @@ export function summaryCsv(rows: SummaryRow[]): string {
       res ? clarityPcm(res).gap12 : '',
       res ? { net: 'Net', nuance: 'Nuancé', mixte: 'Mixte', egalite: 'Égalité' }[clarityPcm(res).clarity] : '',
       res?.quality ? res.quality.index : '',
+      res?.avgChoices ?? '',
+      res?.resourceType ? (res.ranking.find((x) => x.type === res.resourceType)?.label ?? '') : '',
+      res?.moment ? res.moment.gap12 : '',
+      ...TYPE_ORDER.map((t) => res?.recognition?.[t] ?? ''),
     ]
   })].map((line) => line.map(cell).join(';'))
   return '﻿' + lines.join('\r\n') + '\r\n'

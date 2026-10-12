@@ -32,9 +32,9 @@ export interface ClientTexts {
     overview: string
     finish: string
     situationOf: (n: number, t: number) => string
-    instruction: [string, string, string, string]
+    instruction: [string, string, string, string, string]
     hint: string
-    rankLabels: [string, string, string]
+    rankLabels: string[]
     saved: string
     saving: string
     saveError: string
@@ -93,7 +93,7 @@ const VOUS: ClientTexts = {
   },
   test: {
     kicker: 'Construction mentale',
-    intro: 'Pour chaque situation, classez trois réponses sur six.',
+    intro: 'Pour chaque situation, classez les réponses qui vous ressemblent (au moins trois).',
     start: 'Commencer',
     back: '← Retour',
     next: 'Situation suivante →',
@@ -106,10 +106,11 @@ const VOUS: ClientTexts = {
       'Touchez la réponse qui vous correspond le mieux : votre 1er choix.',
       'Touchez maintenant votre 2e choix.',
       'Touchez enfin votre 3e choix.',
-      'Classement complet. Touchez une réponse pour la retirer et modifier.',
+      'Ajoutez d\'autres réponses si elles vous ressemblent, ou passez à la suite.',
+      'Les six réponses sont classées. Touchez une réponse pour la retirer et modifier.',
     ],
-    hint: 'Vous classez trois réponses sur six, de la plus proche de vous à la moins proche des trois.',
-    rankLabels: ['1er', '2e', '3e'],
+    hint: 'Classez de la plus proche de vous à la moins proche, au moins trois réponses. Ne touchez pas celles qui ne vous ressemblent pas.',
+    rankLabels: ['1er', '2e', '3e', '4e', '5e', '6e'],
     saved: 'Brouillon enregistré',
     saving: 'Enregistrement...',
     saveError: 'Enregistrement impossible, nouvel essai à la prochaine réponse',
@@ -168,7 +169,7 @@ const TU: ClientTexts = {
   },
   test: {
     kicker: 'Construction mentale',
-    intro: 'Pour chaque situation, classe trois réponses sur six.',
+    intro: 'Pour chaque situation, classe les réponses qui te ressemblent (au moins trois).',
     start: 'Commencer',
     back: '← Retour',
     next: 'Situation suivante →',
@@ -181,10 +182,11 @@ const TU: ClientTexts = {
       'Touche la réponse qui te correspond le mieux : ton 1er choix.',
       'Touche maintenant ton 2e choix.',
       'Touche enfin ton 3e choix.',
-      'Classement complet. Touche une réponse pour la retirer et modifier.',
+      'Ajoute d\'autres réponses si elles te ressemblent, ou passe à la suite.',
+      'Les six réponses sont classées. Touche une réponse pour la retirer et modifier.',
     ],
-    hint: 'Tu classes trois réponses sur six, de la plus proche de toi à la moins proche des trois.',
-    rankLabels: ['1er', '2e', '3e'],
+    hint: 'Classe de la plus proche de toi à la moins proche, au moins trois réponses. Ne touche pas celles qui ne te ressemblent pas.',
+    rankLabels: ['1er', '2e', '3e', '4e', '5e', '6e'],
     saved: 'Brouillon enregistré',
     saving: 'Enregistrement...',
     saveError: 'Enregistrement impossible, nouvel essai à la prochaine réponse',

@@ -9,10 +9,11 @@ import { LogoutButton } from './LogoutButton'
 type Phase = 'run' | 'review' | 'confirm'
 type SaveState = 'idle' | 'saving' | 'saved' | 'error'
 
-const isFull = (v: number[] | undefined) => !!v && v.length === 3
+const MAX_PICKS = 6
+const isFull = (v: number[] | undefined) => !!v && v.length >= 3 && v.length <= MAX_PICKS
 
 /**
- * Passation du bilan : une situation par écran, classement 1er, 2e, 3e, brouillon enregistré par le serveur,
+ * Passation du bilan : une situation par écran, classement de 3 à 6 choix, brouillon enregistré par le serveur,
  * récapitulatif puis confirmation explicite. Aucune donnée de lecture n'existe dans ce composant :
  * il ne reçoit que les textes des situations et des réponses.
  */
@@ -76,7 +77,7 @@ export function TestRunner({ questions, initial, tu }: { questions: ClientQuesti
 
   const q = questions[idx]
   const current = q ? (picks[q.id] ?? []) : []
-  const complete = current.length === 3
+  const complete = current.length >= 3
   const answered = useMemo(() => questions.filter((x) => isFull(picks[x.id])).length, [questions, picks])
   const ratio = total ? answered / total : 0
   const missing = useMemo(() => questions.map((x, i) => ({ n: i + 1, ok: isFull(picks[x.id]) })).filter((x) => !x.ok), [questions, picks])
@@ -102,7 +103,7 @@ export function TestRunner({ questions, initial, tu }: { questions: ClientQuesti
       if (!q) return
       const cur = picksRef.current[q.id] ?? []
       if (cur.includes(opt)) update(q.id, cur.filter((x) => x !== opt))
-      else if (cur.length < 3) update(q.id, [...cur, opt])
+      else if (cur.length < MAX_PICKS) update(q.id, [...cur, opt])
     },
     [q, update],
   )
@@ -254,7 +255,7 @@ export function TestRunner({ questions, initial, tu }: { questions: ClientQuesti
     )
   }
 
-  const step = Math.min(current.length, 3)
+  const step = current.length >= MAX_PICKS ? 4 : Math.min(current.length, 3)
 
   return (
     <div className="runner">
@@ -296,7 +297,7 @@ export function TestRunner({ questions, initial, tu }: { questions: ClientQuesti
         </p>
         <div className="ranksteps" aria-hidden="true">
           {t.rankLabels.map((l, i) => (
-            <div key={l} className={`rankstep ${i < step ? 'done' : i === step ? 'now' : ''}`}>
+            <div key={l} className={`rankstep ${i < current.length ? 'done' : i === current.length ? 'now' : ''} ${i >= 3 ? 'optional' : ''}`}>
               {l}
             </div>
           ))}
@@ -306,7 +307,7 @@ export function TestRunner({ questions, initial, tu }: { questions: ClientQuesti
           {q.options.map((text, i) => {
             const rank = current.indexOf(i)
             const selected = rank !== -1
-            const dim = !selected && current.length === 3
+            const dim = false
             return (
               <button
                 key={i}

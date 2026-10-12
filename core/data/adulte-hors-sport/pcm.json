@@ -2366,5 +2366,727 @@
         "Développez la conscience de l'impact de vos actions sur les autres"
       ]
     }
-  }
+  },
+  "valorisation": [
+    {
+      "id": "Q73",
+      "situation": "Vous venez de terminer une période de travail très dense. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Que quelqu'un relise mon travail et salue sa rigueur et sa fiabilité.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on me demande vraiment comment je vais et qu'on prenne soin de moi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on reconnaisse mon engagement et que mes valeurs soient respectées.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Disposer de quelques jours tranquilles, dans le calme, pour prendre du recul.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Partager un moment léger et drôle, où l'on s'amuse sans se poser de questions.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on mette en avant mes résultats et qu'on me propose un nouvel objectif ambitieux.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q74",
+      "situation": "Vous venez de réussir quelque chose d'important (présentation, projet, objectif). Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on remarque tout le travail de préparation et le soin apporté aux détails.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on se réjouisse avec moi simplement et qu'on me serre dans les bras.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on me dise que j'ai eu raison de tenir bon, fidèle à mes convictions.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Qu'on me laisse savourer en silence, sans me solliciter.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une fête improvisée avec les gens que j'aime.",
+          "type": "creatif"
+        },
+        {
+          "text": "Un classement ou un chiffre qui prouve que j'ai gagné.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q75",
+      "situation": "Vous traversez un échec ou une déception. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on analyse avec moi, calmement, ce qui s'est passé, point par point.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on m'écoute avec bienveillance et qu'on me réconforte.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on me dise que j'ai agi selon mes principes, même si le résultat n'y est pas.",
+          "type": "guerrier"
+        },
+        {
+          "text": "M'isoler un moment pour réfléchir et laisser les choses se déposer.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Qu'on me fasse rire pour relativiser et passer à autre chose.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me lance tout de suite un nouveau défi pour rebondir.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q76",
+      "situation": "On vous impose un changement de programme à la dernière minute. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on m'explique clairement les raisons et le nouveau déroulé, avec des horaires précis.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on prenne en compte l'effet sur moi et sur mes proches avant de décider.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on me consulte et qu'on respecte mon avis, même si on décide autrement.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Qu'on me laisse le temps de m'adapter à ma façon, sans pression.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Qu'on en fasse une aventure : un imprévu peut être une bonne surprise.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me confie la gestion de ce changement et qu'on me laisse décider vite.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q77",
+      "situation": "Vous prenez de nouvelles responsabilités. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Un cadre clair : missions, objectifs et critères de réussite écrits noir sur blanc.",
+          "type": "architecte"
+        },
+        {
+          "text": "Que le groupe m'accueille chaleureusement et m'entoure.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on reconnaisse mon sérieux et ma loyauté, et qu'on me confie une vraie mission.",
+          "type": "guerrier"
+        },
+        {
+          "text": "De l'autonomie : qu'on me fasse confiance et qu'on me laisse m'organiser à ma manière.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Qu'on m'encourage à y mettre ma fantaisie et mes idées.",
+          "type": "creatif"
+        },
+        {
+          "text": "Que mes responsabilités soient visibles et accompagnées d'un vrai enjeu à gagner.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q78",
+      "situation": "Vous reprenez après un arrêt ou une longue absence. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Un plan de reprise progressif et précis, avec un suivi des étapes.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un entourage présent, qui s'inquiète de moi et me soutient.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Que mon implication et ma patience soient saluées.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Du temps calme pour me reconnecter à mes envies et à mon rythme.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Reprendre en m'amusant, avec des activités variées et ludiques.",
+          "type": "creatif"
+        },
+        {
+          "text": "Des objectifs de reprise chiffrés et un retour rapide à pleine performance.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q79",
+      "situation": "Vous participez à une réunion ou à un point d'équipe. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on prenne en compte mes données et mes analyses.",
+          "type": "architecte"
+        },
+        {
+          "text": "Que l'ambiance soit chaleureuse et que chacun prenne le temps de s'exprimer.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on m'écoute sur le fond et qu'on respecte mon point de vue.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Qu'on me laisse réfléchir avant de répondre.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une réunion dynamique, avec de l'humour et des idées qui fusent.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me laisse mener la discussion et trancher.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q80",
+      "situation": "Vous vivez une journée beaucoup trop chargée. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Un planning clair, avec des priorités et des pauses prévues.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un geste d'attention : un café préparé, un mot gentil, une pause avec quelqu'un.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Savoir que ce que je fais a du sens et sert une cause qui compte pour moi.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Une heure de silence, sans interruption, pour souffler.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une pause improvisée : sortir, bouger, rire avec des collègues.",
+          "type": "creatif"
+        },
+        {
+          "text": "Voir tout ce que j'ai accompli en un temps record.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q81",
+      "situation": "Vous recevez un retour sur votre travail. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Un retour détaillé et factuel, qui reconnaît la qualité et l'exactitude de ce que j'ai fait.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un retour donné avec douceur, qui montre qu'on m'apprécie en tant que personne.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Un retour qui salue mes valeurs et mon investissement, au-delà du résultat.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Un retour écrit, que je peux lire au calme et digérer à mon rythme.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Un retour léger, avec de l'humour, qui me donne envie d'essayer autre chose.",
+          "type": "creatif"
+        },
+        {
+          "text": "Un retour direct, sans détour, qui m'explique comment passer au niveau supérieur.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q82",
+      "situation": "On vous félicite devant tout le groupe. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on cite précisément ce que j'ai fait et la méthode que j'ai suivie.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on dise que le groupe m'apprécie et qu'on m'applaudisse chaleureusement.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on souligne ma constance et la force de mes convictions.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Que ce soit bref et discret, sans me mettre en avant.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Que ce soit fait avec humour et un peu de fantaisie.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me remette une récompense visible et qu'on me donne en exemple.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q83",
+      "situation": "Vous avez un désaccord avec quelqu'un d'important pour vous. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Poser les faits à plat et en discuter point par point.",
+          "type": "architecte"
+        },
+        {
+          "text": "Que l'autre exprime qu'il tient à notre relation et qu'on se réconcilie.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Que l'autre reconnaisse que mes principes comptent et qu'on trouve un terrain d'entente juste.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Prendre du recul quelques jours avant d'en reparler calmement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Désamorcer par l'humour et passer à autre chose.",
+          "type": "creatif"
+        },
+        {
+          "text": "Régler cela franchement, tout de suite, et en sortir avec une décision.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q84",
+      "situation": "Une échéance importante approche, dans quelques semaines (projet, présentation). Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Un plan de préparation détaillé, semaine par semaine.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un entourage proche qui croit en moi et m'accompagne.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on me confie un rôle clé pour lequel on compte sur moi.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Du temps pour me préparer à ma manière, à l'écart du bruit.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une préparation variée, où l'on s'amuse en progressant.",
+          "type": "creatif"
+        },
+        {
+          "text": "Un enjeu de haut niveau et une échéance qui fait monter l'adrénaline.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q85",
+      "situation": "Vous avez un week-end entièrement libre. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "L'avoir organisé à l'avance et pouvoir cocher ce que j'avais prévu.",
+          "type": "architecte"
+        },
+        {
+          "text": "Le passer avec des proches, dans une ambiance douce et confortable.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Le consacrer à une cause ou à une activité qui compte vraiment pour moi.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Ne rien planifier : rêver, lire, laisser venir les idées.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Partir à l'improviste, essayer une activité nouvelle ou drôle.",
+          "type": "creatif"
+        },
+        {
+          "text": "Me lancer un défi personnel ou sportif et le réussir.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q86",
+      "situation": "Vous traversez une période où vous doutez de vous. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on me rappelle des faits précis qui prouvent ma compétence.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on me dise qu'on m'aime tel que je suis, sans condition.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on me rappelle ce en quoi je crois et ce que j'ai tenu jusqu'ici.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Du temps pour moi, dans le calme, pour retrouver mon équilibre.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Qu'on me change les idées avec quelque chose de fun.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me remette face à un objectif où je sais que je peux gagner.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q87",
+      "situation": "Vous rejoignez un nouveau groupe (équipe, association). Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on m'explique les règles, l'organisation et ce qu'on attend de moi.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on m'accueille avec chaleur et qu'on s'intéresse à moi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on me demande mon avis et qu'on écoute ma façon de voir.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Qu'on me laisse observer et prendre ma place tranquillement.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une première rencontre détendue, avec du jeu et de la bonne humeur.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me laisse montrer vite ce que je vaux.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q88",
+      "situation": "Vous apprenez quelque chose de nouveau. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Une méthode claire, étape par étape, avec des explications précises.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un formateur attentif, qui crée une ambiance rassurante.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Un contenu qui a du sens et que je peux relier à mes valeurs.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Du temps pour explorer par moi-même, à mon rythme.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Un apprentissage ludique, fait d'essais et de découvertes.",
+          "type": "creatif"
+        },
+        {
+          "text": "Des exercices exigeants, un classement et des progrès mesurés.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q89",
+      "situation": "Un dimanche soir, juste avant une semaine chargée. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Avoir tout préparé : agenda, affaires, priorités de la semaine.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un repas chaleureux avec des proches.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Me dire que la semaine qui vient a du sens pour moi.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Un moment de calme avec mes pensées.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une soirée improvisée qui me met de bonne humeur.",
+          "type": "creatif"
+        },
+        {
+          "text": "Me projeter dans les défis de la semaine et avoir envie de les relever.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q90",
+      "situation": "Quelqu'un vous remercie sincèrement. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on me dise que mon travail est précis et qu'on peut compter sur moi.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on me remercie pour ma présence et ma bienveillance.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on me remercie pour mon engagement et mon honnêteté.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Qu'on me remercie pour ma façon de faire, discrète et réfléchie.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Un petit cadeau surprise ou une blague pour me dire merci.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me remercie pour le résultat obtenu et l'énergie que j'y ai mise.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q91",
+      "situation": "Vous ressentez une grande fatigue après une longue période d'effort. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Une récupération planifiée et suivie, avec des repères précis.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un bon repas, un lit confortable, des gens bienveillants autour de moi.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on reconnaisse que je suis allé au bout par conviction.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Le silence et du temps pour moi afin de recharger mes batteries.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Une détente joyeuse : musique, jeux, éclats de rire.",
+          "type": "creatif"
+        },
+        {
+          "text": "Voir mon effort récompensé par une performance remarquée.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q92",
+      "situation": "Vous avez une décision importante à prendre. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Disposer de toutes les informations et du temps de les comparer.",
+          "type": "architecte"
+        },
+        {
+          "text": "En parler avec quelqu'un de proche qui me comprend.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Avoir la certitude que la décision respecte mes principes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Me retirer pour y réfléchir au calme.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Me fier à mon intuition et tenter ma chance.",
+          "type": "creatif"
+        },
+        {
+          "text": "Décider vite et agir, quitte à corriger ensuite.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q93",
+      "situation": "Vous partez plusieurs jours en déplacement (séminaire, mission, voyage). Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Un programme détaillé, horaires et logistique compris.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un groupe uni, une ambiance conviviale et un hébergement confortable.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Savoir pourquoi je pars et ce que ce déplacement apporte à ce qui compte pour moi.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Des plages de temps libre, à l'écart, pour me ressourcer.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Des découvertes, de l'inattendu et de la bonne humeur.",
+          "type": "creatif"
+        },
+        {
+          "text": "Un objectif clair à atteindre sur place.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q94",
+      "situation": "Vous vivez une période de routine, où tout se ressemble. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Une routine bien rodée, qui me permet d'être efficace.",
+          "type": "architecte"
+        },
+        {
+          "text": "De petits plaisirs partagés avec les autres au quotidien.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Une mission qui donne du sens à mes journées.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Du temps pour mes pensées et mes projets intérieurs.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Des variations, de la nouveauté, des surprises.",
+          "type": "creatif"
+        },
+        {
+          "text": "Un nouveau défi pour retrouver de l'intensité.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q95",
+      "situation": "On vous critique sur un point que vous jugez injuste. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Qu'on examine les faits ensemble, preuves à l'appui.",
+          "type": "architecte"
+        },
+        {
+          "text": "Qu'on me montre qu'on me garde de l'estime malgré ce désaccord.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Qu'on reconnaisse que mes intentions étaient honnêtes et justes.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Qu'on me laisse digérer avant de m'en reparler.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Qu'on dédramatise, avec un peu d'humour.",
+          "type": "creatif"
+        },
+        {
+          "text": "Qu'on me laisse prouver par mes résultats que j'avais raison.",
+          "type": "competiteur"
+        }
+      ]
+    },
+    {
+      "id": "Q96",
+      "situation": "Vous faites le bilan de votre année. Ce qui vous ferait le plus de bien :",
+      "options": [
+        {
+          "text": "Un bilan chiffré et précis, qui montre les progrès réalisés.",
+          "type": "architecte"
+        },
+        {
+          "text": "Un moment de partage avec ceux qui ont compté cette année.",
+          "type": "connecteur"
+        },
+        {
+          "text": "Un bilan qui reconnaît ce que j'ai défendu et tenu.",
+          "type": "guerrier"
+        },
+        {
+          "text": "Un temps de retrait pour relire mon année à ma manière.",
+          "type": "visionnaire"
+        },
+        {
+          "text": "Un bilan en images et en souvenirs, avec des éclats de rire.",
+          "type": "creatif"
+        },
+        {
+          "text": "Un classement de mes réussites et de nouveaux objectifs plus hauts.",
+          "type": "competiteur"
+        }
+      ]
+    }
+  ]
 }

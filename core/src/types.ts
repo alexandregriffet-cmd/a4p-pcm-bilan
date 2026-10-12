@@ -415,11 +415,29 @@ export interface PcmTypeData {
 
 export interface PcmData {
   questions: PcmQuestion[]
+  /** 24 situations de valorisation (ce qui fait du bien en ce moment) : second classement, calculé séparément. Absent des anciennes données. */
+  valorisation?: PcmQuestion[]
   types: Record<PcmType, PcmTypeData>
 }
 
 /** [premier choix, deuxième choix, troisième choix], index d'option de 0 à 5. */
-export type PcmAnswers = Record<string, [number, number, number]>
+/** Pour chaque situation : de 3 à 6 index d'options, du 1er choix au dernier retenu (les options non retenues sont omises). */
+export type PcmAnswers = Record<string, number[]>
+
+/** Second classement des six profils, issu des situations de valorisation (moteur du moment). */
+export interface PcmMoment {
+  scores: Record<PcmType, number>
+  percents: Record<PcmType, number>
+  ranking: PcmRankedType[]
+  /** Profil au total le plus élevé des situations de valorisation. */
+  topType: PcmType
+  /** Écart entre le 1er et le 2e en points de pourcentage. */
+  gap12: number
+  /** Vrai si le moteur du moment est le profil fondamental : la personne est dans sa base ; le profil du moment affiché est alors le suivant. */
+  inBase: boolean
+  recognition: Record<PcmType, number>
+  avgChoices: number
+}
 
 export interface PcmRankedType {
   type: PcmType
@@ -437,6 +455,10 @@ export interface PcmQuality {
   positionShare: number
   /** Part des situations dont le classement affiché est identique à celui de la situation précédente (0 à 1). */
   repeatShare: number
+  /** Nombre moyen d'options retenues par situation (3 à 6). */
+  avgChoices?: number
+  /** Part des situations ayant le nombre de choix le plus fréquent (0 à 1). */
+  countShare?: number
 }
 
 export interface PcmResult {
@@ -447,11 +469,19 @@ export interface PcmResult {
   percents: Record<PcmType, number>
   maxPoints: number
   totalPoints: number
+  /** Taux de reconnaissance : part des situations où le profil a été retenu parmi les choix (0 à 100). Absent des passages antérieurs. */
+  recognition?: Record<PcmType, number>
+  /** Nombre moyen de choix par situation. Absent des passages antérieurs. */
+  avgChoices?: number
   ranking: PcmRankedType[]
   baseType: PcmType
   phaseType: PcmType
   baseProfile: PcmTypeData & { type: PcmType }
   phaseProfile: PcmTypeData & { type: PcmType }
+  /** Moteur du moment issu des situations de valorisation. Absent des passages antérieurs. */
+  moment?: PcmMoment
+  /** Deuxième profil du style (ressource), quand le moment vient des situations de valorisation. */
+  resourceType?: PcmType
   /** Cohérence des réponses, absente des passages antérieurs à l'ordre aléatoire. */
   quality?: PcmQuality
 }
@@ -485,6 +515,23 @@ export interface ResultByTest {
 }
 
 /** Fiche approfondie d'un profil (commune à tous les publics, rédigée à la troisième personne). */
+/** Lecture détaillée du moteur du moment (ce qui valorise la personne en ce moment) pour un profil. */
+export interface PcmMomentDetail {
+  /** Façon de communiquer du profil, en groupe nominal court (phrase de synthèse). */
+  facon: string
+  /** Ce que la personne attend en ce moment, en proposition courte (phrase de synthèse). */
+  court: string
+  attente: string
+  nourri: string[]
+  manque: string[]
+  se_nourrir: string[]
+  entourage: string[]
+  questions: string[]
+  vigilance: string
+  plan14: string[]
+  ressource: string
+}
+
 export interface PcmDetail {
   perception: string
   recoit: string
@@ -501,4 +548,5 @@ export interface PcmDetail {
   non: string[]
   plan: string[]
   autres: Record<PcmType, string>
+  moment: PcmMomentDetail
 }
