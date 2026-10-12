@@ -1,5 +1,5 @@
 import 'server-only'
-import { getTestData } from '@core/index'
+import { clarityPcm, getTestData } from '@core/index'
 import { common } from '@core/data'
 import type { PcmType } from '@core/types'
 import { categoryLabel, formatDateShort } from '@/lib/format'
@@ -53,6 +53,9 @@ export function summaryCsv(rows: SummaryRow[]): string {
     'Profil fondamental',
     'Profil du moment',
     ...TYPE_ORDER.map((t) => `${labels[t]} (%)`),
+    'Écart 1er-2e (points)',
+    'Netteté',
+    'Cohérence des réponses (0-100)',
   ]
   const lines = [header, ...rows.map((r) => {
     const res = r.latest?.result
@@ -66,6 +69,9 @@ export function summaryCsv(rows: SummaryRow[]): string {
       res ? res.baseProfile.label : '',
       res ? res.phaseProfile.label : '',
       ...TYPE_ORDER.map((t) => (res ? res.percents[t] : '')),
+      res ? clarityPcm(res).gap12 : '',
+      res ? { net: 'Net', nuance: 'Nuancé', mixte: 'Mixte', egalite: 'Égalité' }[clarityPcm(res).clarity] : '',
+      res?.quality ? res.quality.index : '',
     ]
   })].map((line) => line.map(cell).join(';'))
   return '﻿' + lines.join('\r\n') + '\r\n'

@@ -57,7 +57,7 @@ export default async function EspacePage() {
 
   // state === 'ready'
   const draft = await db.getDraft(me.id)
-  return <TestRunner questions={clientQuestions(me.category!)} initial={draft?.answers ?? {}} tu={tu} />
+  return <TestRunner questions={clientQuestions(me.category!, me.id, count + 1)} initial={draft?.answers ?? {}} tu={tu} />
 }
 
 function Message({ title, text }: { title: string; text: string }) {

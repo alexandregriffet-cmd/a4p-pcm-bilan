@@ -177,11 +177,44 @@ async function createClient(admin, { first, last, email, category, guardian }) {
   return { email, password, id: href.split('/').pop(), category }
 }
 
+/* Même algorithme que core/src/scoring/pcm-extra.ts (ordre aléatoire des options propre à chaque client). */
+function displayOrderJs(seed, n) {
+  let h = 1779033703 ^ seed.length
+  for (let i = 0; i < seed.length; i++) {
+    h = Math.imul(h ^ seed.charCodeAt(i), 3432918353)
+    h = (h << 13) | (h >>> 19)
+  }
+  h = Math.imul(h ^ (h >>> 16), 2246822507)
+  h = Math.imul(h ^ (h >>> 13), 3266489909)
+  let a = (h ^ (h >>> 16)) >>> 0
+  const r = () => {
+    a = (a + 0x6d2b79f5) >>> 0
+    let t = a
+    t = Math.imul(t ^ (t >>> 15), t | 1)
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+  const idx = Array.from({ length: n }, (_, i) => i)
+  for (let i = idx.length - 1; i > 0; i--) {
+    const j = Math.floor(r() * (i + 1))
+    ;[idx[i], idx[j]] = [idx[j], idx[i]]
+  }
+  return idx
+}
+
+/* Les options sont affichées dans un ordre propre à chaque client : on retrouve l'option voulue par son texte. */
+async function clickOrig(page, cat, qi, o) {
+  const text = loadData(cat).questions[qi].options[o].text.replace(/\s+/g, ' ').trim()
+  const idx = await page.$$eval('.opt', (els, t) => els.findIndex((e) => e.lastElementChild.textContent.replace(/\s+/g, ' ').trim() === t), text)
+  if (idx < 0) throw new Error(`option introuvable : ${text.slice(0, 40)}`)
+  await page.click(`[data-opt="${idx}"]`)
+}
+
 /* Passation : répond de la situation `from` à la dernière, puis ouvre le récapitulatif. */
-async function answerFrom(page, answers, from) {
+async function answerFrom(page, cat, answers, from) {
   for (let i = from; i < answers.length; i++) {
     const txt = await page.textContent('[data-testid=situation]')
-    for (const o of answers[i]) await page.click(`[data-opt="${o}"]`)
+    for (const o of answers[i]) await clickOrig(page, cat, i, o)
     await page.click('.btn-next')
     void txt
   }
@@ -341,8 +374,12 @@ async function finishAndValidate(page) {
       check('passation: consigne de classement 1er choix', /1er choix/.test(rankInstr))
     }
     // Les trois premières situations
+    let shuffled = 0
     for (let i = 0; i < 3; i++) {
-      for (const o of c.exp.answers[i]) await page.click(`[data-opt="${o}"]`)
+      const shownTxt = await page.$$eval('.opt', (els) => els.map((e) => e.lastElementChild.textContent.replace(/\s+/g, ' ').trim()))
+      const origTxt = loadData(cat).questions[i].options.map((o) => o.text.replace(/\s+/g, ' ').trim())
+      if (shownTxt.join('|') !== origTxt.join('|')) shuffled++
+      for (const o of c.exp.answers[i]) await clickOrig(page, cat, i, o)
       if (i === 0 && cat === 'adulte-sport') {
         await page.screenshot({ path: path.join(SHOTS, '07-passation-classee-375.png') })
         // les libellés 1er, 2e, 3e sont visibles
@@ -352,6 +389,7 @@ async function finishAndValidate(page) {
       }
       await page.click('.btn-next')
     }
+    check(`passation (${cat}): ordre des options aléatoire`, shuffled >= 1, String(shuffled))
     await page.waitForFunction(() => /Enregistr|Brouillon/.test(document.querySelector('.savestate')?.innerText || ''))
     await page.waitForTimeout(900)
     await page.reload()
@@ -365,7 +403,7 @@ async function finishAndValidate(page) {
     check(`passation (${cat}): retour arrière`, back.trim() === loadData(cat).questions[2].situation.trim())
     await page.click('.btn-next')
     // terminer
-    await answerFrom(page, c.exp.answers, 3)
+    await answerFrom(page, cat, c.exp.answers, 3)
     // récapitulatif
     await page.waitForSelector('text=Récapitulatif de')
     if (cat === 'adulte-sport') {
@@ -525,7 +563,7 @@ async function finishAndValidate(page) {
     await page.waitForSelector('[data-testid=situation]')
     const exp = makeAnswers('manager', 505)
     for (let i = 0; i < 2; i++) {
-      for (const o of exp.answers[i]) await page.click(`[data-opt="${o}"]`)
+      for (const o of exp.answers[i]) await clickOrig(page, 'adulte-sport', i, o)
       await page.click('.btn-next')
     }
     await page.waitForTimeout(900)
@@ -545,7 +583,7 @@ async function finishAndValidate(page) {
     const first = (await page.textContent('[data-testid=situation]')).trim()
     check('client: brouillon effacé et questions de la nouvelle catégorie', first === loadData('manager').questions[0].situation.trim() && !/retrouvées/.test(await page.innerText('body')), first.slice(0, 60))
     // l'ancien brouillon (catégorie précédente) ne peut plus être envoyé: identifiants d'options valides, mais jamais de catégorie client
-    await answerFrom(page, exp.answers, 0)
+    await answerFrom(page, 'manager', exp.answers, 0)
     await finishAndValidate(page)
     await page.click('button:has-text("Oui, valider définitivement")')
     await page.waitForSelector('[data-testid=thanks-title]')
@@ -573,7 +611,7 @@ async function finishAndValidate(page) {
     // appels directs avant consentement: refus
     const mgr = loadData('manager')
     const a = makeAnswers('manager', 606)
-    const body = { answers: Object.fromEntries(mgr.questions.map((q, i) => [q.id, a.answers[i]])), category: 'ado-etudes', audience: 'ado-etudes' }
+    const body = { answers: Object.fromEntries(mgr.questions.map((q, i) => { const ord = displayOrderJs(`${c.id}|1|${q.id}`, 6); return [q.id, a.answers[i].map((o) => ord.indexOf(o))] })), category: 'ado-etudes', audience: 'ado-etudes' }
     let r = await api(page, 'POST', '/api/test/submit', body)
     check('soumission avant consentement refusée (403)', r.status === 403, `${r.status} ${r.text}`)
     await page.check('.card > label.check input[type=checkbox]')
@@ -600,7 +638,8 @@ async function finishAndValidate(page) {
     await admin.goto(BASE + `/admin/clients/${c.id}/resultat`)
     const t = await admin.innerText('.report')
     check('la catégorie envoyée par le client a été ignorée (résultat en Manager)', t.includes('Manager') && !t.includes('Adolescent'), t.slice(0, 200))
-    check('résultat calculé par le serveur conforme au calcul indépendant', t.includes(a.base))
+    check('résultat calculé par le serveur conforme au calcul indépendant (ordre aléatoire inclus)', t.includes(a.base))
+    check('rapport: fiabilité de la lecture (netteté et cohérence) affichée', /Fiabilité de cette lecture/.test(t) && /Netteté/.test(t) && /Cohérence des réponses/.test(t) && /indice \d+ sur 100/.test(t), t.match(/Cohérence des réponses[^\n]*/)?.[0])
     await ctx.close()
   }
 
@@ -665,7 +704,7 @@ async function finishAndValidate(page) {
     await page.waitForSelector('[data-testid=situation]')
     check('nouveau passage: le client revoit le test (consentement conservé)', true)
     const exp2 = makeAnswers('adulte-hors-sport', 777)
-    await answerFrom(page, exp2.answers, 0)
+    await answerFrom(page, 'adulte-hors-sport', exp2.answers, 0)
     await finishAndValidate(page)
     await page.click('button:has-text("Oui, valider définitivement")')
     await page.waitForSelector('[data-testid=thanks-title]')
@@ -749,7 +788,7 @@ async function finishAndValidate(page) {
     check('CSV: séparateur point-virgule et en-tête', lines[0].startsWith('Nom;E-mail;Catégorie;Statut;Date de passage;Passages;Profil fondamental;Profil du moment;Architecte (%);Connecteur (%)'), lines[0])
     check(`CSV: une ligne par client (${lines.length - 1})`, lines.length - 1 === 7, String(lines.length))
     const rowL = lines.find((l) => l.includes('camille.sportif@exemple.fr'))
-    check('CSV: ligne de Camille avec ses pourcentages', rowL && rowL.includes(clients['adulte-sport'].exp.base) && rowL.endsWith(TYPES.map((t) => clients['adulte-sport'].exp.percents[t]).join(';')), rowL)
+    check('CSV: ligne de Camille avec ses pourcentages', rowL && rowL.includes(clients['adulte-sport'].exp.base) && rowL.includes(TYPES.map((t) => clients['adulte-sport'].exp.percents[t]).join(';') + ';'), rowL)
     fs.writeFileSync(path.join(SHOTS, 'synthese.csv'), buf)
     // page Exports
     await admin.goto(BASE + '/admin/export')

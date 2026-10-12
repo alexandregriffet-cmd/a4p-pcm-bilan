@@ -428,6 +428,17 @@ export interface PcmRankedType {
   percent: number
 }
 
+/** Indice de cohérence des réponses (disponible seulement si l'ordre des options a été aléatoire). */
+export interface PcmQuality {
+  /** 0 à 100, plus c'est haut plus les réponses semblent attentives. */
+  index: number
+  level: 'bonne' | 'a-verifier' | 'faible'
+  /** Part maximale des premiers choix tombés sur une même position affichée (0 à 1). */
+  positionShare: number
+  /** Part des situations dont le classement affiché est identique à celui de la situation précédente (0 à 1). */
+  repeatShare: number
+}
+
 export interface PcmResult {
   test: 'pcm'
   meta: ResultMeta
@@ -441,6 +452,8 @@ export interface PcmResult {
   phaseType: PcmType
   baseProfile: PcmTypeData & { type: PcmType }
   phaseProfile: PcmTypeData & { type: PcmType }
+  /** Cohérence des réponses, absente des passages antérieurs à l'ordre aléatoire. */
+  quality?: PcmQuality
 }
 
 /* ------------------------------------------------------------------ */

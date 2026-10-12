@@ -1,5 +1,5 @@
 import 'server-only'
-import { getTestData } from '@core/index'
+import { displayOrder, getTestData } from '@core/index'
 import type { PcmData } from '@core/types'
 import type { Category, ClientQuestion, DraftAnswers } from '@/lib/types'
 
@@ -8,8 +8,16 @@ export function pcmData(category: Category): PcmData {
 }
 
 /** Situations pour le navigateur du client : texte seulement, jamais le profil rattaché à chaque option. */
-export function clientQuestions(category: Category): ClientQuestion[] {
-  return pcmData(category).questions.map((q) => ({ id: q.id, situation: q.situation, options: q.options.map((o) => o.text) }))
+export function clientQuestions(category: Category, userId: string, attempt: number): ClientQuestion[] {
+  return pcmData(category).questions.map((q) => {
+    const order = orderOf(userId, attempt, q.id, q.options.length)
+    return { id: q.id, situation: q.situation, options: order.map((i) => q.options[i].text) }
+  })
+}
+
+/** Ordre d'affichage des options d'une situation pour un client et une tentative : stable, propre à chaque personne. */
+export function orderOf(userId: string, attempt: number, questionId: string, nbOptions: number): number[] {
+  return displayOrder(`${userId}|${attempt}|${questionId}`, nbOptions)
 }
 
 /** Valide et nettoie un brouillon (0 à 3 choix distincts, entre 0 et 5, pour des situations connues). */

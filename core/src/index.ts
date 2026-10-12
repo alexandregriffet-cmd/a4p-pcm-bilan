@@ -67,3 +67,4 @@ export function isCompleteTest<T extends TestId>(test: T, audience: AudienceId, 
     default: throw new Error(`Test inconnu : ${String(test)}`)
   }
 }
+export * from './scoring/pcm-extra'

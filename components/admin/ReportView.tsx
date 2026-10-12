@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { PcmType, PcmTypeData } from '@core/types'
 import { getAudience } from '@core/audiences'
 import { getDetail } from '@core/data'
+import { clarityPcm } from '@core/index'
 import { categoryLabel, formatDate, REPORT_TITLE, SIGNATURE } from '@/lib/format'
 import type { StoredResult } from '@/lib/types'
 import { TYPE_ACCENT } from './accent'
@@ -16,6 +17,19 @@ const ADVICE_TITLE: Record<string, string> = {
   'adulte-hors-sport': 'Conseils pour la vie professionnelle et personnelle',
   manager: 'Conseils pour le management',
 }
+
+const CLARITY_TEXT = {
+  net: (g: number) => `Profil net : le profil fondamental se détache nettement du deuxième (écart de ${g} points).`,
+  nuance: (g: number) => `Profil nuancé : le profil fondamental devance le deuxième de ${g} points. Les deux ont un rôle à explorer.`,
+  mixte: (g: number) => `Profil mixte : les deux premiers profils sont proches (écart de ${g} points). Ils guident la personne à parts presque égales.`,
+  egalite: () => 'Égalité : les deux premiers profils ont exactement le même total. Le départage est à discuter en entretien.',
+} as const
+
+const QUALITY_TEXT = {
+  bonne: 'Réponses cohérentes : aucune habitude de réponse anormale détectée.',
+  'a-verifier': 'À vérifier en entretien : certaines habitudes de réponse reviennent souvent (position ou classement répété).',
+  faible: 'Réponses peu cohérentes : la passation a peut-être été rapide ou peu attentive. Interpréter le résultat avec prudence.',
+} as const
 
 const STRESS_LEVELS = ['Signaux de tension', 'Tension en montée', 'Saturation']
 
@@ -405,6 +419,30 @@ export function ReportView({
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }} aria-label="Fiabilité de la lecture">
+        <div className="card">
+          <h3>Fiabilité de cette lecture</h3>
+          {(() => {
+            const c = clarityPcm(r)
+            return (
+              <>
+                <p style={{ marginBottom: 6 }}>
+                  <strong>Netteté.</strong> {CLARITY_TEXT[c.clarity](c.gap12)}
+                  {c.momentToConfirm ? ' Le profil du moment se distingue peu du suivant : à confirmer en entretien.' : ''}
+                </p>
+                <p style={{ marginBottom: 6 }}>
+                  <strong>Cohérence des réponses.</strong>{' '}
+                  {r.quality
+                    ? `${QUALITY_TEXT[r.quality.level]} (indice ${r.quality.index} sur 100)`
+                    : 'Non disponible pour ce passage, enregistré avant la mise en place de l\u2019ordre aléatoire des réponses.'}
+                </p>
+              </>
+            )
+          })()}
+          <p className="muted small" style={{ margin: 0 }}>Repères provisoires, à affiner avec les données de l&apos;étude de validation. Ils éclairent l&apos;entretien et ne le remplacent pas.</p>
         </div>
       </section>
 
